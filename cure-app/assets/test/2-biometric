@@ -1,0 +1,278 @@
+
+
+      <!--Start Cure Biometric-->
+    <div class="cure-biometric">
+      <div class="container">
+         <div class="row">
+            <!--Start Navbar-->  
+               <div class="nav-bar">
+                  <input type="checkbox" id="check">
+                  <label for="check" class="checkbtn">
+                     <i class="fas fa-bars"></i>
+                  </label> 
+                  <label>
+                     <img class="cure-logo" src="assets/imgs/logo.png.png"/>
+                  </label>
+                  <ul class="list-unstyled menu-side">
+                     <li><a class="nav-list" href="#">Login</a></li>
+                     <li><a class="nav-list" href="#">Support</a></li>
+                     <li><a class="nav-list" href="#">Faq</a></li>
+                  </ul>
+               </div>
+            <!--End Navbar-->
+            <div class="cure-bio col-md-12">
+               <h2>Create Free Account</h2>
+               <p>Cure Biometric Measurement</p>
+            </div>
+            <div class="image-aqua col-md-2 text-center">
+               <div class="image-over">
+               <img class="paitent-item" src="assets/Icons/paitent-aqua.png.png">           
+               <p>Patient</p>
+               </div>
+            </div>
+            <div class="image-aqua col-md-2 text-center">
+               <div class="image-over">
+               <img class="paitent-item" src="assets/Icons/doctor-aqua.png.png">
+               <p>Doctor</p>
+               </div>
+            </div>
+            <div class="image-aqua col-md-2 text-center">
+               <div class="image-over">
+               <img class="paitent-item" src="assets/Icons/pharmacy-aqua.png.png">
+               <p>Pharmacy</p>
+               </div>
+            </div>
+            <div class="image-aqua col-md-2 text-center">
+               <div class="image-over">
+               <img class="paitent-item" src="assets/Icons/lab-aqua.png.png">
+               <p>Labs</p>
+               </div>
+            </div>
+            <div class="image-aqua col-md-2 text-center">
+               <div class="image-over">
+               <img class="paitent-item" src="assets/Icons/factory-aqua.png.png">
+               <p>Factory</p>
+               </div>
+            </div>   
+            <div class="image-aqua col-md-2 text-center">
+               <div class="image-over">
+               <img class="paitent-item" src="assets/Icons/hospital-aqua.png.png">
+               <p>Hospital</p>
+            </div>
+            </div>
+            <div class="container">
+               <div class="row">
+                  <div class="col-sm-12 choose-category">
+                     <p>Choose Your Account Category First</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!--End Cure Biometric-->
+
+Css Style------------------------------------------->
+
+
+
+<!----------------------------Biometric------------------------------>
+
+/*Start Navbar*/
+.nav-bar{
+    width:100%;
+    height:80px;
+}
+.nav-bar img.cure-logo{
+    width:80px;
+    padding:40px 0px;
+    margin-left:20px;
+}
+.nav-bar ul{
+    float:right;
+    margin-right:10px;
+    margin-top:30px;
+}
+.nav-bar ul li{
+    display:inline-block;
+    line-height:50px;
+    margin:0 20px;
+}
+.nav-bar ul li a.nav-list{
+    color:white;
+    font-weight:bold;
+    font-size:15px;
+    text-decoration:none;
+}
+.nav-bar ul li a:hover{
+    color:#8ed8e6;
+}
+.nav-bar .checkbtn{
+    color:white;
+    font-size:30px;
+    line-height:80px;
+    float:right;
+    margin-right:40px;
+    cursor:pointer;
+    display:none;
+}
+.nav-bar #check{
+    display:none;
+}
+@media(max-width:1200px){
+    .nav-bar ul{
+        position: absolute;
+        background:#8396e2;
+        width:100%;
+        height:250px;
+        top:80px;
+        left:-1500px;
+        text-align:center;
+        -webkit-transition:all .5s ease-in-out;
+        -moz-transition:all .5s ease-in-out;
+        -o-transition:all .5s ease-in-out;
+        transition:all .5s ease-in-out;
+        z-index:999;
+        margin-top:150px;
+    }
+    .nav-bar ul li{
+        display:block;
+    }
+    .nav-bar ul li a.nav-list{
+        font-size:20px
+    }
+    .nav-bar .checkbtn{
+        display:block;
+        color:#5766a1;
+        margin-top:25px;
+    }
+    #check:checked ~ ul{
+        left:0px;
+    }
+}
+/*End Navbar*/
+/*Start Cure Biometric*/
+div.cure-biometric{
+    width:100%;
+    height:100vh;
+    background-image:url("../imgs/bg.png.png");
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+.cure-biometric .cure-bio{
+    margin:70px 0 30px 0; 
+}
+.cure-biometric h2{
+    margin-bottom:0px;
+}
+.cure-biometric h2 , 
+.cure-biometric p{
+    color:#8396e2;
+}
+.cure-biometric h2{
+    letter-spacing:-2px;
+}
+.cure-biometric p{
+    letter-spacing:-1px;
+}
+.cure-biometric .image-aqua{
+    margin-top:40px;
+}
+.cure-biometric .image-aqua .image-over{
+    width:80%;
+    height:100%;
+    padding:15px 15px;
+    border-radius:10px;
+    background:white;
+}
+.cure-biometric .image-aqua .image-over:hover{
+    width:80%;
+    height:100%;
+    padding:15px 15px;
+    border-radius:10px;
+    background:black;
+    cursor:pointer;
+    -webkit-transition:.5s all ease-in-out;
+    -moz-transition:.5s all ease-in-out;
+    -o-transition:.5s all ease-in-out;
+    transition:.5s all ease-in-out;
+}
+.cure-biometric .image-aqua .image-over p{
+    color:#8ed8e6;
+    letter-spacing:1px;
+    line-height:1;
+    font-weight:bold;
+}
+.cure-biometric .paitent-item{
+    width:80px;
+    height:80px;
+    padding:10px;
+    border-radius:10px;
+}
+.cure-biometric .choose-category p{
+    color:#a1a1a1;
+    padding:50px 0px;
+    letter-spacing:0;
+    font-size:15px;
+}
+@media(max-width:993px){
+    .cure-biometric .image-aqua .image-over{
+        width:100%;
+        height:100%;
+        padding:15px 10px;
+        border-radius:10px;
+        background:white;
+        cursor:pointer;
+        -webkit-transition:.5s all ease-in-out;
+        -moz-transition:.5s all ease-in-out;
+        -o-transition:.5s all ease-in-out;
+        transition:.5s all ease-in-out;
+    }
+    .cure-biometric .image-aqua .image-over:hover{
+        width:100%;
+        height:100%;
+        padding:15px 10px;
+        border-radius:10px;
+        background:black;
+        cursor:pointer;
+        -webkit-transition:.5s all ease-in-out;
+        -moz-transition:.5s all ease-in-out;
+        -o-transition:.5s all ease-in-out;
+        transition:.5s all ease-in-out;
+    }
+    .cure-biometric .image-aqua .image-over p{
+        color:#8ed8e6;
+        letter-spacing:0px;
+        line-height:1;
+        font-weight:bold;
+    }
+    @media(max-width:769px){
+        .cure-biometric .image-aqua .image-over{
+            text-align:center;
+            margin:0 auto;
+            width:150px;
+            height:100%;
+            padding:15px 10px;
+            border-radius:10px;
+            background:white;
+            cursor:pointer;
+            -webkit-transition:.5s all ease-in-out;
+            -moz-transition:.5s all ease-in-out;
+            -o-transition:.5s all ease-in-out;
+            transition:.5s all ease-in-out;
+        }
+        .cure-biometric .image-aqua .image-over:hover{
+            width:150px;
+            height:100%;
+            padding:15px 10px;
+            border-radius:10px;
+            background:black;
+            cursor:pointer;
+            -webkit-transition:.5s all ease-in-out;
+            -moz-transition:.5s all ease-in-out;
+            -o-transition:.5s all ease-in-out;
+            transition:.5s all ease-in-out;
+        }
+    }
+}
+/*End Cure Biometric*/

@@ -1,0 +1,337 @@
+<!--Start Navbar-->
+
+<!--Start Navbar-->
+
+   <nav>
+      <input type="checkbox" id="check"/>
+      <label class="checkbtn" for="check">
+         <i class="fas fa-bars"></i>
+      </label>
+      <img class="logo" src="assets/Icons/cure.png.png"/>
+      <ul class="list-unstyled">
+         <li><a class="active" href="#">Login</a></li>
+         <li><a href="#">Support</a></li>
+         <li><a href="#">Faq</a></li>
+      </ul>
+   </nav>
+
+<!--End Navbar-->  
+
+
+
+
+
+<!--Start Loading Screen-->
+   <div class="loading-overflow">
+      <div class="loading-screen">
+         <div class="container">
+            <div class="row">
+               <img class="cure-animation" src="assets/Icons/curewhite.png.png"/>
+            </div>
+         </div>
+      </div>
+   </div>
+<!--End Loading Screen-->
+
+
+
+
+<!--Start Create Account-->
+<div class="create-account">
+   <div class="container">
+      <div class="row">
+
+         <div class="col-md-9 col-xs-12 text-left">
+            <img class="cure-logo" src="assets/Icons/cure.png.png"/>
+         </div>
+
+         <div class="navbar item col-md-3 text-right">
+            <a href="" class="navbar-item">Login</a>
+            <a href="" class="navbar-item">Support</a>
+            <a href="" class="navbar-item">Faq</a>
+         </div>
+
+         
+
+         <div class="cure-bio col-md-12">
+            <h2>Create Free Account</h2>
+            <p>Cure Biometric Measurement</p>
+         </div>
+
+         <div class="col-lg-2">
+            <img class="paitent-item" src="assets/Icons/patient.png.png"/>
+         </div>
+         <div class="col-md-5">
+            <ul class="list-unstyled">
+              <li><a href="">Full Name</a></li>
+              <li><a href="">Email</a></li>
+              <li><a href="">User Name</a></li>
+              <li><a href="">Password</a></li>
+              <li><a href="">Phone Number</a></li>
+              <li><a href="">Gender</a></li>
+            </ul>
+            <button type="button" class="btn btn-primary">Register</button>
+         </div>
+         <div class="col-md-5">
+            <img class="doctor-item img-thumbnail" src="assets/Icons/doctor.png.png"/>
+         </div>
+
+      </div>
+   </div>
+</div>
+<!--End Create Account-->
+
+
+
+
+<!--Start Cure Biometric-->
+<div class="cure-biometric">
+   <div class="container">
+      <div class="row">
+
+         <div class="col-md-9 col-xs-12 text-left">
+            <img class="cure-logo" src="assets/Icons/cure.png.png"/>
+         </div>
+
+         <div class="item col-md-3 hidden-xs text-right">
+            <a href="" class="navbar-item">Login</a>
+            <a href="" class="navbar-item">Support</a>
+            <a href="" class="navbar-item">Faq</a>
+         </div>
+
+         <div class="cure-bio col-md-12">
+            <h2>Create Free Account</h2>
+            <p>Cure Biometric Measurement</p>
+         </div>
+
+         <div class="image-aqua col-md-2 text-center">
+            <div class="image-over">
+            <img class="paitent-item" src="assets/Icons/paitent-aqua.png.png">           
+            <p>Patient</p>
+            </div>
+         </div>
+
+         <div class="image-aqua col-md-2 text-center">
+            <div class="image-over">
+            <img class="paitent-item" src="assets/Icons/doctor-aqua.png.png">
+            <p>Doctor</p>
+            </div>
+         </div>
+
+         <div class="image-aqua col-md-2 text-center">
+            <div class="image-over">
+            <img class="paitent-item" src="assets/Icons/pharmacy-aqua.png.png">
+            <p>Pharmacy</p>
+            </div>
+         </div>
+
+         <div class="image-aqua col-md-2 text-center">
+            <div class="image-over">
+            <img class="paitent-item" src="assets/Icons/lab-aqua.png.png">
+            <p>Laboratory</p>
+            </div>
+         </div>
+
+         <div class="image-aqua col-md-2 text-center">
+            <div class="image-over">
+            <img class="paitent-item" src="assets/Icons/factory-aqua.png.png">
+            <p>Factory</p>
+            </div>
+         </div>
+         
+         <div class="image-aqua col-md-2 text-center">
+            <div class="image-over">
+            <img class="paitent-item" src="assets/Icons/hospital-aqua.png.png">
+            <p>Hospital</p>
+         </div>
+         </div>
+
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12 choose-category">
+                  <p>Choose Your Account Category First</p>
+               </div>
+            </div>
+         </div>
+
+      </div>
+   </div>
+</div>
+<!--End Cure Biometric-->
+
+
+
+   <!--Start Cure Market-->
+   <div class="cure-market">
+      <div class="row">          
+         <div class="col-md-3">             
+            <img class="cure-logo" src="assets/Icons/cure.png.png"/>
+         </div>
+            <div class="col-md-6">             
+               <h3>Market</h3>
+            </div>
+         <div class="notification col-md-3">
+            <i class="far fa-bell fa-2x"></i>
+            <i class="fas fa-shopping-cart fa-2x"></i>
+         </div>         
+      </div>
+</div>
+<!--End Cure Market-->
+   <!--Start Cure Category-->
+   <div class="cure-category">
+      <div class="container">
+         <div class="row">
+
+            <div class="col-md-2">    
+               <p>Pargraph</p>
+            </div>
+
+            <div class="category-list col-md-8">
+               <h3>Categories</h3>
+               <ul class="list-unstyled row text-center">
+                  <li class="col-md">All</li>
+                  <li class="col-md">Treatment</li>
+                  <li class="col-md">Tools</liclass="col-md">
+                  <li class="col-md">Treatment</li>
+                  <li class="col-md">Tools</li>
+                  <li class="col-md">Treatment</li>
+                  <li class="col-md">Tools</li>
+               </ul>
+               <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img class="d-block w-100" src="assets/imgs/carousel-1.jpg" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="assets/imgs/carousel-2.jpg" alt="Second slide">
+                    </div>
+                  </div>                  
+                </div>
+               <!--Start Rated Pharmcy-->
+                <h4>Top Rated Pharmcy</h4>
+
+                <div class="row">                 
+                  <div class="col-md-3">
+                     <i class="fab fa-500px fa-7x"></i>
+                  </div>
+                  <div class="col-md-3">
+                     <i class="fab fa-500px fa-7x"></i>
+                  </div>
+                  <div class="col-md-3">
+                     <i class="fab fa-500px fa-7x"></i>
+                  </div>
+                  <div class="col-md-3">
+                     <i class="fab fa-500px fa-7x"></i>
+                  </div>
+                </div>
+               <!--End Rated Pharmcy-->
+               <!--Start Trending-->
+                <h4>Trending Now</h4>
+                <div class="trend row">
+
+                   <div class="trend-category col-md-4">
+                     <img src="assets/imgs/trend-1.jpg"/>
+                     <p>VaseLine Body Spray Coca Rate ,1909</p>
+                     <ins>130.00 EGP</ins>
+                     <del>140.00 EGP</del>
+                     <p>Eligible for <span>Free Shopping</span></p>
+                   </div>
+                   <div class="trend-category col-md-4">
+                     <img src="assets/imgs/trend-1.jpg"/>
+                     <p>VaseLine Body Spray Coca Rate ,1909</p>
+                     <ins>49.00 EGP</ins>
+                     <del>60.00 EGP</del>
+                   </div>
+                   <div class="trend-category col-md-4">
+                     <img src="assets/imgs/trend-1.jpg"/>
+                     <p>VaseLine Body Spray Coca Rate ,1909</p>
+                     <ins>300.00 EGP</ins>
+                   </div>
+                   
+
+                </div>
+               <!--End Trending-->
+
+
+            </div>
+
+            <div class="col-md-2">
+               <p>Pargraph</p>
+            </div>
+
+         </div>
+      </div>
+   </div>
+   <!--End Cure Category-->
+
+
+
+
+
+
+
+
+
+   .nav-bar{
+    width:100%;
+    height:80px;
+    background:grey;
+}
+.nav-bar img {
+    width:80px;
+    padding:20px 0px;
+}
+.nav-bar ul {
+    float:right;
+}
+.nav-bar ul li{
+    display:inline-block;
+    line-height:80px;
+    margin-right:20px;
+}
+.nav-bar ul li a{
+    color:red;
+    font-weight:bold;
+    font-size:15px;
+    text-decoration:none;
+}
+.nav-bar ul li a:hover{
+    color:#8ed8e6;
+    transition:all .3s ease-in-out;
+}
+.nav-bar .checkbtn{
+    font-size:30px;
+    color:red;
+    line-height:80px;
+    cursor:pointer;
+    display:none;
+}
+.check{
+    display:none;
+}
+@media(max-width:858px){
+    .nav-bar .checkbtn{
+        display:block;
+        float:right;
+        padding:0 400px
+    }
+    .nav-bar ul{
+        position:fixed;
+        height:100vh;
+        width:100%;
+        top:80px;
+        left:-500px;
+        background:#72b6c4;
+        text-align:center;
+    }
+    .nav-bar ul li {
+        display:block;
+    }
+    .nav-bar check:checked ~ ul{
+        left:0;
+    }
+}

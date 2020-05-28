@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html >
+<head>
+   <meta charset="utf-8" />
+   <!--First Mobile Meta-->
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--End Mobile Meta-->
+   <title>Cure Platform</title>
+   <!--Start Fontawesome-->
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous">
+   <!--End Fontawesome-->
+   <!--Start Google Font-->
+   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Tangerine">
+   <!--End Google Font-->
+      <!--Start Bootstrap Css-->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <!--End Bootstrap Css-->
+   <link rel="stylesheet" href="assets/css/style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+</head>
+<body>
+
+   <!--Start Navbar-->
+   <nav>
+      <input type="checkbox" id="check"/>
+      <label class="checkbtn" for="check">
+         <i class="fas fa-bars"></i>
+      </label>
+      <img class="logo" src="assets/Icons/cure.png.png"/>
+      <ul class="list-unstyled">
+         <li><i class="far fa-envelope fa-x active"></i></li>
+         <li><i class="far fa-bell fa-x"></i></li> 
+         <li><i class="fas fa-shopping-cart fa-x"></i></li>
+      </ul>
+   </nav>
+   <section class="categorey">
+
+   <!--Start Cure Category-->
+   <div class="cure-category">
+      <div class="container">
+         <div class="row">
+          <!--Start Sidebar-->
+            <div class="col-md-3">    
+              <div class="sidebar">
+               <h3>My App</h3>
+               <ul class="list-unstyled">
+                 <li><a class="active" href="#"><i class="fas fa-store-alt"></i>Market</a></li>
+                 <li><a href="#"><i class="fas fa-credit-card"></i>Black Market</a></li>
+                 <li><a href="#"><i class="fas fa-file-medical-alt"></i>Medical File</a></li>
+                 <li><a href="#"><i class="fas fa-prescription-bottle-alt"></i>Blood Donation</a></li>
+                 <li><a href="#"><i class="fas fa-book-medical"></i>Mdeical Booking</a></li>
+                 <li><a href="#"><i class="fas fa-history"></i>History</a></li>
+                 <li><a href="#"><i class="fas fa-cogs"></i>Settings</a></li>
+                 <li><a href="#"><i class="far fa-question-circle"></i>Help Center</a></li>
+                 <li><a href="#"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+               </ul>
+              </div>
+            </div>
+            <!--End Sidebar-->
+            <div class="category-list col-md-7">
+               <h3>Categories</h3>
+               <ul class="list-unstyled row text-center">
+                  <li class="col-md">All</li>
+                  <li class="col-md">Treatment</li>
+                  <li class="col-md">Tools</liclass="col-md">
+                  <li class="col-md">Treatment</li>
+                  <li class="col-md">Tools</li>
+               </ul>
+               <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img class="d-block w-100" src="assets/imgs/carousel-1.jpg" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="assets/imgs/carousel-2.jpg" alt="Second slide">
+                    </div>
+                  </div>                  
+                </div>
+               <!--Start Rated Pharmcy-->
+                <h4>Top Rated Pharmcy</h4>
+
+                <div class="row">                 
+                  <div class="col-md-3">
+                     <i class="fab fa-500px fa-7x"></i>
+                  </div>
+                  <div class="col-md-3">
+                     <i class="fab fa-500px fa-7x"></i>
+                  </div>
+                  <div class="col-md-3">
+                     <i class="fab fa-500px fa-7x"></i>
+                  </div>
+                  <div class="col-md-3">
+                     <i class="fab fa-500px fa-7x"></i>
+                  </div>
+                </div>
+               <!--End Rated Pharmcy-->
+               <!--Start Trending-->
+                <h4>Trending Now</h4>
+                <div class="trend row">
+
+                   <div class="trend-category col-md-4">
+                     <img src="assets/imgs/trend-1.jpg"/>
+                     <p>VaseLine Body Spray Coca Rate ,1909</p>
+                     <ins>130.00 EGP</ins>
+                     <del>140.00 EGP</del>
+                     <p>Eligible for <span>Free Shopping</span></p>
+                   </div>
+                   <div class="trend-category col-md-4">
+                     <img src="assets/imgs/trend-1.jpg"/>
+                     <p>VaseLine Body Spray Coca Rate ,1909</p>
+                     <ins>49.00 EGP</ins>
+                     <del>60.00 EGP</del>
+                   </div>
+                   <div class="trend-category col-md-4">
+                     <img src="assets/imgs/trend-1.jpg"/>
+                     <p>VaseLine Body Spray Coca Rate ,1909</p>
+                     <ins>300.00 EGP</ins>
+                   </div>
+                   
+
+                </div>
+               <!--End Trending-->
+
+
+
+               <h4>All Products</h4>
+                <div class="trend row">
+                   <div class="trend-category col-md-4">
+                     <img src="assets/imgs/trend-1.jpg"/>
+                     <p>VaseLine Body Spray Coca Rate ,1909</p>
+                     <ins>130.00 EGP</ins>
+                     <del>140.00 EGP</del>
+                     <p>Eligible for <span>Free Shopping</span></p>
+                   </div>
+                   <div class="trend-category col-md-4">
+                     <img src="assets/imgs/trend-1.jpg"/>
+                     <p>VaseLine Body Spray Coca Rate ,1909</p>
+                     <ins>49.00 EGP</ins>
+                     <del>60.00 EGP</del>
+                   </div>
+                   <div class="trend-category col-md-4">
+                     <img src="assets/imgs/trend-1.jpg"/>
+                     <p>VaseLine Body Spray Coca Rate ,1909</p>
+                     <ins>300.00 EGP</ins>
+                   </div>
+                   <div class="trend-category col-md-4">
+                     <img src="assets/imgs/trend-1.jpg"/>
+                     <p>VaseLine Body Spray Coca Rate ,1909</p>
+                     <ins>130.00 EGP</ins>
+                     <del>140.00 EGP</del>
+                     <p>Eligible for <span>Free Shopping</span></p>
+                   </div>
+                   <div class="trend-category col-md-4">
+                     <img src="assets/imgs/trend-1.jpg"/>
+                     <p>VaseLine Body Spray Coca Rate ,1909</p>
+                     <ins>49.00 EGP</ins>
+                     <del>60.00 EGP</del>
+                   </div>
+                   <div class="trend-category col-md-4">
+                     <img src="assets/imgs/trend-1.jpg"/>
+                     <p>VaseLine Body Spray Coca Rate ,1909</p>
+                     <ins>300.00 EGP</ins>
+                   </div>
+                </div>
+            </div>
+            <!--Start Donate Section-->
+            <div class="donation col-md-2">
+               <input class="search-market" type="text" placeholder="Search Market"/>
+               <div class="row setting-donation">
+                  <h4 class="col-md">Donation</h4>
+                  <i class="col-md fas fa-cog"></i>
+
+                  <div id="accordion">
+                     <div class="card">
+                       <div class="card-header" id="headingOne">
+                         <h5 class="mb-0">
+                           <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                             Donate Request In Sharqia
+                           </button>
+                         </h5>
+                       </div>
+                   
+                       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                         <div class="card-body">
+                           Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                         </div>
+                       </div>
+                     </div>
+                     <div class="card">
+                       <div class="card-header" id="headingTwo">
+                         <h5 class="mb-0">
+                           <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              Donate Request In Sharqia
+                           </button>
+                         </h5>
+                       </div>
+                       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                         <div class="card-body">
+                           Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                         </div>
+                       </div>
+                     </div>
+                     <div class="card">
+                        <div class="card-header" id="headingTwo">
+                          <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                               Donate Request In Sharqia
+                            </button>
+                          </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                          <div class="card-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                          </div>
+                        </div>
+                      </div>
+                     <div class="card">
+                       <div class="card-header" id="headingThree">
+                         <h5 class="mb-0">
+                           <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                              Show More
+                           </button>
+                         </h5>
+                       </div>
+                       <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                         <div class="card-body">
+                           Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+
+                   <div class="cure-inc">                  
+                     <a href="#">Terms</a>
+                     <a href="#">Privacy Policy</a>
+                     <a href="#">Cookies</a>
+                     <a href="#">Ads Info</a>
+                     <a href="#">More</a>        
+                   </div>
+                   <p class="inc-2020 text-center"> &copy;2020 cure.Ins</p>
+
+               </div>
+            </div>
+            <!--End Donate Section-->
+         </div>
+      </div>
+   </div>
+   <!--End Cure Category-->
+
+   </section>
+
+   <!--End Navbar-->  
+   
+   <script src="http://code.jquery.com/jquery-1.11.1.js" integrity="sha256-MCmDSoIMecFUw3f1LicZ/D/yonYAoHrgiep/3pCH9rw="
+   crossorigin="anonymous"></script>
+   <script src="assets/js/main.js"></script>
+   <!--Start Bootstrap Js-->
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <!--End Loading By JQuery--> 
+</body>
+</html>

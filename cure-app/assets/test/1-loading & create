@@ -1,0 +1,416 @@
+
+
+
+
+<!--Start Loading Screen-->
+   <div class="loading-overflow">
+      <div class="loading-screen">
+        <div class="container">
+            <div class="row">
+              <img class="cure-animation" src="assets/Icons/curewhite.png.png"/>
+            </div>
+        </div>
+      </div>
+    </div>
+    <!--End Loading Screen-->
+   <!--Start Create Account-->
+   <div class="create-account">
+      <div class="container">
+        <div class="row">         
+         <!--Start Navbar-->  
+            <div class="nav-bar">
+               <input type="checkbox" id="check">
+               <label for="check" class="checkbtn">
+                  <i class="fas fa-bars"></i>
+               </label> 
+               <label>
+                  <img class="cure-logo" src="assets/imgs/logo.png.png"/>
+               </label>
+               <ul class="list-unstyled">
+                  <li><a class="nav-list" href="#">Login</a></li>
+                  <li><a class="nav-list" href="#">Support</a></li>
+                  <li><a class="nav-list" href="#">Faq</a></li>
+               </ul>
+            </div>
+         <!--End Navbar-->
+            <div class="cure-bio col-md-12">
+              <h2>Create Free Account</h2>
+              <p>Cure Biometric Measurement</p>
+            </div>
+            <div class="cure-item col-lg-2">
+              <img class="paitent-item" src="assets/Icons/patient.png.png"/>
+            </div>
+            <div class="cure-item col-md-5">
+              <ul class="list-unstyled">
+                <li><a class="cure-list" href="">Full Name</a></li>
+                <li><a class="cure-list" href="">Email</a></li>
+                <li><a class="cure-list" href="">User Name</a></li>
+                <li><a class="cure-list" href="">Password</a></li>
+                <li><a class="cure-list" href="">Phone Number</a></li>
+                <li><a class="cure-list" href="">Gender</a></li>
+              </ul>
+              <button type="button" class="btn btn-primary">Register</button>
+            </div>
+            <div class="col-md-5">
+              <img class="doctor-item img-thumbnail" src="assets/Icons/doctor.png.png"/>
+            </div>
+        </div>
+      </div>
+    </div>
+  <!--End Create Account-->
+
+
+Css Style------------------------------------------------>>>>>
+<!---------------------------Loading And Create & Res Navbar---------------------------->
+
+/*Start Loading Screen*/
+.loading-overflow{
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background-size:cover;
+    background-repeat:no-repeat;
+    position:absolute;
+    z-index:9999;
+}
+.loading-screen{
+    background-image:url("../imgs/loading.png.png");
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background-size:cover;
+    background-repeat:no-repeat;
+    position:absolute;
+}
+.loading-screen .cure-animation{
+    width:100px;
+    position:relative;
+    top:-10px;
+    display:block;
+    margin:auto;
+    -webkit-animation:moving 5s infinite ease-in-out;
+    -moz-animation:moving 5s infinite ease-in-out;
+    -o-animation:moving 5s infinite ease-in-out;
+    animation:moving 5s infinite ease-in-out;
+}
+@keyframes moving{
+
+    50%{
+        top:200px;
+        bottom:100px;
+    }
+}
+/*End Loading Screen*/
+/*Start Navbar*/
+.nav-bar{
+    width:100%;
+    height:80px;
+}
+.nav-bar img.cure-logo{
+    width:80px;
+    padding:40px 0px;
+    margin-left:20px;
+}
+.nav-bar ul{
+    float:right;
+    margin-right:10px;
+    margin-top:30px;
+}
+.nav-bar ul li{
+    display:inline-block;
+    line-height:50px;
+    margin:0 20px;
+}
+.nav-bar ul li a.nav-list{
+    color:white;
+    font-weight:bold;
+    font-size:15px;
+    text-decoration:none;
+}
+.nav-bar ul li a:hover{
+    color:#8ed8e6;
+}
+.nav-bar .checkbtn{
+    color:white;
+    font-size:30px;
+    line-height:80px;
+    float:right;
+    margin-right:25px;
+    cursor:pointer;
+    display:none;
+}
+.nav-bar #check{
+    display:none;
+}
+@media(max-width:1200px){
+    .nav-bar ul{
+        position: absolute;
+        background:#8396e2;
+        width:100%;
+        height:250px;
+        top:80px;
+        left:-1500px;
+        text-align:center;
+        -webkit-transition:all .5s ease-in-out;
+        -moz-transition:all .5s ease-in-out;
+        -o-transition:all .5s ease-in-out;
+        transition:all .5s ease-in-out;
+        z-index:999;
+        margin-top:100px;
+    }
+    .nav-bar ul li{
+        display:block;
+        margin-top:20px;
+    }
+    .nav-bar ul li a.nav-list{
+        font-size:20px
+    }
+    .nav-bar .checkbtn{
+        display:block;
+        color:#5766a1;
+        margin-top:40px;
+    }
+    #check:checked ~ ul{
+        left:0px;
+    }
+}
+/*End Navbar*/
+/*Start Create Account*/
+div.create-account{
+    width:100%;
+    height:100vh;
+    background-image:url("../imgs/bg.png.png");
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+.create-account .cure-bio{
+    margin:30px 0px;
+}
+.create-account h2{
+    margin-bottom: 0px;
+}
+.create-account h2 , p{
+    color:#8396e2;
+}
+.create-account h2{
+    letter-spacing:-2px;
+}
+.create-account p{
+    letter-spacing:-1px;
+}
+.create-account .paitent-item{
+    width:100px;
+    background:#8ed8e6;
+    padding:30px 15px;
+    border-radius:20px;
+}
+.create-account ul li{
+    font-weight:bold;
+    font-size:15px;
+    padding:15px 0px;
+}
+.create-account ul li a.cure-list{
+    color:black;
+    text-decoration:none;
+}
+.create-account button{
+    background:#8396e2;
+    border:#8396e2;
+    margin-top:20px;
+    padding:5px 20px;
+}
+.create-account .doctor-item{
+    max-width:100%;
+    min-height:100%;
+    border-radius:50%;
+    padding:10px;
+    border:none;
+}
+@media(max-width:1200px){
+    .create-account button{
+        margin-bottom:30px;
+    }
+}
+@media(max-width:775px){
+    .create-account .doctor-item{
+        display:none;
+    }
+    .create-account button{
+        margin-bottom:30px;
+    }
+    .create-account .cure-item{
+        text-align:center
+    }
+}
+/*End Create Account*/
+
+
+
+*************************************************************************************************************************
+
+
+
+@Media only screen and (max-width:1100px){
+    .create-account .navbar .non-res{
+        display:none;
+    }
+    .create-account .navbar .res{
+        color:red;
+    }
+}
+
+
+
+
+/*Start Forms Menu*/
+.forms-menu{
+    position:fixed;
+    top:0;
+    right:-500px;
+    bottom:0;
+    width:250px;
+    background:#8396e2;
+    z-index:999;
+}
+.forms-menu ul{
+    text-align:center;
+    margin-top:40px;
+}
+.forms-menu ul li{
+    line-height:80px
+}
+.forms-menu ul li a{
+    font-size:25px;
+    font-weight:bold;
+    color:white !important;
+    cursor:pointer;
+}
+.forms-menu .exit-menu i{
+    font-size:20px !important;
+    color:white;
+    position:absolute;
+    top:10px;
+    left:10px;
+    cursor:pointer;
+}
+.forms-menu ul li:hover{
+    background:#7384c9;
+}
+/*End Forms Menu*/
+/*Start Loading Screen*/
+.loading-overflow{
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background-size:cover;
+    background-repeat:no-repeat;
+    position:absolute;
+    z-index:9999;
+}
+.loading-screen{
+    background-image:url("../imgs/loading.png.png");
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background-size:cover;
+    background-repeat:no-repeat;
+    position:absolute;
+}
+.loading-screen .cure-animation{
+    width:100px;
+    position:relative;
+    top:-10px;
+    display:block;
+    margin:auto;
+    -webkit-animation:moving 5s infinite ease-in-out;
+    -moz-animation:moving 5s infinite ease-in-out;
+    -o-animation:moving 5s infinite ease-in-out;
+    animation:moving 5s infinite ease-in-out;
+}
+@keyframes moving{
+
+    50%{
+        top:200px;
+        bottom:100px;
+    }
+}
+/*End Loading Screen*/
+/*Start Create Account*/
+div.create-account{
+    width:100%;
+    height:100vh;
+    background-image:url("../imgs/bg.png.png");
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+.create-account .cure-logo{
+    width:80px;
+    padding:25px 0px;
+}
+.navbar-item{
+    display:inline-block;
+    margin-left:35px;
+    color:white;
+    font-weight:bold;
+    font-size:15px;
+}
+.navbar-item:hover{
+    text-decoration:none;
+}
+.create-account .cure-bio{
+    padding-bottom:30px
+}
+.create-account h2{
+    margin-bottom: 0px;
+}
+.create-account h2 , p{
+    color:#8396e2;
+}
+.create-account h2{
+    letter-spacing:-2px;
+}
+.create-account p{
+    letter-spacing:-1px;
+}
+.create-account .paitent-item{
+    width:100px;
+    background:#8ed8e6;
+    padding:30px 15px;
+    border-radius:20px;
+}
+.create-account ul li{
+    font-weight:bold;
+    font-size:15px;
+    padding:15px 0px;
+}
+.create-account ul li a{
+    color:black;
+    text-decoration:none;
+}
+.create-account button{
+    background:#8396e2;
+    border:#8396e2;
+    margin-top:20px;
+    padding:5px 20px;
+}
+.create-account .doctor-item{
+    max-width:100%;
+    min-height:100%;
+    border-radius:50%;
+    padding:10px;
+    border:none;
+}
+/*End Create Account*/
+/*Media Query*/
+@Media only screen and (max-width:1100px){
+    .create-account .navbar .non-res{
+        display:none;
+    }
+    .create-account .navbar .res{
+        color:red;
+    }
+}

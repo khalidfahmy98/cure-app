@@ -1,0 +1,984 @@
+/*Start Global*/
+*{
+    padding:0px;
+    margin:0px;
+}
+ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+a{
+    color:black
+}
+/*End Global*/
+/*Start Navbar*/
+.nav-bar{
+    width:100%;
+    height:80px;
+}
+.nav-bar img.cure-logo{
+    width:80px;
+    padding:40px 0px;
+    margin-left:20px;
+}
+.nav-bar ul{
+    float:right;
+    margin-right:10px;
+    margin-top:30px;
+    font-size:19px;
+}
+.nav-bar ul li{
+    display:inline-block;
+    line-height:50px;
+    margin:0 20px;
+}
+.nav-bar ul li a.nav-list{
+    color:white;
+    font-weight:bold;
+    font-size:15px;
+    text-decoration:none;
+}
+.nav-bar ul li a:hover{
+    color:#8ed8e6;
+}
+.nav-bar .checkbtn{
+    color:white;
+    font-size:30px;
+    line-height:80px;
+    float:right;
+    margin-right:40px;
+    cursor:pointer;
+    display:none;
+}
+.nav-bar #check{
+    display:none;
+}
+@media(max-width:1200px){
+    .nav-bar ul{
+        position: absolute;
+        background:#8396e2;
+        width:100%;
+        height:250px;
+        top:80px;
+        left:-1500px;
+        text-align:center;
+        -webkit-transition:all .5s ease-in-out;
+        -moz-transition:all .5s ease-in-out;
+        -o-transition:all .5s ease-in-out;
+        transition:all .5s ease-in-out;
+        z-index:999;
+        margin-top:150px;
+    }
+    .nav-bar ul li{
+        display:block;
+        line-height:80px;
+        font-size:25px;
+    }
+    .nav-bar ul li a.nav-list{
+        font-size:20px
+    }
+    .nav-bar .checkbtn{
+        display:block;
+        color:#5766a1;
+        margin-top:25px;
+    }
+    #check:checked ~ ul{
+        left:0px;
+    }
+}
+/*End Navbar*/
+section.categorey{
+    height:calc(100vh - 80px);
+}
+.cure-category .category-list h3{
+    padding-bottom:20px;
+}
+/*Start Sidebar*/
+.cure-category .sidebar {
+    position:fixed;
+    width:260px;
+    height:100%;
+    margin-top:10px;
+}
+.cure-category .sidebar .acc-image{
+    margin-bottom:10px;
+    padding-left:40px;
+}
+.cure-category .sidebar .acc-image img{
+    border-radius: 50%;
+    width: 50px;
+    height:50px;
+    margin-right:30px;
+}
+.cure-category .sidebar .acc-write h4{
+    color:#8396e2;
+    font-weight:normal;
+    margin-bottom:0;
+}
+.cure-category .sidebar .acc-write span{
+    font-size:15px;
+    color:#bebebed4
+}
+.cure-category .sidebar .acc-write span i{
+    width:15px;
+    font-size:15px;
+    background:#FFc201;
+    border-radius:50%;
+    color:white;
+    margin-right:10px;
+}
+.cure-category .sidebar ul a{
+    display:block;
+    color:black;
+    width:100%;
+    /* height:100%; */
+    line-height:50px;
+    font-size:20px;
+    padding-left:40px;  
+    transition:all .4s ease-in-out;
+}
+.cure-category .sidebar ul li a.active{
+    background:#8396e2;
+    color:white;
+}
+.cure-category .sidebar ul li a:hover{
+    background:#8396e2;
+    color:white;
+    text-decoration:none;
+}
+.cure-category .sidebar ul li:hover a{
+    padding-left:50px; 
+}
+.cure-category .sidebar ul a i{
+    margin-right:25px;
+}
+/*End Sidebar*/
+/*Start Categories*/
+.cure-category .category-list ul li{
+    background:#8396e2;
+    width:30px;
+    color:white;
+    border:2px solid #8396e2;
+    cursor:pointer;
+    border-radius:5px;
+    margin:0px 5px;
+    margin-bottom:50px;
+}
+.cure-category .carousel-indicators li{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+}
+.cure-category .category-list h4{
+    padding:30px 0px;
+}
+.cure-category ins{
+    text-decoration:none;
+    font-weight:bold;
+    font-size:20px;
+    color:#4b94d9;
+}
+.cure-category del{
+    display:inherit;
+    font-weight:bold;
+    color:#c7c7c7;
+}
+.cure-category .trend{
+    border:2px solid #d4d4d4;
+    padding:10px 0px;
+}
+.cure-category .trend-category p{
+    color:#818181;
+}
+.cure-category .trend-category p:first-of-type{
+    margin:0px;
+    padding-top:20px;
+    font-size:14px;
+    font-weight:bold
+}
+.cure-category .trend-category p:last-child{
+    font-size:12px;
+}
+.cure-category .trend-category p:last-child span{
+    font-weight:bold;
+}
+/*End Categories*/
+/*Start Donation*/
+.cure-category .donation .donation-fixed{
+    position:fixed;
+}
+.cure-category .donation .search-market{
+    width:200px;
+    height:25px;
+    border-radius:5px;
+    border:1px solid #d4d4d4;
+    background:#ebebeb;
+    font-size:15px;
+    padding:10px;
+    font-family:none;
+    margin-top:25px;
+    margin-bottom:40px;
+}
+.cure-category .donation .setting-donation{
+    background:#ebebeb;
+    width:200px;
+    height:300px;
+    border-radius:10px;
+    margin:0;
+    overflow:hidden;
+}
+.cure-category .donation .setting-donation h4{
+    padding:10px;
+}
+.cure-category .donation .setting-donation i{
+    position:relative;
+    top: 10px;
+    padding:10px 10px 0px 0px;  
+    margin-left: 50px;
+    text-decoration:none;
+}
+.cure-category .donation #accordion .card{
+    width:200px;
+}
+.cure-category .donation button{
+    color: #484848;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0;
+}
+.cure-category .donation button:hover{
+    text-decoration:none
+}
+.cure-category .cure-inc{
+    font-size:12px;
+    font-weight:bold;
+    margin-top:40px;
+}
+.cure-category .cure-inc a{
+    margin-left:10px;
+    color:#4b94d9;
+}
+.cure-category .inc-2020{
+    font-size:13px;
+    font-weight:bold;
+    color:#484848;
+    margin-top:20px;
+}
+/*End Cure Category*/
+/*Sidebar Media*/
+@media(max-width:1200px){
+    .cure-category .sidebar {
+        width:200px;
+    }
+    .cure-category .sidebar .acc-write h4{
+        font-size:18px;
+    }
+    .cure-category .sidebar .acc-write span i{
+        font-size:14px;
+    }
+    .cure-category .sidebar ul a{
+        font-size:16px;
+    }
+    .cure-category .sidebar ul a i{
+        margin-right:10px;
+    }
+}
+@media(max-width:992px){
+    .cure-category .sidebar {
+        width:165px;
+    }
+    .cure-category .sidebar .acc-write h4{
+        font-size:15px;
+    }
+    .cure-category .sidebar .acc-write span i{
+        font-size:12px;
+    }
+    .cure-category .sidebar ul a{
+        font-size:14px;
+    }
+    .cure-category .sidebar ul a i{
+        margin-right:5px;
+    }
+    .cure-category .sidebar ul li:hover a{
+        padding-left:5px; 
+    }
+    .cure-category .sidebar ul a i{
+        margin-right:15px;
+    }
+}
+@media(max-width:768px){
+    .cure-category .sidebar {
+        display:none;
+    }
+}
+/*Categories Media*/
+@media(max-width:1090px){
+    .cure-category .trend .trend-category img{
+        width:150px;
+    }
+}
+@media(max-width:1200px){
+    .cure-category .trend .trend-category img{
+        width:150px;
+    }
+}
+@media(max-width:992px){
+    .cure-category .trend .trend-category img{
+        width:110px;
+    }
+    .cure-category .category-list ul li{
+        width:30px;
+        font-size:13px;
+        margin:0px 2px;
+        margin-bottom:30px;
+    }
+}
+@media(max-width:768px){
+    .cure-category .category-list ul{
+        text-align:center;
+        margin:10px auto;    
+    }
+    .cure-category .category-list ul li{
+        width:90px;
+        font-size:13px;
+        margin:0px 2px;
+        margin-bottom:10px;
+    }
+}
+@media(max-width:577px){
+    .cure-category .rate-pharmcy{
+        text-align:center;
+        margin-bottom:20px;
+    }
+    .cure-category .trend-category{
+        text-align:center;
+        margin-bottom:20px;
+    }
+.cure-category .trend{
+    border:none;
+    padding:10px 0px;
+}
+}
+/*Donation Media*/
+@media(max-width:1090px){
+    .cure-category .donation .search-market{
+        width:160px;
+    }
+    .cure-category .donation .setting-donation{
+        width:160px;
+    }
+    .cure-category .donation .setting-donation i{
+        margin-left:10px;
+    }
+    .cure-category .donation #accordion .card{
+        width:160px;
+    }
+}
+@media(max-width:768px){
+    .cure-category .donation{
+        display:none;
+    }
+}
+/*Start Loading Screen*/
+.loading-overflow{
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background-size:cover;
+    background-repeat:no-repeat;
+    position:absolute;
+    z-index:9999;
+}
+.loading-screen{
+    background-image:url("../imgs/loading.png.png");
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background-size:cover;
+    background-repeat:no-repeat;
+    position:absolute;
+}
+.loading-screen .cure-animation{
+    width:100px;
+    position:relative;
+    top:-10px;
+    display:block;
+    margin:auto;
+    -webkit-animation:moving 5s infinite ease-in-out;
+    -moz-animation:moving 5s infinite ease-in-out;
+    -o-animation:moving 5s infinite ease-in-out;
+    animation:moving 5s infinite ease-in-out;
+}
+@keyframes moving{
+
+    50%{
+        top:200px;
+        bottom:100px;
+    }
+}
+/*End Loading Screen*/
+/*Start Navbar*/
+.nav-bar{
+    width:100%;
+    height:80px;
+}
+.nav-bar img.cure-logo{
+    width:80px;
+    padding:40px 0px;
+    margin-left:20px;
+}
+.nav-bar ul{
+    float:right;
+    margin-right:10px;
+    margin-top:30px;
+}
+.nav-bar ul li{
+    display:inline-block;
+    line-height:50px;
+    margin:0 20px;
+}
+.nav-bar ul li a.nav-list{
+    color:white;
+    font-weight:bold;
+    font-size:15px;
+    text-decoration:none;
+}
+.nav-bar ul li a:hover{
+    color:#8ed8e6;
+}
+.nav-bar .checkbtn{
+    color:white;
+    font-size:30px;
+    line-height:80px;
+    float:right;
+    margin-right:25px;
+    cursor:pointer;
+    display:none;
+}
+.nav-bar #check{
+    display:none;
+}
+@media(max-width:1200px){
+    .nav-bar ul{
+        position: absolute;
+        background:#8396e2;
+        width:100%;
+        height:250px;
+        top:80px;
+        left:-1500px;
+        text-align:center;
+        -webkit-transition:all .5s ease-in-out;
+        -moz-transition:all .5s ease-in-out;
+        -o-transition:all .5s ease-in-out;
+        transition:all .5s ease-in-out;
+        z-index:999;
+        margin-top:100px;
+    }
+    .nav-bar ul li{
+        display:block;
+        margin-top:20px;
+    }
+    .nav-bar ul li a.nav-list{
+        font-size:20px
+    }
+    .nav-bar .checkbtn{
+        display:block;
+        color:#5766a1;
+        margin-top:40px;
+    }
+    #check:checked ~ ul{
+        left:0px;
+    }
+}
+/*End Navbar*/
+/*Start Create Account*/
+div.create-account{
+    width:100%;
+    height:100vh;
+    background-image:url("../imgs/bg.png.png");
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+.create-account .cure-bio{
+    margin:30px 0px;
+}
+.create-account h2{
+    margin-bottom: 0px;
+}
+.create-account h2 , p{
+    color:#8396e2;
+}
+.create-account h2{
+    letter-spacing:-2px;
+}
+.create-account p{
+    letter-spacing:-1px;
+}
+.create-account .paitent-item{
+    width:100px;
+    background:#8ed8e6;
+    padding:30px 15px;
+    border-radius:20px;
+}
+.create-account ul li{
+    font-weight:bold;
+    font-size:15px;
+    padding:15px 0px;
+}
+.create-account ul li a.cure-list{
+    color:black;
+    text-decoration:none;
+}
+.create-account button{
+    background:#8396e2;
+    border:#8396e2;
+    margin-top:20px;
+    padding:5px 20px;
+}
+.create-account .doctor-item{
+    max-width:100%;
+    min-height:100%;
+    border-radius:50%;
+    padding:10px;
+    border:none;
+}
+@media(max-width:1200px){
+    .create-account button{
+        margin-bottom:30px;
+    }
+}
+@media(max-width:775px){
+    .create-account .doctor-item{
+        display:none;
+    }
+    .create-account button{
+        margin-bottom:30px;
+    }
+    .create-account .cure-item{
+        text-align:center
+    }
+}
+/*End Create Account*/
+
+
+
+
+
+
+@Media only screen and (max-width:1100px){
+    .create-account .navbar .non-res{
+        display:none;
+    }
+    .create-account .navbar .res{
+        color:red;
+    }
+}
+
+
+
+
+/*Start Forms Menu*/
+.forms-menu{
+    position:fixed;
+    top:0;
+    right:-500px;
+    bottom:0;
+    width:250px;
+    background:#8396e2;
+    z-index:999;
+}
+.forms-menu ul{
+    text-align:center;
+    margin-top:40px;
+}
+.forms-menu ul li{
+    line-height:80px
+}
+.forms-menu ul li a{
+    font-size:25px;
+    font-weight:bold;
+    color:white !important;
+    cursor:pointer;
+}
+.forms-menu .exit-menu i{
+    font-size:20px !important;
+    color:white;
+    position:absolute;
+    top:10px;
+    left:10px;
+    cursor:pointer;
+}
+.forms-menu ul li:hover{
+    background:#7384c9;
+}
+/*End Forms Menu*/
+/*Start Loading Screen*/
+.loading-overflow{
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background-size:cover;
+    background-repeat:no-repeat;
+    position:absolute;
+    z-index:9999;
+}
+.loading-screen{
+    background-image:url("../imgs/loading.png.png");
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background-size:cover;
+    background-repeat:no-repeat;
+    position:absolute;
+}
+.loading-screen .cure-animation{
+    width:100px;
+    position:relative;
+    top:-10px;
+    display:block;
+    margin:auto;
+    -webkit-animation:moving 5s infinite ease-in-out;
+    -moz-animation:moving 5s infinite ease-in-out;
+    -o-animation:moving 5s infinite ease-in-out;
+    animation:moving 5s infinite ease-in-out;
+}
+@keyframes moving{
+
+    50%{
+        top:200px;
+        bottom:100px;
+    }
+}
+/*End Loading Screen*/
+/*Start Create Account*/
+div.create-account{
+    width:100%;
+    height:100vh;
+    background-image:url("../imgs/bg.png.png");
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+.create-account .cure-logo{
+    width:80px;
+    padding:25px 0px;
+}
+.navbar-item{
+    display:inline-block;
+    margin-left:35px;
+    color:white;
+    font-weight:bold;
+    font-size:15px;
+}
+.navbar-item:hover{
+    text-decoration:none;
+}
+.create-account .cure-bio{
+    padding-bottom:30px
+}
+.create-account h2{
+    margin-bottom: 0px;
+}
+.create-account h2 , p{
+    color:#8396e2;
+}
+.create-account h2{
+    letter-spacing:-2px;
+}
+.create-account p{
+    letter-spacing:-1px;
+}
+.create-account .paitent-item{
+    width:100px;
+    background:#8ed8e6;
+    padding:30px 15px;
+    border-radius:20px;
+}
+.create-account ul li{
+    font-weight:bold;
+    font-size:15px;
+    padding:15px 0px;
+}
+.create-account ul li a{
+    color:black;
+    text-decoration:none;
+}
+.create-account button{
+    background:#8396e2;
+    border:#8396e2;
+    margin-top:20px;
+    padding:5px 20px;
+}
+.create-account .doctor-item{
+    max-width:100%;
+    min-height:100%;
+    border-radius:50%;
+    padding:10px;
+    border:none;
+}
+/*End Create Account*/
+/*Media Query*/
+@Media only screen and (max-width:1100px){
+    .create-account .navbar .non-res{
+        display:none;
+    }
+    .create-account .navbar .res{
+        color:red;
+    }
+}
+
+/*Start Navbar*/
+
+nav .logo{
+    width:80px;
+    position:relative;
+    line-height:80px;
+    top: -10px;
+    margin:0 100px;
+}
+
+nav{
+    background:black;
+    width:100%;
+    height:80px;
+}
+
+nav ul{
+    float:right;
+    margin:0 100px;
+}
+nav ul li{
+    display:inline-block;
+    line-height:80px;
+    margin:0 30px;
+}
+nav ul li a{
+    font-size:17px;
+    font-weight:bold;
+    color:white;
+    text-transform:Capitalize;
+    text-decoration:none;
+}
+nav ul li a:hover{
+    color:#0082e6;
+    text-decoration:none;
+    transition:.5s;
+}
+nav .checkbtn{
+    color:white;
+    font-size:30px;
+    line-height:80px;
+    float:right;
+    margin-right:40px;
+    cursor:pointer;
+    display:none;
+}
+#check{
+    display:none;
+}
+@media(max-width:952px){
+    nav .logo{
+        width:80px;
+        position:relative;
+        line-height:80px;
+        top: -10px;
+        margin-left:50px;
+        z-index:999;
+    }
+    ul li a{
+        font-size:16px;
+        text-decoration:none;
+    }
+}
+@media(max-width:858px){
+    nav .checkbtn{
+        display:block;
+    }
+    nav ul{
+        position:fixed;
+        background:#2c3e50;
+        width:100%;
+        height:100%;
+        top:80px;
+        left:-100%;
+        text-align:center;
+        transition:all .5s ease-in-out;
+    }
+    nav ul li {
+        display:block;
+        margin:50px 0px;
+        line-height:20px;
+    }
+    nav ul li a{
+        font-size:20px;
+    }
+    nav ul li a:hover,
+    nav ul li a.active
+    {
+        text-decoration:none;
+        background:none;
+        color:#0082e6;
+    }
+    #check:checked ~ ul{
+        left:0;
+    }
+}
+
+/*End Navbar*/
+
+
+
+
+
+/*Start Create Account*/
+div.create-account{
+    width:100%;
+    height:100vh;
+    background-image:url("../imgs/bg.png.png");
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+.create-account .cure-logo{
+    width:80px;
+    position:relative;
+    top: -10px;
+    padding-bottom:30px;
+}
+.item{
+    padding-top:40px;
+}
+.navbar-item{
+    display:inline-block;
+    margin-left:35px;
+    color:white;
+    font-weight:bold;
+    font-size:15px;
+}
+.navbar-item:hover{
+    text-decoration:none;
+}
+.create-account .cure-bio{
+    padding-bottom:30px
+}
+.create-account h2{
+    margin-bottom: 0px;
+}
+.create-account h2 , p{
+    color:#8396e2;
+}
+.create-account h2{
+    letter-spacing:-2px;
+}
+.create-account p{
+    letter-spacing:-1px;
+}
+.create-account .paitent-item{
+    width:100px;
+    background:#8ed8e6;
+    padding:30px 15px;
+    border-radius:20px;
+}
+.create-account ul li{
+    font-weight:bold;
+    font-size:15px;
+    padding:15px 0px;
+}
+.create-account ul li a{
+    color:black;
+    text-decoration:none;
+}
+.create-account button{
+    background:#8396e2;
+    border:#8396e2;
+    margin-top:20px;
+    padding:5px 20px;
+}
+.create-account .doctor-item{
+    max-width:100%;
+    min-height:100%;
+    border-radius:50%;
+    padding:10px;
+    border:none;
+}
+/*End Create Account*/
+
+
+
+
+
+
+
+
+
+/*Start Cure Market*/
+.cure-market .row{
+    max-width:100%;
+}
+.cure-market .cure-logo{
+    width:80px;
+    position:relative;
+    top: -10px;
+    padding-bottom:30px;
+}
+.cure-market h3{
+    margin:30px 0px;
+}
+.cure-market .notification i{
+    margin:30px 30px;
+}
+/*End Cure Market*/
+/*Start Cure Category*/
+.cure-category .category-list h3{
+    padding-bottom:20px;
+}
+.cure-category .category-list ul li{
+    background:#8396e2;
+    color:white;
+    border:2px solid #8396e2;
+    border-radius:5px;
+    margin:0px 5px;
+}
+.cure-category .carousel-indicators li{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+}
+.cure-category .category-list h4{
+    padding:30px 0px;
+}
+.cure-category ins{
+    text-decoration:none;
+    font-weight:bold;
+    font-size:20px;
+    color:#4b94d9;
+}
+.cure-category del{
+    display:inherit;
+    font-weight:bold;
+    color:#c7c7c7;
+}
+.cure-category .trend{
+    border:2px solid #d4d4d4;
+    padding:10px 0px;
+}
+.cure-category .trend-category p{
+    color:#818181;
+}
+.cure-category .trend-category p:first-of-type{
+    margin:0px;
+    padding-top:20px;
+    font-size:14px;
+    font-weight:bold
+}
+.cure-category .trend-category p:last-child{
+    font-size:12px;
+}
+.cure-category .trend-category p:last-child span{
+    font-weight:bold;
+}
+/*End Cure Category*/
+

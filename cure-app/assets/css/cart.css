@@ -1,0 +1,409 @@
+/*Start Global*/
+*{
+    padding:0px;
+    margin:0px;
+}
+ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+a{
+    color:black
+}
+/*End Global*/
+/*Start Navbar*/
+.nav-bar{
+    width:100%;
+    height:80px;
+}
+.nav-bar img.cure-logo{
+    width:80px;
+    padding:40px 0px;
+    margin-left:20px;
+}
+.nav-bar ul{
+    float:right;
+    margin-right:10px;
+    margin-top:30px;
+    font-size:19px;
+}
+.nav-bar ul li{
+    display:inline-block;
+    line-height:50px;
+    margin:0 20px;
+}
+.nav-bar ul li a.nav-list{
+    color:white;
+    font-weight:bold;
+    font-size:15px;
+    text-decoration:none;
+}
+.nav-bar ul li a:hover{
+    color:#8ed8e6;
+}
+.nav-bar .checkbtn{
+    color:white;
+    font-size:30px;
+    line-height:80px;
+    float:right;
+    margin-right:40px;
+    cursor:pointer;
+    display:none;
+}
+.nav-bar #check{
+    display:none;
+}
+@media(max-width:1200px){
+    .nav-bar ul{
+        position: absolute;
+        background:#8396e2;
+        width:100%;
+        height:250px;
+        top:80px;
+        left:-1500px;
+        text-align:center;
+        -webkit-transition:all .5s ease-in-out;
+        -moz-transition:all .5s ease-in-out;
+        -o-transition:all .5s ease-in-out;
+        transition:all .5s ease-in-out;
+        z-index:999;
+        margin-top:150px;
+    }
+    .nav-bar ul li{
+        display:block;
+        line-height:80px;
+        font-size:25px;
+    }
+    .nav-bar ul li a.nav-list{
+        font-size:20px
+    }
+    .nav-bar .checkbtn{
+        display:block;
+        color:#5766a1;
+        margin-top:25px;
+    }
+    #check:checked ~ ul{
+        left:0px;
+    }
+}
+/*End Navbar*/
+section.categorey{
+    height:calc(100vh - 80px);
+}
+.cure-category .category-list h3{
+    padding-bottom:20px;
+}
+/*Start Sidebar*/
+.cure-category .sidebar {
+    position:fixed;
+    width:260px;
+    height:100%;
+    margin-top:10px;
+}
+.cure-category .sidebar .acc-image{
+    margin-bottom:10px;
+    padding-left:40px;
+}
+.cure-category .sidebar .acc-image img{
+    border-radius: 50%;
+    width: 50px;
+    height:50px;
+    margin-right:30px;
+}
+.cure-category .sidebar .acc-write h4{
+    color:#8396e2;
+    font-weight:normal;
+    margin-bottom:0;
+}
+.cure-category .sidebar .acc-write span{
+    font-size:15px;
+    color:#bebebed4
+}
+.cure-category .sidebar .acc-write span i{
+    width:15px;
+    font-size:15px;
+    background:#FFc201;
+    border-radius:50%;
+    color:white;
+    margin-right:10px;
+}
+.cure-category .sidebar ul a{
+    display:block;
+    color:black;
+    width:100%;
+    height:100%;
+    line-height:50px;
+    font-size:20px;
+    padding-left:40px;  
+    transition:all .4s ease-in-out;
+}
+.cure-category .sidebar ul li a.active{
+    background:#8396e2;
+    color:white;
+}
+.cure-category .sidebar ul li a:hover{
+    background:#8396e2;
+    color:white;
+    text-decoration:none;
+}
+.cure-category .sidebar ul li:hover a{
+    padding-left:50px; 
+}
+.cure-category .sidebar ul a i{
+    margin-right:25px;
+}
+/*End Sidebar*/
+/*Start Categories*/
+.category-list img{
+    width:100px;
+}
+.category-list .media{
+    margin-bottom:20px
+}
+.cure-category .media-body p{
+    margin:0;
+}
+.cure-category .media-body p:first-of-type{
+    padding-top:20px;
+    font-size:14px;
+    font-weight:bold;
+    color:black;
+}
+.cure-category .media-body p{
+    font-size:13px;
+    color:#818181;
+}
+.cure-category .media-body p select{
+    float:right;
+    border: 1px solid #818181;
+    padding: 5px 20px;
+    cursor:pointer;
+}
+.cure-category .media-body .choose-item{
+    margin-top:10px;
+    font-size:13px;
+    color:#818181;
+}
+.cure-category .media-body .choose-item span{
+    float:right;
+    font-weight: bold;
+    color: black;
+}
+.cure-category .media-body .choose-item i{
+    padding-right:5px;
+}
+.cure-category .media-body .choose-item .remove-item{
+    margin-right:10px;
+    border-right:2px solid #818181;
+    padding-right:10px;
+    margin-left:-15px;
+}
+.cure-category .info-item li{
+    color:#4b94d9;
+    font-size:13px;
+}
+.cure-category .total-item h4{
+    margin:20px 0px;
+}
+.cure-category .total-item ul li{
+    font-size:13px;
+    color:black;
+    font-weight:bold;
+    margin-bottom: 15px;
+}
+.cure-category .total-item ul li span{
+    float:right;
+}
+.cure-category .total-item button{
+    width:100%;
+    height:45px;
+    color:white;
+    background:orange;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:15px;
+    margin:15px 0px 20px 0px;
+}
+.cure-category .total-item p{
+    font-size: 11px;
+    font-weight:bold;
+    color: #818181;
+}
+/*End Categories*/
+/*Start Donation*/
+.cure-category .donation .donation-fixed{
+    position:fixed;
+}
+.cure-category .donation .search-market{
+    width:200px;
+    height:25px;
+    border-radius:5px;
+    border:1px solid #d4d4d4;
+    background:#ebebeb;
+    font-size:15px;
+    padding:10px;
+    font-family:none;
+    margin-top:25px;
+    margin-bottom:40px;
+}
+.cure-category .donation .setting-donation{
+    background:#ebebeb;
+    width:200px;
+    height:300px;
+    border-radius:10px;
+    margin:0;
+    overflow:hidden;
+}
+.cure-category .donation .setting-donation h4{
+    padding:10px;
+}
+.cure-category .donation .setting-donation i{
+    position:relative;
+    top: 10px;
+    padding:10px 10px 0px 0px;  
+    margin-left: 50px;
+    text-decoration:none;
+}
+.cure-category .donation #accordion .card{
+    width:200px;
+}
+.cure-category .donation button{
+    color: #484848;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0;
+}
+.cure-category .donation button:hover{
+    text-decoration:none
+}
+.cure-category .cure-inc{
+    font-size:12px;
+    font-weight:bold;
+    margin-top:40px;
+}
+.cure-category .cure-inc a{
+    margin-left:10px;
+    color:#4b94d9;
+}
+.cure-category .inc-2020{
+    font-size:13px;
+    font-weight:bold;
+    color:#484848;
+    margin-top:20px;
+}
+/*End Cure Category*/
+/*Sidebar Media*/
+@media(max-width:1200px){
+    .cure-category .sidebar {
+        width:200px;
+    }
+    .cure-category .sidebar .acc-write h4{
+        font-size:18px;
+    }
+    .cure-category .sidebar .acc-write span i{
+        font-size:14px;
+    }
+    .cure-category .sidebar ul a{
+        font-size:16px;
+    }
+    .cure-category .sidebar ul a i{
+        margin-right:10px;
+    }
+}
+@media(max-width:992px){
+    .cure-category .sidebar {
+        width:165px;
+    }
+    .cure-category .sidebar .acc-write h4{
+        font-size:15px;
+    }
+    .cure-category .sidebar .acc-write span i{
+        font-size:12px;
+    }
+    .cure-category .sidebar ul a{
+        font-size:14px;
+    }
+    .cure-category .sidebar ul a i{
+        margin-right:5px;
+    }
+    .cure-category .sidebar ul li:hover a{
+        padding-left:5px; 
+    }
+    .cure-category .sidebar ul a i{
+        margin-right:15px;
+    }
+}
+@media(max-width:768px){
+    .cure-category .sidebar {
+        display:none;
+    }
+}
+/*Categories Media*/
+@media(max-width:1090px){
+    .cure-category .trend .trend-category img{
+        width:150px;
+    }
+}
+@media(max-width:1200px){
+    .cure-category .trend .trend-category img{
+        width:150px;
+    }
+}
+@media(max-width:992px){
+    .cure-category .trend .trend-category img{
+        width:110px;
+    }
+    .cure-category .category-list ul li{
+        width:30px;
+        font-size:13px;
+        margin:0px 2px;
+        margin-bottom:30px;
+    }
+}
+@media(max-width:768px){
+    .cure-category .category-list ul{
+        text-align:center;
+        margin:10px auto;    
+    }
+    .cure-category .category-list ul li{
+        width:90px;
+        font-size:13px;
+        margin:0px 2px;
+        margin-bottom:10px;
+    }
+}
+@media(max-width:577px){
+    .cure-category .rate-pharmcy{
+        text-align:center;
+        margin-bottom:20px;
+    }
+    .cure-category .trend-category{
+        text-align:center;
+        margin-bottom:20px;
+    }
+.cure-category .trend{
+    border:none;
+    padding:10px 0px;
+}
+}
+/*Donation Media*/
+@media(max-width:1090px){
+    .cure-category .donation .search-market{
+        width:160px;
+    }
+    .cure-category .donation .setting-donation{
+        width:160px;
+    }
+    .cure-category .donation .setting-donation i{
+        margin-left:10px;
+    }
+    .cure-category .donation #accordion .card{
+        width:160px;
+    }
+}
+@media(max-width:768px){
+    .cure-category .donation{
+        display:none;
+    }
+}
