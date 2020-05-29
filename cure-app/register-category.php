@@ -1,6 +1,6 @@
 <?php 
     require 'core/init.php';
-    templateController::setTitle('Homepage | Cure');
+    templateController::setTitle('Choose Account Type  | Cure');
     templateController::get('fheader');
 ?>
    <!--Start Create Account-->
@@ -17,7 +17,7 @@
                   <img class="cure-logo" src="assets/imgs/logo.png.png"/>
                </label>
                <ul class="list-unstyled">
-                  <li><a class="nav-list" href="#">Login</a></li>
+                  <li><a class="nav-list" href="login.php">Login</a></li>
                   <li><a class="nav-list" href="#">Support</a></li>
                   <li><a class="nav-list" href="#">Faq</a></li>
                </ul>
@@ -28,47 +28,36 @@
               <p>Choose Your Account Type First To Continue ..</p>
             </div>
             <div class="row">
-                <a href="#" class="cure-item col-lg-2">
+                <a href="register.php?type=patient.png" class="cure-item col-lg-2">
                     <div >
                         <img class="paitent-item" src="assets/Icons/patient.png.png"/>
                     </div>
                 </a>
-                <a href="#" class="cure-item col-lg-2">
+                <a href="register.php?type=doctor-white" class="cure-item col-lg-2">
                     <div >
-                        <img class="paitent-item" src="assets/Icons/patient.png.png"/>
+                        <img class="paitent-item" src="assets/Icons/doctor-white.png"/>
                     </div>
                 </a>
-                <a href="#" class="cure-item col-lg-2">
+                <a href="register.php?type=lab-microscope-white" class="cure-item col-lg-2">
                     <div >
-                        <img class="paitent-item" src="assets/Icons/patient.png.png"/>
+                        <img class="paitent-item" src="assets/Icons/lab-microscope-white.png"/>
                     </div>
                 </a>
-                <a href="#" class="cure-item col-lg-2">
+                <a href="register.php?type=pharmacy-white" class="cure-item col-lg-2">
                     <div >
-                        <img class="paitent-item" src="assets/Icons/patient.png.png"/>
+                        <img class="paitent-item" src="assets/Icons/pharmacy-white.png"/>
                     </div>
                 </a>
-                <a href="#" class="cure-item col-lg-2">
+                <a href="register.php?type=factory-white" class="cure-item col-lg-2">
                     <div >
-                        <img class="paitent-item" src="assets/Icons/patient.png.png"/>
+                        <img class="paitent-item" src="assets/Icons/factory-white.png"/>
                     </div>
                 </a>
-                <a href="#" class="cure-item col-lg-2">
+                <a href="register.php?type=hospital-buildings-white" class="cure-item col-lg-2">
                     <div >
-                        <img class="paitent-item" src="assets/Icons/patient.png.png"/>
+                        <img class="paitent-item" src="assets/Icons/hospital-buildings-white.png"/>
                     </div>
                 </a>
-                <a href="#" class="cure-item col-lg-2">
-                    <div >
-                        <img class="paitent-item" src="assets/Icons/patient.png.png"/>
-                    </div>
-                </a>
-                <a href="#" class="cure-item col-lg-2">
-                    <div >
-                        <img class="paitent-item" src="assets/Icons/patient.png.png"/>
-                    </div>
-                </a>
-
             </div>
         </div>
       </div>

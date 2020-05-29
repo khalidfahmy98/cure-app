@@ -1,6 +1,6 @@
 <?php 
     require 'core/init.php';
-    templateController::setTitle('Homepage | Cure');
+    templateController::setTitle('Login | Cure');
     templateController::get('fheader');
 ?>
    <!--Start Create Account-->
@@ -24,8 +24,8 @@
             </div>
          <!--End Navbar-->
             <div class="cure-bio col-md-12">
-              <h2>Create Free Account</h2>
-              <p>Cure Biometric Measurement</p>
+              <h2>Access Now your Account As Patient Only </h2>
+              <p>Cure Biometric Measurement <a href="../cure-auth/">Login As Service Provider</a></p>
             </div>
             <div class="cure-item col-md-7">
               <ul class="list-unstyled">

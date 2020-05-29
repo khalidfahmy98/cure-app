@@ -1,6 +1,6 @@
 <?php 
     require 'core/init.php';
-    templateController::setTitle('Homepage | Cure');
+    templateController::setTitle('Craete Account  | Cure');
     templateController::get('fheader');
 ?>
    <!--Start Create Account-->
@@ -17,7 +17,7 @@
                   <img class="cure-logo" src="assets/imgs/logo.png.png"/>
                </label>
                <ul class="list-unstyled">
-                  <li><a class="nav-list" href="#">Login</a></li>
+                  <li><a class="nav-list" href="login.php">Login</a></li>
                   <li><a class="nav-list" href="#">Support</a></li>
                   <li><a class="nav-list" href="#">Faq</a></li>
                </ul>
@@ -28,14 +28,16 @@
               <p>Cure Biometric Measurement</p>
             </div>
             <div class="cure-item col-lg-2">
-              <img class="paitent-item" src="assets/Icons/patient.png.png"/>
+              <?php 
+                if ( input::get('type')) {
+                  ?>
+                    <img class="paitent-item" src="assets/Icons/<?php echo input::get('type');?>.png"/>
+                  <?php 
+                }
+              ?>
             </div>
             <div class="cure-item col-md-5">
               <ul class="list-unstyled">
-                <li class="cure-list">
-                    <label> Full Name </label>
-                    <input type="text" class="form-control input-sm">
-                </li>
                 <li class="cure-list">
                     <label>  Email </label>
                     <input type="text" class="form-control input-sm">
@@ -53,6 +55,14 @@
                     <input type="text" class="form-control input-sm">
                 </li>
                 <li class="cure-list">
+                    <label> Nationality </label>
+                    <select class="form-control input-sm">
+                        <option > Male </option>
+                        <option> Female </option>
+                        <option> Other </option>
+                    </select>
+                </li>
+                <li class="cure-list">
                     <label>   Gender </label>
                     <select class="form-control input-sm">
                         <option > Male </option>
@@ -62,9 +72,6 @@
                 </li>
               </ul>
               <button type="button" class="btn btn-primary">Register</button>
-            </div>
-            <div class="col-md-5">
-              <img class="doctor-item img-thumbnail" src="assets/Icons/doctor.png.png"/>
             </div>
         </div>
       </div>
