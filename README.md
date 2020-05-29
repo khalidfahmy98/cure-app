@@ -1,4 +1,4 @@
-# Cure Application Readme Documentation  
+# Cure Application  Documentation  
 
 
 Hello , 
@@ -9,7 +9,7 @@ notice that in this repo there are the following directories :
     3- cure-api 
 
 
-# cure-auth 
+# Cure-auth 
 
     in this directory all the inner folders and files  made for cure non patient users dashboards and control panels 
     like : 
@@ -20,7 +20,7 @@ notice that in this repo there are the following directories :
         ..etc as we discuess @ the documentation before 
 
 
-# cure-api 
+# Cure-api 
 
     in this directory all the inner folders and files  made for the api to the android developer 
     each api controller will be associated to sepcial directory for example if you want to add new user to the system ! 
@@ -28,5 +28,8 @@ notice that in this repo there are the following directories :
     localhost/cure-app/cure-api/users/add.php
 
 
-Dont be shy for any question you have about this repo 
-    contact me ASAP while you got trouble  . 
+# Flags Reference 
+    -> Patient Table  <-
+        1- patient_gender                     default is ( 0 )  = Male         and ( 1 ) = Female 
+        2- patient_donation_status            default is ( 0 )  = Available for donate           and ( 1 ) Not Available for donate 
+        3- patient_account_status             default is ( 0 )  = Active Account       and ( 1 ) Blocked Account  
