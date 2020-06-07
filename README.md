@@ -31,8 +31,10 @@ notice that in this repo there are the following directories :
 
     in this directory all the inner folders and files  made for the api to the android developer 
     each api controller will be associated to sepcial directory for example if you want to add new user to the system ! 
-
-    localhost/cure-app/cure-api/users/add.php
+--------------------------------------------------------------------------
+    Patients Apis's : 
+    1 - Add user ( register ) :  XX-CHANGE THIS WITH YOUR LOCAL IP ADDRESS -XX/cure-app/cure-api/users/add.php
+    
 
 
 # Flags Reference 
