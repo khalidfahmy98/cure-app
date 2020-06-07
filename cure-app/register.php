@@ -40,6 +40,7 @@
               <ul class="list-unstyled">
                 <li class="cure-list">
                     <label>  Email </label>
+                    <input type="hidden" value="<?php echo input::get('cattype');?>">
                     <input type="text" class="form-control input-sm">
                 </li>
                 <li class="cure-list">

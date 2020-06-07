@@ -19,6 +19,13 @@ notice that in this repo there are the following directories :
         - factories 
         ..etc as we discuess @ the documentation before 
 
+# Cure-app
+    This directory includes all website application files ( front end + back end  ) used to splitted all the front end code into smaller views 
+    classes used to have got all model connections with the db tables and user data 
+    controllers have got all the controlling filed that respond with status and data for each AJAX call 
+    also assets => includes all the css and styling files for the front end  
+    core - function - includes are directories for splitting the project into views and oop structure 
+    while all requests and responds in the live preview used to include SCRIPTS directory hold up all js AJAX codes for the requests .
 
 # Cure-api 
 
