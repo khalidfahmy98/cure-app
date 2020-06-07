@@ -34,3 +34,5 @@ notice that in this repo there are the following directories :
         2- patient_donation_status            default is ( 0 )  = Available for donate           and ( 1 ) Not Available for donate 
         3- patient_account_status             default is ( 0 )  = Active Account       and ( 1 ) Blocked Account  
 --------------------------------------------------------------------------
+    ->  Cure Workers Table   <-
+        1- worker gender                      default is ( 0 )  = Male         and ( 1 ) = Female
