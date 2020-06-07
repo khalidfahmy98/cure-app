@@ -28,32 +28,32 @@
               <p>Choose Your Account Type First To Continue ..</p>
             </div>
             <div class="row">
-                <a href="register.php?type=patient.png" class="cure-item col-lg-2">
+                <a href="register.php?type=patient.png&cattype=1" class="cure-item col-lg-2">
                     <div >
                         <img class="paitent-item" src="assets/Icons/patient.png.png"/>
                     </div>
                 </a>
-                <a href="register.php?type=doctor-white" class="cure-item col-lg-2">
+                <a href="register.php?type=doctor-white&cattype=2" class="cure-item col-lg-2">
                     <div >
                         <img class="paitent-item" src="assets/Icons/doctor-white.png"/>
                     </div>
                 </a>
-                <a href="register.php?type=lab-microscope-white" class="cure-item col-lg-2">
+                <a href="register.php?type=lab-microscope-white&cattype=3" class="cure-item col-lg-2">
                     <div >
                         <img class="paitent-item" src="assets/Icons/lab-microscope-white.png"/>
                     </div>
                 </a>
-                <a href="register.php?type=pharmacy-white" class="cure-item col-lg-2">
+                <a href="register.php?type=pharmacy-white&cattype=4" class="cure-item col-lg-2">
                     <div >
                         <img class="paitent-item" src="assets/Icons/pharmacy-white.png"/>
                     </div>
                 </a>
-                <a href="register.php?type=factory-white" class="cure-item col-lg-2">
+                <a href="register.php?type=factory-white&cattype=5" class="cure-item col-lg-2">
                     <div >
                         <img class="paitent-item" src="assets/Icons/factory-white.png"/>
                     </div>
                 </a>
-                <a href="register.php?type=hospital-buildings-white" class="cure-item col-lg-2">
+                <a href="register.php?type=hospital-buildings-white&cattype=6" class="cure-item col-lg-2">
                     <div >
                         <img class="paitent-item" src="assets/Icons/hospital-buildings-white.png"/>
                     </div>
