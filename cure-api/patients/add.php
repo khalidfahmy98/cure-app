@@ -2,8 +2,8 @@
     require '../core/init.php';
     $patient = new patient();
     if ( !empty(input::get('username')) && !empty(input::get('email')) && !empty(input::get('password')) ) {
-        if ( !$user->find(input::get('username')) ) {
-            $user->create(array(
+        if ( !$patient->find(input::get('username')) ) {
+            $patient->create(array(
                 'useremail' =>  input::get('email'), 
                 'username' =>  input::get('username'),
                 'userpassword' =>  input::get('password')
