@@ -1,4 +1,4 @@
-# Cure Application  Documentation  
+# Cure Repository Reference
 
 
 Hello , 

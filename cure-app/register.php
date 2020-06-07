@@ -41,23 +41,23 @@
                 <li class="cure-list">
                     <label>  Email </label>
                     <input type="hidden" value="<?php echo input::get('cattype');?>">
-                    <input type="text" class="form-control input-sm">
+                    <input type="text" class="form-control input-sm" id="useremail">
                 </li>
                 <li class="cure-list">
                     <label>  Username </label>
-                    <input type="text" class="form-control input-sm">
+                    <input type="text" class="form-control input-sm" id="username">
                 </li>
                 <li class="cure-list">
                     <label>  Password </label>
-                    <input type="text" class="form-control input-sm">
+                    <input type="text" class="form-control input-sm" id="userpassword">
                 </li>
                 <li class="cure-list">
                     <label>  Phone Number </label>
-                    <input type="text" class="form-control input-sm">
+                    <input type="text" class="form-control input-sm" id="userphone">
                 </li>
                 <li class="cure-list">
                     <label> Nationality </label>
-                    <select class="form-control input-sm">
+                    <select class="form-control input-sm" id="usernationality">
                         <option > Male </option>
                         <option> Female </option>
                         <option> Other </option>
@@ -65,7 +65,7 @@
                 </li>
                 <li class="cure-list">
                     <label>   Gender </label>
-                    <select class="form-control input-sm">
+                    <select class="form-control input-sm" id="usergender">
                         <option > Male </option>
                         <option> Female </option>
                         <option> Other </option>
@@ -73,6 +73,9 @@
                 </li>
               </ul>
               <button type="button" class="btn btn-primary">Register</button>
+              <div id="responserForToasters">
+                  
+              </div>
             </div>
         </div>
       </div>
@@ -80,4 +83,5 @@
   <!--End Create Account-->
   <?php 
       templateController::get('ffooter');
+      templateController::getScript('authentication','register');
 ?>

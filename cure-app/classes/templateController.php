@@ -17,7 +17,7 @@ class templateController {
             if( $directory == null  && $local == false ){
                 echo '<script src="'.$name.'"></script>';
             }else{
-                echo '<script src="'.$directory.'/'.$name.'.js"></script>';
+                echo '<script src="scripts/'.$directory.'/'.$name.'.js"></script>';
             }
         }
     }
