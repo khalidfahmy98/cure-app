@@ -14,6 +14,6 @@ function createAccount (type) {
         }
         xhr.open("POST","controllers/authentication.php?do=register",true);
         xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-        xhr.send("p_email="+email+"&p_username="+username+"&p_password="+password+"&p_phone="+phone+"&p_natio="+nationality+"&p_gender="+gender+"&type="+type);
+        xhr.send("patient_email="+email+"&patient_username="+username+"&p_password="+password+"&patient_phone="+phone+"&p_natio="+nationality+"&p_gender="+gender+"&type="+type);
     }
 }

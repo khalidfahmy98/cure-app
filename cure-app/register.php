@@ -41,7 +41,7 @@
                 <li class="cure-list">
                     <label>  Email </label>
                     <input type="hidden" value="<?php echo input::get('cattype');?>">
-                    <input type="text" class="form-control input-sm" id="useremail">
+                    <input type="email" class="form-control input-sm" id="useremail">
                 </li>
                 <li class="cure-list">
                     <label>  Username </label>
@@ -49,7 +49,7 @@
                 </li>
                 <li class="cure-list">
                     <label>  Password </label>
-                    <input type="text" class="form-control input-sm" id="userpassword">
+                    <input type="password" class="form-control input-sm" id="userpassword">
                 </li>
                 <li class="cure-list">
                     <label>  Phone Number </label>
@@ -58,23 +58,23 @@
                 <li class="cure-list">
                     <label> Nationality </label>
                     <select class="form-control input-sm" id="usernationality">
-                        <option > Male </option>
-                        <option> Female </option>
-                        <option> Other </option>
+                        <option  value="EGY"> Egypt </option>
+                        <option value="JORD">  Jordan </option>
+                        <option value="SUD"> Sudan </option>
                     </select>
                 </li>
                 <li class="cure-list">
                     <label>   Gender </label>
                     <select class="form-control input-sm" id="usergender">
-                        <option > Male </option>
-                        <option> Female </option>
-                        <option> Other </option>
+                        <option value="0"> Male </option>
+                        <option value="1">  Female </option>
+                        <option value="2"> Other </option>
                     </select>
                 </li>
               </ul>
-              <button type="button" class="btn btn-primary">Register</button>
+              <button type="button" class="btn btn-primary" onclick="createAccount(<?php echo input::get('cattype'); ?>)">Register</button>
               <div id="responserForToasters">
-                  
+
               </div>
             </div>
         </div>

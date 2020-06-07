@@ -9,4 +9,7 @@ class toasters {
     public static function success($msg){
         echo '<div class="alert alert-success">'.$msg.'</div>';
     }
+    public static function successWithLink($msg,$linkPage,$linkTitle){
+        echo '<div class="alert alert-success">'.$msg.'<a href="'. $linkPage .'">'. $linkTitle.'</a></div>';
+    }
 }

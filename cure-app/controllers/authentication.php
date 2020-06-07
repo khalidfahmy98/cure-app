@@ -1,25 +1,28 @@
 <?php 
-    require '../core/init.php';
+    require '../core/initControllers.php';
     $patient = new patient ();
     if (input::exists('get')){
         if ( $_GET['do'] == 'register' ){
                 $validate = new validation();
                 $validate->check($_POST,array(
-                    'w_username' => array (
+                    'patient_email' => array (
+                        'required' => true ,
+                        'min'   => 8 ,
+                        'unique' => 'patient'
+                    ),
+                    'patient_username' => array (
                         'required' => true ,
                         'min'   => 6 ,
-                        'unique' => 'website_users'
+                        'unique' => 'patient'
                     ),
-                    'w_fullname' => array(
+                    'patient_phone' => array(
                         'required' => true ,
-                        'min'   => 6 
+                        'min'   => 10 ,
+                        'max'   => 13,
+                        'unique' => 'patient'
+
                     ),
-                    'w_useremail' => array(
-                        'required' => true ,
-                        'min'   => 6 ,
-                        'unique' => 'website_users'
-                    ),
-                    'w_userpassword' => array(
+                    'p_password' => array(
                         'required' => true ,
                         'min'   => 6,
                         'max'   => 13
@@ -27,19 +30,24 @@
                 ));
                 if ( $validate->passed() ){
                     $salt = hash::salt(32);
-                    try{
-                        $patient -> create(array(
-                            'w_fullname'=> input::get('w_fullname'),
-                            'w_username' => input::get('w_username'),
-                            'w_useremail' => input::get('w_useremail'),
-                            'w_userpassword' => input::get('w_userpassword'),
-                            'w_gender' => input::get('w_gender'),
-                            'w_hashedpassword' => hash::make(input::get('w_userpassword'),$salt),
-                            'salt' => $salt
-                        ));
-                        toasters::success('تم إنشاء الحساب بنجاح');
-                    }catch(Exception $e){
-                        die($e->getMessage());
+                    if ( input::get('type') !== 1 ) {
+                        try{
+                            $patient -> create(array(
+                                'patient_username'=> input::get('patient_username'),
+                                'patient_email' => input::get('patient_email'),
+                                'patient_password' => input::get('p_password'),
+                                'patient_salt' => $salt,
+                                'patient_hashedpassword' => hash::make(input::get('p_password'),$salt),
+                                'patient_phone' => input::get('patient_phone'),
+                                'patient_gender' => input::get('p_gender'),
+                                'patient_nationality' => input::get('p_natio'),
+                            ));
+                            toasters::successWithLink('Account Created Successfuly' , 'login.php' , 'Login Now ! ');
+                        }catch(Exception $e){
+                            die($e->getMessage());
+                        }
+                    }else {
+                        toasters::warning('Creating Account Not Available For This Type Of Users');
                     }
                 }else{
                     foreach ($validate->errors() as $error ){
