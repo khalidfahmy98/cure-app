@@ -30,7 +30,7 @@
                 ));
                 if ( $validate->passed() ){
                     $salt = hash::salt(32);
-                    if ( input::get('type') !== 1 ) {
+                    if ( input::get('type') == 1 ) {
                         try{
                             $patient -> create(array(
                                 'patient_username'=> input::get('patient_username'),
