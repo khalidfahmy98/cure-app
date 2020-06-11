@@ -2,6 +2,7 @@
     require 'core/init.php';
     templateController::setTitle('Login | Cure');
     templateController::get('fheader');
+    $patient = new patient ();
 ?>
    <!--Start Create Account-->
    <div class="create-account">
@@ -28,17 +29,52 @@
               <p>Cure Biometric Measurement <a href="../cure-auth/">Login As Service Provider</a></p>
             </div>
             <div class="cure-item col-md-7">
-              <ul class="list-unstyled">
-                <li class="cure-list">
-                    <label>  Username </label>
-                    <input type="text" class="form-control input-sm">
-                </li>
-                <li class="cure-list">
-                    <label>  Password </label>
-                    <input type="text" class="form-control input-sm">
-                </li>
-              </ul>
-              <button type="button" class="btn btn-primary">Login</button>
+               <form action="" method="POST">
+                  <ul class="list-unstyled">
+                     <li class="cure-list">
+                        <label>  Username </label>
+                        <input type="text" class="form-control input-sm" id="username" name="username">
+                     </li>
+                     <li class="cure-list">
+                        <label>  Password </label>
+                        <input type="password" class="form-control input-sm" id="password" name="password">
+                     </li>
+                  </ul>
+                  <button type="submit" class="btn btn-primary">Login</button>
+               </form>
+              <?php 
+        if( session::exists(config::get('session/session_name'))){
+            redirect::to('index.php');
+        }else{
+                if( input::exists() ) {
+                        $validate = new validation();
+                        $validate->check($_POST,array(
+                            'username' => array(
+                                'required' => true 
+                            ),
+                            'password' => array(
+                                'required' => true 
+                            )
+                        ));
+                    if($validate->passed()){
+                        $user = new user();
+                        $remember = true ;
+                        $login = $user->login(input::get('username'),input::get('password'),$remember);
+            
+                        if ($login){
+                            redirect::to('index.php');
+                        }else{
+                            toasters::error('لا يمكن تسجيل الدخول ');
+                        }
+            
+                    }else{
+                        foreach($validate->errors() as $error ){
+                            echo $error;
+                            }
+                        }
+                }
+        }
+            ?> 
             </div>
             <div class="col-md-5">
               <img class="doctor-item img-thumbnail" src="assets/Icons/doctor.png.png"/>

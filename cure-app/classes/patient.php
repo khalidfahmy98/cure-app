@@ -1,6 +1,6 @@
 <?php
 
-class cure_users{
+class patient{
 
     private $_db,$_data,$_sessionName,$_isLogged,$_cookieName;
     public function __construct($user = null){
