@@ -8,18 +8,18 @@
                     'patient_email' => array (
                         'required' => true ,
                         'min'   => 8 ,
-                        'unique' => 'patient'
+                        'unique' => 'cure_users'
                     ),
                     'patient_username' => array (
                         'required' => true ,
                         'min'   => 6 ,
-                        'unique' => 'patient'
+                        'unique' => 'cure_users'
                     ),
                     'patient_phone' => array(
                         'required' => true ,
                         'min'   => 10 ,
                         'max'   => 13,
-                        'unique' => 'patient'
+                        'unique' => 'cure_users'
 
                     ),
                     'p_password' => array(
@@ -30,7 +30,6 @@
                 ));
                 if ( $validate->passed() ){
                     $salt = hash::salt(32);
-                    if ( input::get('type') == 1 ) {
                         try{
                             $patient -> create(array(
                                 'patient_username'=> input::get('patient_username'),
@@ -46,9 +45,6 @@
                         }catch(Exception $e){
                             die($e->getMessage());
                         }
-                    }else {
-                        toasters::warning('Creating Account Not Available For This Type Of Users');
-                    }
                 }else{
                     foreach ($validate->errors() as $error ){
                         echo $error;

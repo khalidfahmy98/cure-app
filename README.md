@@ -36,12 +36,32 @@ notice that in this repo there are the following directories :
     1 - Add user ( register ) :  XX-CHANGE THIS WITH YOUR LOCAL IP ADDRESS -XX/cure-app/cure-api/users/add.php
     
 
-
+# Notices  
+    1- to create pharmacy orgnization or clinic you have to be doctor account type 
+    2- to create factory or laborator you have to be worker account or higher rank account means doctor also .
+    3- cure workers - doctors can use the platform with thier cardintials by login as worker account . but not as orgnization .
+    4- creating account is the same to all after creating the account the user choose his interstings after using the platform .
 # Flags Reference 
-    -> Patient Table  <-
+    -> cure_users ( includes  all as patients then inside the platform they switch into thier buisness ) <-
         1- patient_gender                     default is ( 0 )  = Male         and ( 1 ) = Female 
         2- patient_donation_status            default is ( 0 )  = Available for donate           and ( 1 ) Not Available for donate 
         3- patient_account_status             default is ( 0 )  = Active Account       and ( 1 ) Blocked Account  
+        4- worker_account_type                default is ( 0 )  = patient account     (1) Worker Account           ( 2 ) = Doctor Account 
 --------------------------------------------------------------------------
-    ->  Cure Workers Table   <-
-        1- worker gender                      default is ( 0 )  = Male         and ( 1 ) = Female
+    ->   Workers Category Table   <-
+        1- category_premission_type  : 
+             -  0 => no permission garanted                      
+                (permission operations ) =>  
+
+             -  1 => Main Orgnization Manager 
+                (permission operations ) => 
+
+             -  2 => Branch Manager 
+                (permission operations ) =>
+
+             -  3 => Editor 
+                (permission operations ) => 
+
+             -  4 => Moderator  
+                (permission operations ) => 
+

@@ -1,4 +1,4 @@
-function createAccount (type) {
+function createAccount () {
     var xhr = new XMLHttpRequest (),
      email = document.getElementById("useremail").value,
      username = document.getElementById("username").value,
@@ -14,6 +14,6 @@ function createAccount (type) {
         }
         xhr.open("POST","controllers/authentication.php?do=register",true);
         xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-        xhr.send("patient_email="+email+"&patient_username="+username+"&p_password="+password+"&patient_phone="+phone+"&p_natio="+nationality+"&p_gender="+gender+"&type="+type);
+        xhr.send("patient_email="+email+"&patient_username="+username+"&p_password="+password+"&patient_phone="+phone+"&p_natio="+nationality+"&p_gender="+gender);
     }
 }
