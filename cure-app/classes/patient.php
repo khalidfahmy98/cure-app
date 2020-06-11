@@ -40,7 +40,7 @@ class patient{
     }
     public function find($user = null){
         if($user){
-            $field = (is_numeric($user)) ? 'patient_id' :'cure_users_username';
+            $field = (is_numeric($user)) ? 'patient_id' :'patient_username';
             $data = $this->_db->get('cure_users',array($field,'=',$user));
             if($data->count()){
                 $this->_data = $data->first();
@@ -56,7 +56,7 @@ class patient{
         }else{
             $user = $this->find($username);
             if($user){
-                if($this->data()->w_userpassword === $password ){
+                if($this->data()->patient_hashedpassword === hash::make($password,$this->data()->patient_salt) ){
                     session::put($this->_sessionName , $this->data()->patient_id);
                     if($remember){
                         $hash = hash::uniqueHash();

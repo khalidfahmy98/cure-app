@@ -39,7 +39,7 @@
                                 'patient_hashedpassword' => hash::make(input::get('p_password'),$salt),
                                 'patient_phone' => input::get('patient_phone'),
                                 'patient_gender' => input::get('p_gender'),
-                                'patient_nationality' => input::get('p_natio'),
+                                'patient_nationality' => input::get('p_natio')
                             ));
                             toasters::successWithLink('Account Created Successfuly' , 'login.php' , 'Login Now ! ');
                         }catch(Exception $e){

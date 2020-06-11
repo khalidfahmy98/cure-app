@@ -26,7 +26,7 @@
          <!--End Navbar-->
             <div class="cure-bio col-md-12">
               <h2>Access Now your Account As Patient Only </h2>
-              <p>Cure Biometric Measurement <a href="../cure-auth/">Login As Service Provider</a></p>
+              <p>Cure Biometric Measurement <a href="../cure-app/register.php">Create Now Free Account ? </a></p>
             </div>
             <div class="cure-item col-md-7">
                <form action="" method="POST">
@@ -57,14 +57,13 @@
                             )
                         ));
                     if($validate->passed()){
-                        $user = new user();
                         $remember = true ;
-                        $login = $user->login(input::get('username'),input::get('password'),$remember);
+                        $login = $patient->login(input::get('username'),input::get('password'),$remember);
             
                         if ($login){
                             redirect::to('index.php');
                         }else{
-                            toasters::error('لا يمكن تسجيل الدخول ');
+                            toasters::error('Sorry , Cant Sign In Try Again ..');
                         }
             
                     }else{
