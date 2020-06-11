@@ -1,3 +1,8 @@
+<?php 
+
+$patient = new patient();
+
+?>
 <html >
 <head>
    <meta charset="utf-8" />
@@ -51,10 +56,16 @@
           <div class="col-md-3">    
             <div class="sidebar">
             <div class="acc-image row">
-              <img src="assets/imgs/tn.png"/>
+            <?php 
+              if ( $patient->data()->patient_image_code == null ) {
+                echo '<img src="assets/imgs/tn.png"/>';
+              }else{
+                echo '<img src="../storage/'. $patient->data()->patient_image_code  .'"/>';
+              }
+            ?>
               <div class="acc-write">
-                <h4>Tarek NeGm</h4>
-                <span class="text-center"><i class="fas fa-dollar-sign"></i>999</span>
+                <h4><?php echo $patient->data()->patient_username; ?></h4>
+                <span class="text-center"><i class="fas fa-dollar-sign"></i><?php echo $patient->data()->patient_e_coins; ?></span>
               </div>
             </div>
              <ul class="list-unstyled">
@@ -64,7 +75,8 @@
                <li><a href="#"><i class="fas fa-prescription-bottle-alt"></i>Blood Donation</a></li>
                <li><a href="#"><i class="fas fa-book-medical"></i>Mdeical Book</a></li>
                <li><a href="#"><i class="fas fa-cogs"></i>Settings</a></li>
-               <li><a href="#"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+               <li><a href="#"><i class="fas fa-cogs"></i>Cure Workers</a></li>
+               <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
              </ul>
             </div>
           </div>
