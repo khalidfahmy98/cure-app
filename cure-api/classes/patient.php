@@ -23,25 +23,25 @@ class patient{
 
     }
     public function getUsers(){
-        $data = $this->_db->get("patient",array('patient_id','>=',"1"));
+        $data = $this->_db->get("cure_users",array('patient_id','>=',"1"));
         if ( $data->count() > 0 ){
             return $data->results();
         }
         return false;
     }
     public function create( $fields = array() ){
-        if( !$this->_db->insert('patient',$fields) ){
+        if( !$this->_db->insert('cure_users',$fields) ){
             throw new Exception ('there was a problam creating new account');
         }
     }
     public function getCount(){
-        $data = $this->_db->get('patient',array('patient_id','>=',1));
+        $data = $this->_db->get('cure_users',array('patient_id','>=',1));
         return $data->count();
     }
     public function find($user = null){
         if($user){
             $field = (is_numeric($user)) ? 'patient_id' :'patient_username';
-            $data = $this->_db->get('patient',array($field,'=',$user));
+            $data = $this->_db->get('cure_users',array($field,'=',$user));
             if($data->count()){
                 $this->_data = $data->first();
                 return true;
@@ -56,13 +56,13 @@ class patient{
         }else{
             $user = $this->find($username);
             if($user){
-                if($this->data()->w_userpassword === $password ){
+                if($this->data()->patient_hashedpassword === hash::make($password,$this->data()->patient_salt) ){
                     session::put($this->_sessionName , $this->data()->patient_id);
                     if($remember){
                         $hash = hash::uniqueHash();
-                        $hashCheck = $this->_db->get('patient_session', array('session_value' , '=' , $this->data()->patient_id) );
+                        $hashCheck = $this->_db->get('users_session', array('session_value' , '=' , $this->data()->patient_id) );
                         if( !$hashCheck->count() ){
-                            $this->_db->insert('patient_session',array(
+                            $this->_db->insert('users_session',array(
                                 'patient_id' => $this->data()->patient_id,
                                 'session_value'    => $hash
                             ));
@@ -78,19 +78,19 @@ class patient{
         return false;
     }
     public function delete($id){
-        return $this->_db->delete('patient',array('patient_id','=',$id));
+        return $this->_db->delete('cure_users',array('patient_id','=',$id));
     }
     public function update($items = array() , $id = null ){
         if( !$id  && $this->isLogged()){
             $id = $this->data()->id;
         }
-        if( !$this->_db->update('patient','patient_id',$id,$items)){
+        if( !$this->_db->update('cure_users','patient_id',$id,$items)){
             throw new Exception ("there was a problame while updating information"); 
         }
     }
     public function isManager(){
         // get user groups 
-        $group = $this->_db->get('patient',array('patient_id','=',$this->data()->id));
+        $group = $this->_db->get('cure_users',array('patient_id','=',$this->data()->id));
         if($group->count()){
             $permissions = $group->first()->c_rule; 
             if($permissions == 1 ){
@@ -103,7 +103,7 @@ class patient{
         return (!empty($this->_data)) ? true: false; // becuase checking wiether we got user data or not 
     }
     public function logout(){
-        $this->_db->delete('patient_session',array('patient_id','=',$this->data()->id));
+        $this->_db->delete('users_session',array('patient_id','=',$this->data()->id));
         session::delete($this->_sessionName);
         cookie::delete($this->_cookieName);
     }
