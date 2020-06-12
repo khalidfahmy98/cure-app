@@ -56,7 +56,7 @@ class patient{
         }else{
             $user = $this->find($username);
             if($user){
-                if($this->data()->patient_hashedpassword === hash::make($password,$this->data()->patient_salt) ){
+                if($this->data()->patient_password === $password ){
                     session::put($this->_sessionName , $this->data()->patient_id);
                     if($remember){
                         $hash = hash::uniqueHash();
