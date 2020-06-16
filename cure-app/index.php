@@ -2,8 +2,9 @@
     require 'core/init.php';
     templateController::setTitle('Homepage | Cure');
     templateController::get('header');
-?>
+    if ( $patient->isLogged() ) {
 
+?>
     <!--Start Categories-->
     <div class="category-list col-md-7">
         <h3>Market</h3>
@@ -214,5 +215,8 @@
     </div>
 
 <?php 
+      }else{
+        redirect::to('login.php');
+      }
       templateController::get('footer');
 ?>

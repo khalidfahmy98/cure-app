@@ -33,7 +33,7 @@ notice that in this repo there are the following directories :
     each api controller will be associated to sepcial directory for example if you want to add new user to the system ! 
 --------------------------------------------------------------------------
     Patients Apis's : 
-    1 - Add user ( register ) :  XX-CHANGE THIS WITH YOUR LOCAL IP ADDRESS -XX/cure-app/cure-api/users/add.php
+    1 - Add user ( register ) :  192.168.1.1/cure-app/cure-api/users/add.php
     
 
 # Notices  
@@ -64,4 +64,7 @@ notice that in this repo there are the following directories :
 
              -  4 => Moderator  
                 (permission operations ) => 
-
+--------------------------------------------------------------------------
+    ->  Cure Organizations  Table   <-
+        1- org_work_type               ( 0 ) not set   -       ( 1 ) pharmacy     - ( 2 ) Factory    
+                                       ( 3 ) Laboratory  -      ( 4 ) Clinic 
