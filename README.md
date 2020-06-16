@@ -31,9 +31,24 @@ notice that in this repo there are the following directories :
 
     in this directory all the inner folders and files  made for the api to the android developer 
     each api controller will be associated to sepcial directory for example if you want to add new user to the system ! 
+    
+    api tokens ? 
+        means that you have to send request variable names with the same name after ( => ) sign 
+        
+    change 192.168.1.1 with your local machine ip address while  xampp running 
 --------------------------------------------------------------------------
     Patients Apis's : 
     1 - Add user ( register ) :  192.168.1.1/cure-app/cure-api/users/add.php
+<<<<<<< HEAD
+=======
+        Api Tokens : 
+            - username      => patient_username
+            - password      => p_password
+            - email         => patient_email
+            - gender        => p_gender 
+            - nationality   => p_natio
+            - phone number  => patient_phone
+>>>>>>> 4deb129cf3e076d9794f70e58a3e4082f76790c5
     
 
 # Notices  
