@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2020 at 09:56 PM
+-- Generation Time: Jun 18, 2020 at 04:02 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -81,6 +81,26 @@ CREATE TABLE `cure_managers_session` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `cure_organizations`
+--
+
+CREATE TABLE `cure_organizations` (
+  `org_id` int(11) NOT NULL,
+  `org_name` varchar(255) NOT NULL,
+  `org_email` varchar(100) NOT NULL,
+  `org_fax` varchar(50) NOT NULL,
+  `org_work_type` tinyint(4) NOT NULL DEFAULT '0',
+  `org_tree_type` int(11) NOT NULL DEFAULT '0',
+  `org_work_id` varchar(30) NOT NULL,
+  `org_town` varchar(100) NOT NULL,
+  `org_address` varchar(255) NOT NULL,
+  `org_status` tinyint(4) NOT NULL DEFAULT '0',
+  `owner_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `cure_users`
 --
 
@@ -131,7 +151,13 @@ CREATE TABLE `users_session` (
 INSERT INTO `users_session` (`session_id`, `session_value`, `patient_id`) VALUES
 (1, '046bf91afb83e23891ddea79a6759a5862731156d96081ab1bb43d97fd58ccfb', 6),
 (2, '4f869a7075030720b021d68d27fef98b88cf67465c5b3d464ae014237de8ff72', 6),
-(3, '1a5b03173fe6cafce85c2d7f70eda09121e4c615d9fbacd6e197524c0173eda2', 6);
+(3, '1a5b03173fe6cafce85c2d7f70eda09121e4c615d9fbacd6e197524c0173eda2', 6),
+(4, '03c2ebf4554cd28ebecd3c26f21afbaf56d3d7cb9fa935689ce7737bda92f3b5', 6),
+(5, '2bd2c94af4045f9e5bf7df270daee11bb514434e18af952bcc29ab910db4cfaa', 6),
+(6, '08e4db7cfd5f02d0343a61bb0a248d06b8cab8b2fbdcba99293c99a72d15dea3', 6),
+(7, '027db4bb597c2b38910237f69554659ce2b4d116354c193dc6de01e18c6202b8', 6),
+(8, 'cce37ccd5283e3eb60a2dbb60987f09e077e4b2461f36c8cb1df2ecb0015cdc8', 6),
+(9, '7f3d8b11c95a7c65b1c926d67a2b256d5b46ce3d1869acfcf92d37be6c72ffa7', 6);
 
 -- --------------------------------------------------------
 
@@ -176,6 +202,13 @@ ALTER TABLE `cure_managers_logs`
 ALTER TABLE `cure_managers_session`
   ADD PRIMARY KEY (`session_id`),
   ADD KEY `connect_sessions_managers_cure` (`manager_id`);
+
+--
+-- Indexes for table `cure_organizations`
+--
+ALTER TABLE `cure_organizations`
+  ADD PRIMARY KEY (`org_id`),
+  ADD KEY `connect_users_with_buisness` (`owner_id`);
 
 --
 -- Indexes for table `cure_users`
@@ -226,6 +259,12 @@ ALTER TABLE `cure_managers_session`
   MODIFY `session_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `cure_organizations`
+--
+ALTER TABLE `cure_organizations`
+  MODIFY `org_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `cure_users`
 --
 ALTER TABLE `cure_users`
@@ -235,7 +274,7 @@ ALTER TABLE `cure_users`
 -- AUTO_INCREMENT for table `users_session`
 --
 ALTER TABLE `users_session`
-  MODIFY `session_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `session_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `worker_categories`
@@ -264,6 +303,12 @@ ALTER TABLE `cure_managers_logs`
 --
 ALTER TABLE `cure_managers_session`
   ADD CONSTRAINT `connect_sessions_managers_cure` FOREIGN KEY (`manager_id`) REFERENCES `cure_managers` (`manager_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `cure_organizations`
+--
+ALTER TABLE `cure_organizations`
+  ADD CONSTRAINT `connect_users_with_buisness` FOREIGN KEY (`owner_id`) REFERENCES `cure_users` (`patient_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `cure_users`
