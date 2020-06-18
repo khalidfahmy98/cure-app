@@ -39,8 +39,6 @@ notice that in this repo there are the following directories :
 --------------------------------------------------------------------------
     Patients Apis's : 
     1 - Add user ( register ) :  192.168.1.1/cure-app/cure-api/users/add.php
-<<<<<<< HEAD
-=======
         Api Tokens : 
             - username      => patient_username
             - password      => p_password
@@ -48,7 +46,6 @@ notice that in this repo there are the following directories :
             - gender        => p_gender 
             - nationality   => p_natio
             - phone number  => patient_phone
->>>>>>> 4deb129cf3e076d9794f70e58a3e4082f76790c5
     
 
 # Notices  
@@ -83,3 +80,5 @@ notice that in this repo there are the following directories :
     ->  Cure Organizations  Table   <-
         1- org_work_type               ( 0 ) not set   -       ( 1 ) pharmacy     - ( 2 ) Factory    
                                        ( 3 ) Laboratory  -      ( 4 ) Clinic 
+        2- org_status                  ( 0 ) pending to accepted      - ( 1 ) approved   
+                                       ( 2 ) Hold Actions             - ( 3 ) Banned 
