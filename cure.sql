@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 18, 2020 at 04:02 PM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 5.6.33
+-- Generation Time: Jun 20, 2020 at 05:58 PM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -21,6 +19,19 @@ SET time_zone = "+00:00";
 --
 -- Database: `cure`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `aggregate_orgs_workers`
+--
+
+CREATE TABLE `aggregate_orgs_workers` (
+  `aggregte_id` int(11) NOT NULL,
+  `worker_id` int(11) NOT NULL,
+  `orgniztion_id` int(11) NOT NULL,
+  `work_category` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -135,6 +146,60 @@ INSERT INTO `cure_users` (`patient_id`, `patient_username`, `patient_email`, `pa
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `master_medical_file`
+--
+
+CREATE TABLE `master_medical_file` (
+  `medical_file_id` int(11) NOT NULL,
+  `medical_description` varchar(250) DEFAULT NULL,
+  `patient_tall` float NOT NULL DEFAULT '0',
+  `patient_weight` float NOT NULL DEFAULT '0',
+  `patient_blood_type` varchar(30) DEFAULT NULL,
+  `patient_smoker` tinyint(4) NOT NULL DEFAULT '0',
+  `patient_surgery` tinyint(4) NOT NULL DEFAULT '0',
+  `patient_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `patient_eyes_rate`
+--
+
+CREATE TABLE `patient_eyes_rate` (
+  `rate_id` int(11) NOT NULL,
+  `R_diest_sph` float NOT NULL DEFAULT '0',
+  `R_diest_cyl` float NOT NULL DEFAULT '0',
+  `R_diest_ax` float NOT NULL DEFAULT '0',
+  `R_near_sph` float DEFAULT '0',
+  `R_near_cyl` float NOT NULL DEFAULT '0',
+  `R_near_ax` float NOT NULL DEFAULT '0',
+  `L_diest_sph` float NOT NULL DEFAULT '0',
+  `L_diest_cyl` float NOT NULL DEFAULT '0',
+  `L_diest_ax` float NOT NULL DEFAULT '0',
+  `L_near_sph` float NOT NULL DEFAULT '0',
+  `L_near_cyl` float NOT NULL DEFAULT '0',
+  `L_near_ax` float NOT NULL DEFAULT '0',
+  `rate_register_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `medical_file_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `patient_surgeries`
+--
+
+CREATE TABLE `patient_surgeries` (
+  `surgery_id` int(11) NOT NULL,
+  `surgery_date` datetime DEFAULT NULL,
+  `surgery_desc` varchar(255) NOT NULL,
+  `medical_file_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users_session`
 --
 
@@ -157,7 +222,8 @@ INSERT INTO `users_session` (`session_id`, `session_value`, `patient_id`) VALUES
 (6, '08e4db7cfd5f02d0343a61bb0a248d06b8cab8b2fbdcba99293c99a72d15dea3', 6),
 (7, '027db4bb597c2b38910237f69554659ce2b4d116354c193dc6de01e18c6202b8', 6),
 (8, 'cce37ccd5283e3eb60a2dbb60987f09e077e4b2461f36c8cb1df2ecb0015cdc8', 6),
-(9, '7f3d8b11c95a7c65b1c926d67a2b256d5b46ce3d1869acfcf92d37be6c72ffa7', 6);
+(9, '7f3d8b11c95a7c65b1c926d67a2b256d5b46ce3d1869acfcf92d37be6c72ffa7', 6),
+(10, '412154ebfa98d7230b026ee4c01640051106669ed6975b4dc8ed27a6f96c1e34', 6);
 
 -- --------------------------------------------------------
 
@@ -175,6 +241,15 @@ CREATE TABLE `worker_categories` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `aggregate_orgs_workers`
+--
+ALTER TABLE `aggregate_orgs_workers`
+  ADD PRIMARY KEY (`aggregte_id`),
+  ADD KEY `connect_to_workers` (`worker_id`),
+  ADD KEY `connect_to_orgn` (`orgniztion_id`),
+  ADD KEY `connect_to_category` (`work_category`);
 
 --
 -- Indexes for table `cure_managers`
@@ -218,6 +293,27 @@ ALTER TABLE `cure_users`
   ADD KEY `cats_users_id_connected` (`worker_category_id`);
 
 --
+-- Indexes for table `master_medical_file`
+--
+ALTER TABLE `master_medical_file`
+  ADD PRIMARY KEY (`medical_file_id`),
+  ADD KEY `connect_patient_with_file` (`patient_id`);
+
+--
+-- Indexes for table `patient_eyes_rate`
+--
+ALTER TABLE `patient_eyes_rate`
+  ADD PRIMARY KEY (`rate_id`),
+  ADD KEY `connect_eye_rate_medical_file` (`medical_file_id`);
+
+--
+-- Indexes for table `patient_surgeries`
+--
+ALTER TABLE `patient_surgeries`
+  ADD PRIMARY KEY (`surgery_id`),
+  ADD KEY `connect_surgeries_with_file` (`medical_file_id`);
+
+--
 -- Indexes for table `users_session`
 --
 ALTER TABLE `users_session`
@@ -235,56 +331,76 @@ ALTER TABLE `worker_categories`
 --
 
 --
+-- AUTO_INCREMENT for table `aggregate_orgs_workers`
+--
+ALTER TABLE `aggregate_orgs_workers`
+  MODIFY `aggregte_id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `cure_managers`
 --
 ALTER TABLE `cure_managers`
   MODIFY `manager_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `cure_managers_categories`
 --
 ALTER TABLE `cure_managers_categories`
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `cure_managers_logs`
 --
 ALTER TABLE `cure_managers_logs`
   MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `cure_managers_session`
 --
 ALTER TABLE `cure_managers_session`
   MODIFY `session_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `cure_organizations`
 --
 ALTER TABLE `cure_organizations`
   MODIFY `org_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `cure_users`
 --
 ALTER TABLE `cure_users`
   MODIFY `patient_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
+--
+-- AUTO_INCREMENT for table `master_medical_file`
+--
+ALTER TABLE `master_medical_file`
+  MODIFY `medical_file_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `patient_eyes_rate`
+--
+ALTER TABLE `patient_eyes_rate`
+  MODIFY `rate_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `patient_surgeries`
+--
+ALTER TABLE `patient_surgeries`
+  MODIFY `surgery_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `users_session`
 --
 ALTER TABLE `users_session`
-  MODIFY `session_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
+  MODIFY `session_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `worker_categories`
 --
 ALTER TABLE `worker_categories`
   MODIFY `worker_category_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `aggregate_orgs_workers`
+--
+ALTER TABLE `aggregate_orgs_workers`
+  ADD CONSTRAINT `connect_to_category` FOREIGN KEY (`work_category`) REFERENCES `worker_categories` (`worker_category_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `connect_to_orgn` FOREIGN KEY (`orgniztion_id`) REFERENCES `cure_organizations` (`org_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `connect_to_workers` FOREIGN KEY (`worker_id`) REFERENCES `cure_users` (`patient_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `cure_managers`
@@ -317,11 +433,28 @@ ALTER TABLE `cure_users`
   ADD CONSTRAINT `cats_users_id_connected` FOREIGN KEY (`worker_category_id`) REFERENCES `worker_categories` (`worker_category_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `master_medical_file`
+--
+ALTER TABLE `master_medical_file`
+  ADD CONSTRAINT `connect_patient_with_file` FOREIGN KEY (`patient_id`) REFERENCES `cure_users` (`patient_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `patient_eyes_rate`
+--
+ALTER TABLE `patient_eyes_rate`
+  ADD CONSTRAINT `connect_eye_rate_medical_file` FOREIGN KEY (`medical_file_id`) REFERENCES `master_medical_file` (`medical_file_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `patient_surgeries`
+--
+ALTER TABLE `patient_surgeries`
+  ADD CONSTRAINT `connect_surgeries_with_file` FOREIGN KEY (`medical_file_id`) REFERENCES `master_medical_file` (`medical_file_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `users_session`
 --
 ALTER TABLE `users_session`
   ADD CONSTRAINT `connect_patient_with_session` FOREIGN KEY (`patient_id`) REFERENCES `cure_users` (`patient_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
