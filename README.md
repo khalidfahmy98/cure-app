@@ -46,7 +46,11 @@ notice that in this repo there are the following directories :
             - gender        => p_gender 
             - nationality   => p_natio
             - phone number  => patient_phone
-    
+            
+    2 - Login :                 192.168.1.1/cure-app/cure-api/users/login.php
+        Api Tokens : 
+            - username      => patient_username
+            - password      => patient_password 
 
 # Notices  
     1- to create pharmacy orgnization or clinic you have to be doctor account type 
