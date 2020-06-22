@@ -22,6 +22,16 @@ class patient{
         }   
 
     }
+    public function info($user = null ){
+        if($user){
+            $field = (is_numeric($user)) ? 'patient_id' :'patient_username';
+            $data = $this->_db->get('cure_users',array($field,'=',$user));
+            if($data->count() > 0){
+                return $data->first();
+            }
+        }
+        return false;
+    }
     public function getUsers(){
         $data = $this->_db->get("cure_users",array('patient_id','>=',"1"));
         if ( $data->count() > 0 ){

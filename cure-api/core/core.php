@@ -14,3 +14,4 @@ $GLOBALS['config'] = array(
         'db'        =>  'cure'
     )
 );
+$token = "k0wsTJMxatMYSe64n8nTGTCslvOO6GEE";
