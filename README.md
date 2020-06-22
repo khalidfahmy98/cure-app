@@ -36,8 +36,8 @@ notice that in this repo there are the following directories :
         means that you have to send request variable names with the same name after ( => ) sign 
         
     change 192.168.1.1 with your local machine ip address while  xampp running 
-    
-    Main Apis Token for security  : k0wsTJMxatMYSe64n8nTGTCslvOO6GEE
+
+    Main Apis Token for security  : k0wsTJMxatMYSe64n8nTGTCslvOO6GEE  => Sent for this vairable (   token   ) 
 --------------------------------------------------------------------------
     Patients Apis's : 
     1 - Add user ( register ) :  192.168.1.1/cure-app/cure-api/users/add.php
