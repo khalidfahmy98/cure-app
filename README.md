@@ -53,6 +53,26 @@ notice that in this repo there are the following directories :
         Api Tokens : 
             - username      => patient_username
             - password      => patient_password 
+            
+    2 - Info  :                 192.168.1.1/cure-app/cure-api/users/info.php
+        Api Tokens : 
+        - patient_id      => send to this token variable the username or user id that he used while logging in to 
+                             get the rest of information 
+
+        this api will list you the following data with the same keys name in the json object to use 
+            id 
+            username
+            email
+            phone
+            gender 
+            birthdate
+            nationality
+            address
+            coins
+            donation
+            account
+            password
+
 
 # Notices  
     1- to create pharmacy orgnization or clinic you have to be doctor account type 
