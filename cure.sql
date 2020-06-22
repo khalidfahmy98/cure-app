@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 20, 2020 at 05:58 PM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Generation Time: Jun 22, 2020 at 11:42 PM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 5.6.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -31,6 +33,40 @@ CREATE TABLE `aggregate_orgs_workers` (
   `worker_id` int(11) NOT NULL,
   `orgniztion_id` int(11) NOT NULL,
   `work_category` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `authorized_products`
+--
+
+CREATE TABLE `authorized_products` (
+  `product_id` int(11) NOT NULL,
+  `product_name` varchar(255) NOT NULL,
+  `product_specs` varchar(255) NOT NULL,
+  `product_expiry_date` varchar(255) NOT NULL,
+  `product_nation` varchar(100) NOT NULL,
+  `product_tap_or_drink` tinyint(4) NOT NULL DEFAULT '0',
+  `product_price` double NOT NULL DEFAULT '0',
+  `product_size_capacity` varchar(100) NOT NULL,
+  `product_description` varchar(255) DEFAULT NULL,
+  `product_global_barcode` varchar(150) DEFAULT NULL,
+  `product_status` tinyint(4) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `clinics_schedule`
+--
+
+CREATE TABLE `clinics_schedule` (
+  `sched_id` int(11) NOT NULL,
+  `day_name` varchar(150) NOT NULL,
+  `time_start` varchar(60) NOT NULL,
+  `time_end` varchar(60) NOT NULL,
+  `clinic_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -146,6 +182,34 @@ INSERT INTO `cure_users` (`patient_id`, `patient_username`, `patient_email`, `pa
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `donated_users`
+--
+
+CREATE TABLE `donated_users` (
+  `donate_id` int(11) NOT NULL,
+  `patient_id` int(11) NOT NULL,
+  `request_id` int(11) NOT NULL,
+  `donate_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `donation_requests`
+--
+
+CREATE TABLE `donation_requests` (
+  `reqeust_id` int(11) NOT NULL,
+  `blood_type` varchar(50) NOT NULL,
+  `donators_qunatity` int(11) NOT NULL DEFAULT '0',
+  `donation_address` varchar(200) NOT NULL,
+  `donate_status` tinyint(4) NOT NULL DEFAULT '0',
+  `patient_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `master_medical_file`
 --
 
@@ -158,6 +222,20 @@ CREATE TABLE `master_medical_file` (
   `patient_smoker` tinyint(4) NOT NULL DEFAULT '0',
   `patient_surgery` tinyint(4) NOT NULL DEFAULT '0',
   `patient_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orgnization_clinic_details`
+--
+
+CREATE TABLE `orgnization_clinic_details` (
+  `clinic_id` int(11) NOT NULL,
+  `orgnization_id` int(11) NOT NULL,
+  `clinic_reservation_cost` double NOT NULL,
+  `clinic_repeat_reservation_cost` double NOT NULL,
+  `clinic_status` tinyint(4) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -195,6 +273,18 @@ CREATE TABLE `patient_surgeries` (
   `surgery_date` datetime DEFAULT NULL,
   `surgery_desc` varchar(255) NOT NULL,
   `medical_file_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_images`
+--
+
+CREATE TABLE `product_images` (
+  `image_id` int(11) NOT NULL,
+  `image_name` varchar(255) DEFAULT NULL,
+  `product_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -252,6 +342,19 @@ ALTER TABLE `aggregate_orgs_workers`
   ADD KEY `connect_to_category` (`work_category`);
 
 --
+-- Indexes for table `authorized_products`
+--
+ALTER TABLE `authorized_products`
+  ADD PRIMARY KEY (`product_id`);
+
+--
+-- Indexes for table `clinics_schedule`
+--
+ALTER TABLE `clinics_schedule`
+  ADD PRIMARY KEY (`sched_id`),
+  ADD KEY `connect_to_clinics` (`clinic_id`);
+
+--
 -- Indexes for table `cure_managers`
 --
 ALTER TABLE `cure_managers`
@@ -293,11 +396,33 @@ ALTER TABLE `cure_users`
   ADD KEY `cats_users_id_connected` (`worker_category_id`);
 
 --
+-- Indexes for table `donated_users`
+--
+ALTER TABLE `donated_users`
+  ADD PRIMARY KEY (`donate_id`),
+  ADD KEY `connect_to_donate_requests` (`request_id`),
+  ADD KEY `connect_to_patient_donators` (`patient_id`);
+
+--
+-- Indexes for table `donation_requests`
+--
+ALTER TABLE `donation_requests`
+  ADD PRIMARY KEY (`reqeust_id`),
+  ADD KEY `connect_to_patients` (`patient_id`);
+
+--
 -- Indexes for table `master_medical_file`
 --
 ALTER TABLE `master_medical_file`
   ADD PRIMARY KEY (`medical_file_id`),
   ADD KEY `connect_patient_with_file` (`patient_id`);
+
+--
+-- Indexes for table `orgnization_clinic_details`
+--
+ALTER TABLE `orgnization_clinic_details`
+  ADD PRIMARY KEY (`clinic_id`),
+  ADD KEY `connect_to_orgnize` (`orgnization_id`);
 
 --
 -- Indexes for table `patient_eyes_rate`
@@ -312,6 +437,13 @@ ALTER TABLE `patient_eyes_rate`
 ALTER TABLE `patient_surgeries`
   ADD PRIMARY KEY (`surgery_id`),
   ADD KEY `connect_surgeries_with_file` (`medical_file_id`);
+
+--
+-- Indexes for table `product_images`
+--
+ALTER TABLE `product_images`
+  ADD PRIMARY KEY (`image_id`),
+  ADD KEY `connect_to_products` (`product_id`);
 
 --
 -- Indexes for table `users_session`
@@ -335,61 +467,109 @@ ALTER TABLE `worker_categories`
 --
 ALTER TABLE `aggregate_orgs_workers`
   MODIFY `aggregte_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `authorized_products`
+--
+ALTER TABLE `authorized_products`
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `clinics_schedule`
+--
+ALTER TABLE `clinics_schedule`
+  MODIFY `sched_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `cure_managers`
 --
 ALTER TABLE `cure_managers`
   MODIFY `manager_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `cure_managers_categories`
 --
 ALTER TABLE `cure_managers_categories`
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `cure_managers_logs`
 --
 ALTER TABLE `cure_managers_logs`
   MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `cure_managers_session`
 --
 ALTER TABLE `cure_managers_session`
   MODIFY `session_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `cure_organizations`
 --
 ALTER TABLE `cure_organizations`
   MODIFY `org_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `cure_users`
 --
 ALTER TABLE `cure_users`
   MODIFY `patient_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `donated_users`
+--
+ALTER TABLE `donated_users`
+  MODIFY `donate_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `donation_requests`
+--
+ALTER TABLE `donation_requests`
+  MODIFY `reqeust_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `master_medical_file`
 --
 ALTER TABLE `master_medical_file`
   MODIFY `medical_file_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `orgnization_clinic_details`
+--
+ALTER TABLE `orgnization_clinic_details`
+  MODIFY `clinic_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `patient_eyes_rate`
 --
 ALTER TABLE `patient_eyes_rate`
   MODIFY `rate_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `patient_surgeries`
 --
 ALTER TABLE `patient_surgeries`
   MODIFY `surgery_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `product_images`
+--
+ALTER TABLE `product_images`
+  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `users_session`
 --
 ALTER TABLE `users_session`
   MODIFY `session_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT for table `worker_categories`
 --
 ALTER TABLE `worker_categories`
   MODIFY `worker_category_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- Constraints for dumped tables
 --
@@ -401,6 +581,12 @@ ALTER TABLE `aggregate_orgs_workers`
   ADD CONSTRAINT `connect_to_category` FOREIGN KEY (`work_category`) REFERENCES `worker_categories` (`worker_category_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `connect_to_orgn` FOREIGN KEY (`orgniztion_id`) REFERENCES `cure_organizations` (`org_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `connect_to_workers` FOREIGN KEY (`worker_id`) REFERENCES `cure_users` (`patient_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `clinics_schedule`
+--
+ALTER TABLE `clinics_schedule`
+  ADD CONSTRAINT `connect_to_clinics` FOREIGN KEY (`clinic_id`) REFERENCES `orgnization_clinic_details` (`clinic_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `cure_managers`
@@ -433,10 +619,29 @@ ALTER TABLE `cure_users`
   ADD CONSTRAINT `cats_users_id_connected` FOREIGN KEY (`worker_category_id`) REFERENCES `worker_categories` (`worker_category_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `donated_users`
+--
+ALTER TABLE `donated_users`
+  ADD CONSTRAINT `connect_to_donate_requests` FOREIGN KEY (`request_id`) REFERENCES `donation_requests` (`reqeust_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `connect_to_patient_donators` FOREIGN KEY (`patient_id`) REFERENCES `cure_users` (`patient_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `donation_requests`
+--
+ALTER TABLE `donation_requests`
+  ADD CONSTRAINT `connect_to_patients` FOREIGN KEY (`patient_id`) REFERENCES `cure_users` (`patient_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `master_medical_file`
 --
 ALTER TABLE `master_medical_file`
   ADD CONSTRAINT `connect_patient_with_file` FOREIGN KEY (`patient_id`) REFERENCES `cure_users` (`patient_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `orgnization_clinic_details`
+--
+ALTER TABLE `orgnization_clinic_details`
+  ADD CONSTRAINT `connect_to_orgnize` FOREIGN KEY (`orgnization_id`) REFERENCES `cure_organizations` (`org_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `patient_eyes_rate`
@@ -451,10 +656,17 @@ ALTER TABLE `patient_surgeries`
   ADD CONSTRAINT `connect_surgeries_with_file` FOREIGN KEY (`medical_file_id`) REFERENCES `master_medical_file` (`medical_file_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `product_images`
+--
+ALTER TABLE `product_images`
+  ADD CONSTRAINT `connect_to_products` FOREIGN KEY (`product_id`) REFERENCES `authorized_products` (`product_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `users_session`
 --
 ALTER TABLE `users_session`
   ADD CONSTRAINT `connect_patient_with_session` FOREIGN KEY (`patient_id`) REFERENCES `cure_users` (`patient_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
