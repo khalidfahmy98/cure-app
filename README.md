@@ -112,3 +112,13 @@ notice that in this repo there are the following directories :
     ->    Medical File Table    <-
         1- patient_smoker           ( 0 ) Not Smoker            - ( 1 )Smoker 
         2- patient_surgery          ( 0 ) Had No Sugery         -  ( 1 ) Yes Had Surgeries
+--------------------------------------------------------------------------
+    ->    Donation_requests Table    <-
+        1- donate_status           ( 0 ) pending requests            - ( 1 ) closed requests  
+--------------------------------------------------------------------------
+    ->   authorized_products Table    <-
+        1- product_tap_or_drink           ( 0 ) not tap not drink             - ( 1 ) tap treatment    -  ( 2 ) drink treatment 
+        2- product_status                 ( 0 ) active to market             - ( 1 ) banned from market  
+--------------------------------------------------------------------------
+    ->   orgnization_clinic_details Table    <-
+        1- clinic_status           ( 0 ) active clinic              - ( 1 )  banned  clinic    
