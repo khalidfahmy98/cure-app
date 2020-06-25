@@ -59,20 +59,7 @@ notice that in this repo there are the following directories :
         - patient_id      => send to this token variable the username or user id that he used while logging in to 
                              get the rest of information 
 
-        this api will list you the following data with the same keys name in the json object to use 
-            id 
-            username
-            email
-            phone
-            gender 
-            birthdate
-            nationality
-            address
-            coins
-            donation
-            account
-            password
-
+        this api will list you all the data for the user model and keys will be provided in the TSQL ( cure-users ) table 
 
 # Notices  
     1- to create pharmacy orgnization or clinic you have to be doctor account type 

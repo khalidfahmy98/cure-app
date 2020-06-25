@@ -9,7 +9,7 @@ class database {
     private function __construct (){
         try{    
             // establishing pdo connection and storing it in _pdo private proprety 
-            $this -> _pdo = new PDO('mysql:host='.config::get('mysql/host').';dbname=' . config::get('mysql/db'), config::get('mysql/username') ,config::get('mysql/password'));
+            $this -> _pdo = new PDO('mysql:host='.config::get('mysql/host').';dbname=' . config::get('mysql/db'), config::get('mysql/username') ,config::get('mysql/password') , array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
         }catch(PDOexception $e){
             die($e->getMessage());
         }
