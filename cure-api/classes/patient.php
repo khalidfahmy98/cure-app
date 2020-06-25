@@ -39,6 +39,13 @@ class patient{
         }
         return false;
     }
+    public function ListConditionedUsers($condition , $value ){
+        $data = $this->_db->get("cure_users",array($condition,'=',$value));
+        if ( $data->count() > 0 ){
+            return $data->results();
+        }
+        return false;
+    }
     public function create( $fields = array() ){
         if( !$this->_db->insert('cure_users',$fields) ){
             throw new Exception ('there was a problam creating new account');

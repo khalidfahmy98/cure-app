@@ -54,4 +54,6 @@
                 array("message" => "incorrect information")
             );
         }
+    }else{
+        http_response_code(404);
     }

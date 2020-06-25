@@ -22,5 +22,7 @@
                 array("message" => "Not Registered")
             );
         }
+    }else{
+        http_response_code(404);
     }
 
