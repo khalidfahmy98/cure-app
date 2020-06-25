@@ -61,12 +61,12 @@ notice that in this repo there are the following directories :
 
         this api will list you all the data for the user model and keys will be provided in the TSQL ( cure-users ) table 
 
-    3 - donatros list  :                 192.168.1.1/cure-app/cure-api/users/indonators_list.php
+    3 - donatros list  :                 192.168.1.1/cure-app/cure-api/users/donators_list.php
         You have to send this token value to the api (donate_value) with the values 0 or 1 
         0 is not donators -- 1 is donators 
         this api will list you all the users available based on your condition 
         will list you all the data for the user model and keys will be provided in the TSQL ( cure-users ) table 
-        
+
 
 # Notices  
     1- to create pharmacy orgnization or clinic you have to be doctor account type 
