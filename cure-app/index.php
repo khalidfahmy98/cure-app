@@ -154,67 +154,6 @@
       </div> 
     </div>
     <!--End Categories-->
-    <!--Start Donate Section-->
-    <div class="donation col-md-2">
-      <div class="donation-fixed">
-        <input class="search-market" type="text" placeholder="Search Market"/>
-        <div class="row setting-donation">
-          <h4 class="col-md">Donation</h4>
-          <i class="col-md fas fa-cog"></i>
-          <div id="accordion">
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Donate Request In Sharqia
-                  </button>
-                </h5>
-              </div>
-              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Donate Request In Sharqia
-                  </button>
-                </h5>
-              </div>
-              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute
-                </div>
-              </div>
-            </div>
-            
-            <div class="card">
-              <div class="card-header" id="headingThree">
-                <h5 class="mb-0">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      Show More
-                  </button>
-                </h5>
-              </div>
-              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row cure-inc">                  
-        <a href="#">Terms</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Cookies</a>
-      </div>
-      <p class="inc-2020 text-center"> &copy;2020 cure.Ins</p>
-    </div>
-
 <?php 
       }else{
         redirect::to('login.php');
