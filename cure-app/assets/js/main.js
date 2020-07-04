@@ -21,9 +21,9 @@ $(window).load(function(){
    $("i").click(function(){
       $(".cure-item").fadeToggle("slow")
    });
-   
+   /////////////////////////////////////////////////////   مكان  ,,,,  شيلت .category-list
    $("i").click(function(){
-      $(".sidebar , .category-list , .donation-fixed , .acc-image , .categorey , .setting-donation").fadeToggle("slow")
+      $(".sidebar , , .donation-fixed , .acc-image , .categorey , .setting-donation").fadeToggle("slow")
    });
 
 });

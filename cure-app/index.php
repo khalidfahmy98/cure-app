@@ -3,7 +3,6 @@
     templateController::setTitle('Homepage | Cure');
     templateController::get('header');
     if ( $patient->isLogged() ) {
-
 ?>
     <!--Start Categories-->
     <div class="category-list col-md-7">

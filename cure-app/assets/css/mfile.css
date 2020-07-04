@@ -105,7 +105,12 @@ section.categorey{
     margin-bottom:10px;
     padding-left:40px;
 }
-.cure-category .sidebar .acc-image img{
+.cure-category .sidebar .location-image{
+    margin-bottom:20px;
+}
+.cure-category .sidebar .acc-image img ,
+.cure-category .sidebar .location-image img
+{
     border-radius: 50%;
     width: 50px;
     height:50px;
@@ -126,6 +131,14 @@ section.categorey{
     background:#FFc201;
     border-radius:50%;
     color:white;
+    margin-right:10px;
+}
+.cure-category .sidebar .acc-write span i.location{
+    width:15px;
+    font-size:15px;
+    border-radius:50%;
+    background:white;
+    color:red;
     margin-right:10px;
 }
 .cure-category .sidebar ul a{
@@ -154,56 +167,32 @@ section.categorey{
     margin-right:25px;
 }
 /*End Sidebar*/
-/*Start Categories*/
-.cure-category .category-list ul li{
-    background:#8396e2;
-    width:30px;
-    color:white;
-    border:2px solid #8396e2;
-    cursor:pointer;
-    border-radius:5px;
-    margin:0px 5px;
-    margin-bottom:50px;
+/*Start Medical File*/
+.cure-category .medical-file h2{
+    font-size:25px;
+    margin-bottom:20px;
+    font-weight:bold;
 }
-.cure-category .carousel-indicators li{
-    width:10px;
-    height:10px;
-    border-radius:50%;
+.cure-category .medical-file .accordion span.main-info {
+    float:right;
 }
-.cure-category .category-list h4{
-    padding:30px 0px;
-}
-.cure-category ins{
+.cure-category .medical-file .accordion button:hover{
     text-decoration:none;
-    font-weight:bold;
-    font-size:20px;
-    color:#4b94d9;
 }
-.cure-category del{
-    display:inherit;
-    font-weight:bold;
-    color:#c7c7c7;
+.cure-category .medical-file .accordion .card:first-child ,
+.cure-category .medical-file .accordion .card:nth-child(2)
+{
+    margin-bottom:20px;
+    border-bottom:1px solid rgba(0,0,0,.125);
 }
-.cure-category .trend{
-    border:2px solid #d4d4d4;
-    padding:10px 0px;
+.cure-category .medical-file .accordion .card .card-body{
+    border-bottom:1px solid rgba(0,0,0,.125);
 }
-.cure-category .trend-category p{
-    color:#818181;
-}
-.cure-category .trend-category p:first-of-type{
-    margin:0px;
-    padding-top:20px;
-    font-size:14px;
-    font-weight:bold
-}
-.cure-category .trend-category p:last-child{
-    font-size:12px;
-}
-.cure-category .trend-category p:last-child span{
+.cure-category .medical-file .accordion .card-body div{
+    font-size:15px;
     font-weight:bold;
 }
-/*End Categories*/
+/*End Medical File*/
 /*Start Donation*/
 .cure-category .donation .donation-fixed{
     position:fixed;
