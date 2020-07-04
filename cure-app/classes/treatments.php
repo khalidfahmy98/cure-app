@@ -6,14 +6,28 @@ class treatments{
     public function __construct(){
         $this->_db = database::getInstance();
     }
-    public function getUsers(){
+    public function getTreatments(){
         $data = $this->_db->get("authorized_products",array('product_id','>=',"1"));
         if ( $data->count() > 0 ){
             return $data->results();
         }
         return false;
     }
-    public function create( $fields = array() ){
+    public function treatmentInfo($treatment){
+        $data = $this->_db->get('authorized_products',array('product_id','=',$treatment));
+        if($data->count() > 0){
+            return $data->first();
+        }
+        return false;
+    }
+    public function listTreatmentsCategories(){
+        $data = $this->_db->get("products_categories",array('category_id','>=',"1"));
+        if ( $data->count() > 0 ){
+            return $data->results();
+        }
+        return false;
+    }
+    public function createTreatment( $fields = array() ){
         if( !$this->_db->insert('authorized_products',$fields) ){
             throw new Exception ('there was a problam creating new account');
         }

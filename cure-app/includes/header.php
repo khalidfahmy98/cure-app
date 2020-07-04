@@ -41,7 +41,6 @@ $patient = new patient();
                <img class="cure-logo" src="assets/imgs/logo.png.png"/>
             </label>
             <ul class="list-unstyled">
-              <li><a href=""><i class="far fa-envelope fa-x active"></i></a> </li>
               <li><a href=""><i class="far fa-bell fa-x"></i></a> </li> 
               <li><a href="cart.html"><i  class="fas fa-shopping-cart fa-x"></i></a> </li>
            </ul>
@@ -73,14 +72,14 @@ $patient = new patient();
               </div>
             </div>
              <ul class="list-unstyled">
-               <li><a class="active" href="index.html"><i class="fas fa-store-alt"></i>Market</a></li>
-               <li><a href="#"><i class="fas fa-credit-card"></i>Black Market</a></li>
-               <li><a href="#"><i class="fas fa-file-medical-alt"></i>Medical File</a></li>
-               <li><a href="#"><i class="fas fa-prescription-bottle-alt"></i>Blood Donation</a></li>
-               <li><a href="#"><i class="fas fa-book-medical"></i>Mdeical Book</a></li>
-               <li><a href="#"><i class="fas fa-cogs"></i>Settings</a></li>
-               <li><a href="#"><i class="fas fa-cogs"></i>Cure Workers</a></li>
-               <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+               <li style="display:block;height:47px;"><a class="active" href="index.html"><i class="fas fa-store-alt"></i>Market</a></li>
+               <li style="display:block;height:47px;"><a href="#"><i class="fas fa-credit-card"></i>Black Market</a></li>
+               <li style="display:block;height:47px;"><a href="#"><i class="fas fa-file-medical-alt"></i>Medical File</a></li>
+               <li style="display:block;height:47px;"><a href="#"><i class="fas fa-prescription-bottle-alt"></i>Blood Donation</a></li>
+               <li style="display:block;height:47px;"><a href="#"><i class="fas fa-book-medical"></i>Mdeical Book</a></li>
+               <li style="display:block;height:47px;"><a href="#"><i class="fas fa-cogs"></i>Settings</a></li>
+               <li style="display:block;height:47px;" ><a href="#"><i class="fas fa-cogs"></i>Cure Workers</a></li>
+               <li style="display:block;height:47px;"><a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
              </ul>
             </div>
           </div>

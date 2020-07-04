@@ -49,7 +49,7 @@
         <h4>Trending Now</h4>
         <div class="trend row">
             <div class="trend-category col-sm-4">
-              <img src="assets/imgs/trend-1.jpg"/>
+              <img class="img-responsive center-block" style="width:175px;" src="assets/imgs/trend-1.jpg"/>
               <p>VaseLine Body Spray Coca Rate ,1909</p>
               <ins>130.00 EGP</ins>
               <del>140.00 EGP</del>
@@ -207,8 +207,6 @@
         <a href="#">Terms</a>
         <a href="#">Privacy Policy</a>
         <a href="#">Cookies</a>
-        <a href="#">Ads Info</a>
-        <a href="#">More</a>        
       </div>
       <p class="inc-2020 text-center"> &copy;2020 cure.Ins</p>
     </div>
