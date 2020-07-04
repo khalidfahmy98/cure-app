@@ -2,17 +2,21 @@
     require 'core/init.php';
     templateController::setTitle('Homepage | Cure');
     templateController::get('header');
+    $treatment = new treatments();
     if ( $patient->isLogged() ) {
 ?>
     <!--Start Categories-->
     <div class="category-list col-md-7">
         <h3>Market</h3>
         <ul class="list-unstyled row text-center">
-          <li class="col-md">All</li>
-          <li class="col-md">Treatment</li>
-          <li class="col-md">Tools</liclass="col-md">
-          <li class="col-md">Treatment</li>
-          <li class="col-md">Tools</li>
+        <li class="col-md"><a href="market.php?category=0">ALL</a></li>
+        <?php 
+            foreach ( $treatment->listTreatmentsCategories()  as $cat ){
+              ?>  
+                <li class="col-md"><a href="market.php?category=<?php echo $cat->category_id; ?>"><?php echo $cat->category_name; ?></li>
+              <?php 
+            }
+        ?>
         </ul>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
