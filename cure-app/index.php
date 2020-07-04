@@ -13,7 +13,7 @@
         <?php 
             foreach ( $treatment->listTreatmentsCategories()  as $cat ){
               ?>  
-                <li class="col-md"><a href="market.php?category=<?php echo $cat->category_id; ?>"><?php echo $cat->category_name; ?></li>
+                <li class="col-md"><a href="market.php?category=<?php echo $cat->category_id; ?>"><?php echo $cat->category_name; ?></a></li>
               <?php 
             }
         ?>
