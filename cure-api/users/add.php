@@ -47,8 +47,11 @@
                 );
                 }catch(Exception $e){
                     die($e->getMessage());
+                    echo json_encode(
+                        array("message" => $e->getMessage(),
+                                "error" => true )
+                    );
                 }
-    
         }else{
             http_response_code(200);
             echo json_encode(
