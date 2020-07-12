@@ -16,28 +16,28 @@ class validation{
                 $value = trim($source[$item]); // used trim to remove white spaces 
                 $item = escape($item); // sanitizing 
                 if( $rule === 'required' && empty($value)){
-                    $this->addError(toasters::error("{$item} يجب أن لا يكون فارغاً  "));
+                    $this->addError("{$item} يجب أن لا يكون فارغاً  ");
                 }else if ( !empty($value)){
                     switch ($rule){
                         case 'min':
                             if (strlen($value) < $rule_value ){
-                                $this->addError(toasters::error("{$item} لايمكن أن يكون أقل من {$rule_value}"));
+                                $this->addError("{$item} لايمكن أن يكون أقل من {$rule_value}");
                             }
                         break;
                         case 'max':
                             if (strlen($value) > $rule_value ){
-                                $this->addError(toasters::error("{$item} لايمكن أن يكون أكثر من {$rule_value}"));
+                                $this->addError("{$item} لايمكن أن يكون أكثر من {$rule_value}");
                             }
                         break;
                         case 'matches':
                             if( $value != $source[$rule_value]){
-                                $this->addError(toasters::error("{$item} يجب أن يكونا متطابقين {$rule_value}"));
+                                $this->addError("{$item} يجب أن يكونا متطابقين {$rule_value}");
                             }
                         break;
                         case 'unique':
                             $check = $this->_db->get($rule_value , array($item , '=' , $value ));
                             if($check->count()){
-                                $this->addError(toasters::error("{$item} هو مسجل بالفعل"));
+                                $this->addError("{$item} هو مسجل بالفعل");
                             }
                         break;
 
