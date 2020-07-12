@@ -73,21 +73,7 @@ class patient{
         }else{
             $user = $this->find($username);
             if($user){
-                if($this->data()->patient_hashedpassword === hash::make($password,$this->data()->patient_salt) ){
-                    session::put($this->_sessionName , $this->data()->patient_id);
-                    if($remember){
-                        $hash = hash::uniqueHash();
-                        $hashCheck = $this->_db->get('users_session', array('session_value' , '=' , $this->data()->patient_id) );
-                        if( !$hashCheck->count() ){
-                            $this->_db->insert('users_session',array(
-                                'patient_id' => $this->data()->patient_id,
-                                'session_value'    => $hash
-                            ));
-                        }else{  // notice: we are making this if condition for  making sure that if the user exists in table with old hash value then we will set a new hash value , if the hashcheck is false then we will set a new hash value for him
-                            $hash = $hashCheck->first()->session_value;
-                        }
-                        cookie::put($this->_cookieName , $hash , config::get('remember/cookie_expiry'));
-                    }
+                if($this->data()->patient_password === $password ){
                     return true;
                 }
             }

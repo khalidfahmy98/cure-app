@@ -42,7 +42,8 @@
                 ));
                 http_response_code(200);
                 echo json_encode(
-                    array("message" => "Signed up successfuly")
+                    array("message" => "Signed up successfuly",
+                        "error" => false)
                 );
                 }catch(Exception $e){
                     die($e->getMessage());
@@ -51,9 +52,14 @@
         }else{
             http_response_code(404);
             echo json_encode(
-                array("message" => "incorrect information")
+                array("message" => "incorrect information",
+                        "error" => true )
             );
         }
     }else{
         http_response_code(404);
+        echo json_encode(
+            array("message" => "Token failed ",
+                    "error" => true )
+        );
     }
