@@ -81,3 +81,6 @@
    <!--End Loading By JQuery--> 
 </body>
 </html>
+<?php
+  ob_flush();
+?>
