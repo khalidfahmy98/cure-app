@@ -380,3 +380,11 @@ section.categorey{
         display:none;
     }
 }
+.create-account{
+    height:100vh;
+    overflow:hidden;
+    background-image: url("../imgs/bg.png.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
