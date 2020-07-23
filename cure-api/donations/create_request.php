@@ -23,7 +23,6 @@
                                 "error" => true )
                     );
                 }
-    
         }else{
             echo json_encode(array(
                 "message" => "All Data Must Be Setted ",

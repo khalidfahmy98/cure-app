@@ -31,9 +31,15 @@ class donations{
     }
     public function create( $fields = array() ){
         if( !$this->_db->insert('donation_requests',$fields) ){
-            throw new Exception ('there was a problam creating new account');
+            throw new Exception ('there was a problam creating donation request ');
         }
     }
+    public function setDonator( $fields = array() ){
+        if( !$this->_db->insert('donated_users',$fields) ){
+            throw new Exception ('there was a problam setting new donator');
+        }
+    }
+
     public function getCount(){
         $data = $this->_db->get('cure_users',array('patient_id','>=',1));
         return $data->count();
