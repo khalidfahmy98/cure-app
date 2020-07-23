@@ -1,8 +1,8 @@
 <?php 
     require '../core/init.php';
     $donations = new donations();
+    http_response_code(200);
     if ( input::get('token') == $token) {
-        http_response_code(200);
         if( is_numeric(input::get("user-id"))) {
             $userRequestsArr = (array) $donations->ListUserRequests(input::get('user-id'));
             echo json_encode($userRequestsArr);
