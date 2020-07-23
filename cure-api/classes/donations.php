@@ -30,7 +30,7 @@ class donations{
         return false;
     }
     public function create( $fields = array() ){
-        if( !$this->_db->insert('cure_users',$fields) ){
+        if( !$this->_db->insert('donation_requests',$fields) ){
             throw new Exception ('there was a problam creating new account');
         }
     }
