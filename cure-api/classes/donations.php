@@ -14,6 +14,14 @@ class donations{
         } 
         return false;
     }
+    public function ListUserRequests($id){
+        $data = $this->_db->innerJoinQuery("donation_requests" , "cure_users" , "patient_id" , "patient_id" , array("donation_requests.patient_id","=",$id)) ;
+        if ( $data->count() > 0 ){
+            return $data->results();
+        } 
+        return false;
+    }
+
     public function getUsers(){
         $data = $this->_db->get("cure_users",array('patient_id','>=',"1"));
         if ( $data->count() > 0 ){
