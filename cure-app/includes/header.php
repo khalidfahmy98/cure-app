@@ -75,7 +75,7 @@ $patient = new patient();
                <li style="display:block;height:47px;"><a class="active" href="index.html"><i class="fas fa-store-alt"></i>Market</a></li>
                <li style="display:block;height:47px;"><a href="#"><i class="fas fa-credit-card"></i>Black Market</a></li>
                <li style="display:block;height:47px;"><a href="#"><i class="fas fa-file-medical-alt"></i>Medical File</a></li>
-               <li style="display:block;height:47px;"><a href="#"><i class="fas fa-prescription-bottle-alt"></i>Blood Donation</a></li>
+               <li style="display:block;height:47px;"><a href="bloodDonations.php"><i class="fas fa-prescription-bottle-alt"></i>Blood Donation</a></li>
                <li style="display:block;height:47px;"><a href="#"><i class="fas fa-book-medical"></i>Mdeical Book</a></li>
                <li style="display:block;height:47px;"><a href="#"><i class="fas fa-cogs"></i>Settings</a></li>
                <li style="display:block;height:47px;" ><a href="#"><i class="fas fa-cogs"></i>Cure Workers</a></li>
