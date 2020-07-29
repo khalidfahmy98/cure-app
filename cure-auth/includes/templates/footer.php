@@ -14,3 +14,6 @@
 <script src="../../assets/dist/js/main.js"></script>
 </body>
 </html>
+<?php 
+    ob_flush();
+?>

@@ -3,8 +3,10 @@
   templateController::get('header');
   templateController::get('navigation');
   templateController::setTitle("Homepage | Cure Systems");
-?>
-<div class="content-wrapper">
+  $patient = new patient();
+  if ($patient->isLogged()){
+    ?>
+    <div class="content-wrapper">
     <section class="content">
     <!-- Info boxes -->
     <div class="row">
@@ -69,10 +71,13 @@
 
     </section>
   </div>
-<?php 
+
+    <?php 
+  }else{
+    redirect::to('../../../cure-app/');
+  }
   templateController::get('footer');
 ?>
-
 
 
 
