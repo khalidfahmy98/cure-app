@@ -83,39 +83,48 @@
   </div>
   <!-- sidebar menu: : style can be found in sidebar.less -->
   <ul class="sidebar-menu" data-widget="tree">
-    <li class="header">MAIN NAVIGATION</li>
-    <li class=" treeview menu-open active">
-      <a href="#">
-        <i class="fa fa-dashboard"></i> <span>Management system</span>
-        <span class="pull-right-container">
-          <i class="fa fa-angle-left pull-right"></i>
-        </span>
-      </a>
-      <ul class="treeview-menu">
-        <li><a href="../../views/cure_managers/"><i class="fa fa-circle-o"></i>Register Manager</a></li>
-        <li><a href="../../views/cure_managers/operations.php"><i class="fa fa-circle-o"></i>Managers Operations</a></li>
-        <li><a href="../../views/cure_managers/logs.php"><i class="fa fa-circle-o"></i>Managers Logs</a></li>
-      </ul>
-    </li>
-    <li class=" treeview menu-open active">
-      <a href="#">
-        <i class="fa fa-dashboard"></i> <span>Emergencies Data</span>
-        <span class="pull-right-container">
-          <i class="fa fa-angle-left pull-right"></i>
-        </span>
-      </a>
-      <ul class="treeview-menu">
-        <li><a href="../../views/emergencies/"><i class="fa fa-circle-o"></i>Emergency Requests</a></li>
-        <li><a href="../../views/emergencies/"><i class="fa fa-circle-o"></i>Emergency Locations</a></li>
-        <li><a href="../../views/emergencies/"><i class="fa fa-circle-o"></i>Emergency Workers</a></li>
-      </ul>
-    </li>
+      <?php 
+        if ($patient->data()->worker_account_type == 0 ) {
+          ?>  
+            <li class="header">Unavailable Yet .</li>
+          <?php 
+        }else{
+          ?>
+          <li class="header">MAIN NAVIGATION</li>
+          <li class=" treeview menu-open active">
+            <a href="#">
+              <i class="fa fa-dashboard"></i> <span>Management system</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="../../views/cure_managers/"><i class="fa fa-circle-o"></i>Register Manager</a></li>
+              <li><a href="../../views/cure_managers/operations.php"><i class="fa fa-circle-o"></i>Managers Operations</a></li>
+              <li><a href="../../views/cure_managers/logs.php"><i class="fa fa-circle-o"></i>Managers Logs</a></li>
+            </ul>
+          </li>
+          <li class=" treeview menu-open active">
+            <a href="#">
+              <i class="fa fa-dashboard"></i> <span>Emergencies Data</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="../../views/emergencies/"><i class="fa fa-circle-o"></i>Emergency Requests</a></li>
+              <li><a href="../../views/emergencies/"><i class="fa fa-circle-o"></i>Emergency Locations</a></li>
+              <li><a href="../../views/emergencies/"><i class="fa fa-circle-o"></i>Emergency Workers</a></li>
+            </ul>
+          </li>
+
+          <?php 
+        }
+      ?>
     
     <!-- <li><a href="../../views/files/report2.php"><i class="fa fa-book"></i> <span>Policies & Terms</span></a></li> -->
     <li class="header">SHORTCUTS</li>
-    <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Cure Platform</span></a></li>
-    <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Report Issues</span></a></li>
-    <li><a href="#"><i class="fa fa-circle-o text-success"></i> <span>Support</span></a></li>
+    <li><a href="../../../cure-app/"><i class="fa fa-circle-o text-aqua"></i> <span>Cure Platform</span></a></li>
   </ul>
 </section>
 <!-- /.sidebar -->
