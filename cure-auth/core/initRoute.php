@@ -3,10 +3,10 @@ session_start();
 // error_reporting(0);
 $GLOBALS['config'] = array(
     'mysql' => array(
-        'host'      =>  'sql312.epizy.com',
-        'username'  =>  'epiz_26381364',
-        'password'  =>  'qa03XGNoud7ML',
-        'db'        =>  'epiz_26381364_cure'
+        'host'      =>  'localhost',
+        'username'  =>  'root',
+        'password'  =>  '',
+        'db'        =>  'cure'
     ),
     'remember' => array (
         'cookie_name'   => 'hash',
@@ -21,7 +21,7 @@ spl_autoload_register(function($class){
     require_once "classes/" . $class . ".php";
 });
 require_once 'functions/sanitize.php';
-
+$patient = new patient();
 // if( cookie::exists(config::get('remember/cookie_name')) && !session::exists(config::get('session','session_name')) ){
 //     $hash = cookie::get(config::get('remember/cookie_name'));
 //     $hashCheck = database::getInstance()->get('user_session',array('hash','=',$hash));

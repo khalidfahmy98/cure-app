@@ -1,7 +1,5 @@
 <?php 
-
 $patient = new patient();
-
 ?>
 <html >
 <head>
@@ -78,7 +76,7 @@ $patient = new patient();
                <li style="display:block;height:47px;"><a href="bloodDonations.php"><i class="fas fa-prescription-bottle-alt"></i>Blood Donation</a></li>
                <li style="display:block;height:47px;"><a href="#"><i class="fas fa-book-medical"></i>Mdeical Book</a></li>
                <li style="display:block;height:47px;"><a href="#"><i class="fas fa-cogs"></i>Settings</a></li>
-               <li style="display:block;height:47px;" ><a href="#"><i class="fas fa-cogs"></i>Cure Workers</a></li>
+               <li style="display:block;height:47px;" ><a href="../cure-auth/"><i class="fas fa-cogs"></i>Service Provider</a></li>
                <li style="display:block;height:47px;"><a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
              </ul>
             </div>

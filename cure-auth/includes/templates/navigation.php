@@ -1,3 +1,6 @@
+<?php 
+  $patient  = new patient();
+?>
 <header class="main-header">
 <!-- Logo -->
 <a href="../Home/" class="logo">
@@ -60,17 +63,28 @@
       <!-- User Account: style can be found in dropdown.less -->
       <li class="dropdown user user-menu">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          <img src="<?php templateController::getImage('user2-160x160.jpg');?>" class="user-image" alt="User Image">
-          <span class="hidden-xs">Alexander Pierce</span>
+        <?php 
+            if ( $patient->data()->patient_image_code == null ) {
+              echo '<img class="user-image" alt="User Image" src="../../assets/dist/img/tn.png" />';
+            }else{
+              echo '<img  class="user-image" alt="User Image" src="../../storage/'. $patient->data()->patient_image_code  .'"/>';
+            }
+        ?>
+          <span class="hidden-xs"><?php echo  $patient->data()->patient_username; ?></span>
         </a>
         <ul class="dropdown-menu">
           <!-- User image -->
           <li class="user-header">
-            <img src="<?php templateController::getImage('user2-160x160.jpg'); ?>" class="img-circle" alt="User Image">
-
+          <?php 
+            if ( $patient->data()->patient_image_code == null ) {
+              echo '<img class="img-circle" alt="User Image" src="../../assets/dist/img/tn.png"/>';
+            }else{
+              echo '<img class="img-circle" alt="User Image" src="../../storage/'. $patient->data()->patient_image_code  .'"/>';
+            }
+        ?>
             <p>
-              Alexander Pierce - Cure Admin 
-              <small>Member since Nov. 2012</small>
+              <?php echo $patient->data()->patient_username; ?>
+              <small>Member since <?php echo $patient->data()->patient_registerdate; ?></small>
             </p>
           </li>
           <!-- Menu Footer-->
@@ -79,7 +93,7 @@
               <a href="#" class="btn btn-default btn-flat">Profile</a>
             </div>
             <div class="pull-right">
-              <a href="#" class="btn btn-default btn-flat">Sign out</a>
+              <a href="../../cure-app/logout.php" class="btn btn-default btn-flat">Sign out</a>
             </div>
           </li>
         </ul>
@@ -96,10 +110,16 @@
   <!-- Sidebar user panel -->
   <div class="user-panel">
     <div class="pull-left image">
-      <img src="<?php templateController::getImage('user2-160x160.jpg'); ?>" class="img-circle" alt="User Image">
+    <?php 
+            if ( $patient->data()->patient_image_code == null ) {
+              echo '<img class="img-circle" alt="User Image" src="../../assets/dist/img/tn.png"/>';
+            }else{
+              echo '<img class="img-circle" alt="User Image" src="../../storage/'. $patient->data()->patient_image_code  .'"/>';
+            }
+        ?>
     </div>
     <div class="pull-left info">
-      <p>Alexander Pierce</p>
+      <p><?php echo $patient->data()->patient_username; ?></p>
       <a href="#"><i class="fa fa-circle text-aqua"></i>Doctor</a>
     </div>
   </div>
