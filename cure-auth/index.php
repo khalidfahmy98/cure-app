@@ -10,14 +10,14 @@
   <title>Login | Cure Systems </title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="icon" href="../assets/dist/img/CureSegnture.png">
+  <link rel="icon" href="assets/dist/img/CureSegnture.png">
   <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="../assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="../assets/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../assets/dist/css/AdminLTE.min.css">
-  <link rel="stylesheet" href="../assets/dist/css/style.css">
+  <link rel="stylesheet" href="assets/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="assets/dist/css/style.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,7 +37,7 @@
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <form action="../../index2.html" method="post">
+    <form action="#" method="post">
       <div class="form-group has-feedback">
         <input type="email" class="form-control" placeholder="Email">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -72,9 +72,9 @@
 <!-- /.login-box -->
 
 <!-- jQuery 3 -->
-<script src="../assets/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="../assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="../assets/dist/js/main.js"></script>
+<script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="assets/dist/js/main.js"></script>
 </body>
 </html>

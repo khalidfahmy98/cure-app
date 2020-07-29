@@ -3,10 +3,10 @@ session_start();
 // error_reporting(0);
 $GLOBALS['config'] = array(
     'mysql' => array(
-        'host'      =>  'localhost',
-        'username'  =>  'root',
-        'password'  =>  '',
-        'db'        =>  'cure'
+        'host'      =>  'sql312.epizy.com',
+        'username'  =>  'epiz_26381364',
+        'password'  =>  'qa03XGNoud7ML',
+        'db'        =>  'epiz_26381364_cure'
     ),
     'remember' => array (
         'cookie_name'   => 'hash',
