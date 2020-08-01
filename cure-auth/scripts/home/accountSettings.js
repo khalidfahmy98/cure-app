@@ -20,7 +20,7 @@ function createOrgnization(ownerId){
         }
         xhr.open("POST","../../controllers/cure_managers/homepageController.php?do=createOrgnization",true);
         xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-        xhr.send("ownerId="+ownerId+"&orgnizationName="+orgnizationName+"&orgnizationEmail="+orgnizationEmail+"&orgnizationPhone="+orgnizationPhone+"&orgnizationLicense="+orgnizationLicense+"&orgnizationCity="+orgnizationCity+"&orgnizationAddress="+orgnizationAddress+"&accoutType="+accoutType+"&orgnizationType="+orgnizationType);
+        xhr.send("ownerId="+ownerId+"&orgnizationName="+orgnizationName+"&org_email="+orgnizationEmail+"&org_fax="+orgnizationPhone+"&org_work_id="+orgnizationLicense+"&orgnizationCity="+orgnizationCity+"&orgnizationAddress="+orgnizationAddress+"&accoutType="+accoutType+"&orgnizationType="+orgnizationType);
     }
 
 }

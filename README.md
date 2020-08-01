@@ -102,6 +102,8 @@ notice that in this repo there are the following directories :
                                        ( 3 ) Laboratory  -      ( 4 ) Clinic 
         2- org_status                  ( 0 ) pending to accepted      - ( 1 ) approved   
                                        ( 2 ) Hold Actions             - ( 3 ) Banned 
+
+                                       treetype = 0 ->>> is the parent branch 
 --------------------------------------------------------------------------
     ->    Medical File Table    <-
         1- patient_smoker           ( 0 ) Not Smoker            - ( 1 )Smoker 
