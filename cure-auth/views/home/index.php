@@ -56,7 +56,7 @@
                 </div>
             </div>
             <div class="form-group">
-              <button class="btn btn-sm btn-success">Create Orgniztion</button>
+              <button class="btn btn-sm btn-success" onclick="createOrgnization(<?php echo $patient->data()->patient_id; ?>)">Create Orgnization</button>
             </div>
         <?php 
       }else{
@@ -133,6 +133,6 @@
     redirect::to('../../../cure-app/');
   }
   templateController::get('footer');
-  templateController::getScript('accountSettings');
+  templateController::getScript('home','accountSettings');
 ?>
 

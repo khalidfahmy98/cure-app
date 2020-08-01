@@ -18,9 +18,9 @@ function createOrgnization(ownerId){
                 document.getElementById("responserWrapper").innerHTML = this.responseText;
             }
         }
-        xhr.open("POST","../../controllers/cure_managers/homepageController.php",true);
+        xhr.open("POST","../../controllers/cure_managers/homepageController.php?do=createOrgnization",true);
         xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-        xhr.send("orgnizationName="+orgnizationName+"&orgnizationEmail="+orgnizationEmail+"&orgnizationPhone="+orgnizationPhone+"&orgnizationLicense="+orgnizationLicense+"&orgnizationCity="+orgnizationCity+"&orgnizationAddress="+orgnizationAddress+"&accoutType="+accoutType+"&orgnizationType="+orgnizationType);
+        xhr.send("ownerId="+ownerId+"&orgnizationName="+orgnizationName+"&orgnizationEmail="+orgnizationEmail+"&orgnizationPhone="+orgnizationPhone+"&orgnizationLicense="+orgnizationLicense+"&orgnizationCity="+orgnizationCity+"&orgnizationAddress="+orgnizationAddress+"&accoutType="+accoutType+"&orgnizationType="+orgnizationType);
     }
 
 }
