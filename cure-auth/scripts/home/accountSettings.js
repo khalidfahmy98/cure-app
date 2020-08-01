@@ -1,22 +1,26 @@
 $(document).ready(function(){
-    
+
 });
 
-// function updateAccountType(accType){
-//     var xhr = new XMLHttpRequest (),
-//         managerName = document.getElementById("fullname").value,
-//         managerEmail = document.getElementById("email").value,
-//         managerUsername = document.getElementById("username").value,
-//         managerPassword = document.getElementById("password").value,
-//         managerRule = document.getElementById("rule").options[document.getElementById("rule").selectedIndex].value;
-//     if ( managerName !== ' ' && managerEmail !== ' ' && managerUsername !==' ' && managerPassword !== ' ' ){
-//         xhr.onreadystatechange = function () {
-//             if ( xhr.readyState == 4 && xhr.status == 200 ) {
-//                 alert( this.responseText );
-//             }
-//         }
-//         xhr.open("POST","../../controllers/cure_managers/registerController.php",true);
-//         xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-//         xhr.send("manager-name="+managerName+"&manager-username="+managerUsername+"&manager-email="+managerEmail+"&manager-password="+managerPassword+"&manager-rule="+managerRule);
-//     }
-// }
+function createOrgnization(ownerId){
+    var xhr = new XMLHttpRequest (),
+        orgnizationName = document.getElementById("orgnizationName").value,
+        orgnizationEmail = document.getElementById("orgnizationEmail").value,
+        orgnizationPhone = document.getElementById("orgnizationPhone").value,
+        orgnizationLicense = document.getElementById("orgnizationLicense").value,
+        orgnizationCity = document.getElementById("orgnizationCity").value,
+        orgnizationAddress = document.getElementById("orgnizationAddress").value,
+        accoutType = document.getElementById("accountType").options[document.getElementById("accountType").selectedIndex].value,
+        orgnizationType = document.getElementById("orgnizationType").options[document.getElementById("orgnizationType").selectedIndex].value;
+    if ( orgnizationName !== ' ' && orgnizationEmail !== ' ' && orgnizationPhone !==' ' && orgnizationLicense !== ' ' && orgnizationCity !== ' '  && orgnizationAddress !== ' '){
+        xhr.onreadystatechange = function () {
+            if ( xhr.readyState == 4 && xhr.status == 200 ) {
+                document.getElementById("responserWrapper").innerHTML = this.responseText;
+            }
+        }
+        xhr.open("POST","../../controllers/cure_managers/homepageController.php",true);
+        xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        xhr.send("orgnizationName="+orgnizationName+"&orgnizationEmail="+orgnizationEmail+"&orgnizationPhone="+orgnizationPhone+"&orgnizationLicense="+orgnizationLicense+"&orgnizationCity="+orgnizationCity+"&orgnizationAddress="+orgnizationAddress+"&accoutType="+accoutType+"&orgnizationType="+orgnizationType);
+    }
+
+}
