@@ -85,16 +85,13 @@ notice that in this repo there are the following directories :
              -  0 => no permission garanted                      
                 (permission operations ) =>  
 
-             -  1 => Main Orgnization Manager 
+             -  1 => Full Control  
                 (permission operations ) => 
 
-             -  2 => Branch Manager 
-                (permission operations ) =>
-
-             -  3 => Editor 
+             -  2 => Editor 
                 (permission operations ) => 
 
-             -  4 => Moderator  
+             -  3 => Moderator 
                 (permission operations ) => 
 --------------------------------------------------------------------------
     ->  Cure Organizations  Table   <-

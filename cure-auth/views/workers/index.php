@@ -46,10 +46,39 @@
                     <button type="button"  class="btn btn-primary">Register</button>
                   </div>
               </div>
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Registered Workers</h3>
+                </div>
+                  <div class="box-body">
+                  <table class="table table-striped table-responsive table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                   </div>
+              </div>
+
+
                 </div>
             </div>
         </section>
     </div>
+
+
 <?php 
 
   templateController::get('footer');
