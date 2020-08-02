@@ -1,15 +1,15 @@
-function selectCategories(){
+function getCategories (org_id) {
     var xhr = new XMLHttpRequest ();
         xhr.onreadystatechange = function () {
             if ( xhr.readyState == 4 && xhr.status == 200 ) {
                 document.getElementById("liveTableData").innerHTML = this.responseText;
             }
-        xhr.open("POST","../../controllers/categoriesController.php?do=selectCategories",true);
-        xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        }
+        xhr.open("GET","../../controllers/categoriesController.php?do=select&org_id="+org_id,true);
         xhr.send();
-    }
 }
-window.onload = selectCategories();
+let orgId = document.getElementById('org_id').value;
+getCategories(orgId);
 function createCategory(org_id){
     var xhr = new XMLHttpRequest (),
     categoryName = document.getElementById("categoryName").value,
@@ -19,7 +19,7 @@ function createCategory(org_id){
         xhr.onreadystatechange = function () {
             if ( xhr.readyState == 4 && xhr.status == 200 ) {
                 document.getElementById("responserWrapper").innerHTML = this.responseText;
-                selectCategories(org_id);
+                getCategories(org_id);
             }
         }
         xhr.open("POST","../../controllers/categoriesController.php?do=createCategory",true);

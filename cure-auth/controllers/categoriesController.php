@@ -34,10 +34,11 @@
                         echo $error;
                     }
                 }
-        }else if ( input::get('do') == 'selectCategories') {
-                foreach ($workerCategories->getCategories()  as $info ){
+        }else if ( input::get('do') == 'select') {
+                foreach ($workerCategories->getCategories(input::get('org_id'))  as $info ){
                     ?>
                         <tr>
+                            <th ><?php echo $info->worker_category_id;?></th>
                             <th ><?php echo $info->worker_category_name;?></th>
                             <td><?php echo $info->worker_category_desc;?></td>
                             <td><?php 
