@@ -24,11 +24,9 @@ class orgnization{
     }
     public function find($user = null){
         if($user){
-            $field = (is_numeric($user)) ? 'org_id' :'org_name';
-            $data = $this->_db->get('cure_organizations',array($field,'=',$user));
+            $data = $this->_db->get('cure_organizations',array('owner_id','=',$user));
             if($data->count()){
-                $this->_data = $data->first();
-                return true;
+                return $this->_data = $data->first();
             }
         }
         return false;

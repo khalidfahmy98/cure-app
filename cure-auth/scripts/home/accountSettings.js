@@ -1,7 +1,3 @@
-$(document).ready(function(){
-
-});
-
 function createOrgnization(ownerId){
     var xhr = new XMLHttpRequest (),
         orgnizationName = document.getElementById("orgnizationName").value,
@@ -18,7 +14,7 @@ function createOrgnization(ownerId){
                 document.getElementById("responserWrapper").innerHTML = this.responseText;
             }
         }
-        xhr.open("POST","../../controllers/cure_managers/homepageController.php?do=createOrgnization",true);
+        xhr.open("POST","../../controllers/homepageController.php?do=createOrgnization",true);
         xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
         xhr.send("owner_id="+ownerId+"&orgnizationName="+orgnizationName+"&org_email="+orgnizationEmail+"&org_fax="+orgnizationPhone+"&org_work_id="+orgnizationLicense+"&orgnizationCity="+orgnizationCity+"&orgnizationAddress="+orgnizationAddress+"&accoutType="+accoutType+"&orgnizationType="+orgnizationType);
     }

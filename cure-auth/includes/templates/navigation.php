@@ -78,7 +78,17 @@
     </div>
     <div class="pull-left info">
       <p><?php echo $patient->data()->patient_username; ?></p>
-      <a href="#"><i class="fa fa-circle text-aqua"></i>Doctor</a>
+      <a href="#"><i class="fa fa-circle text-aqua"></i>
+            <?php 
+              if ( $patient->data()->worker_account_type == 1 ){
+                echo 'Service Provider';
+              }else if ($patient->data()->worker_account_type == 2 ) {
+                echo 'Doctor';
+              }else{
+                echo 'Register Work Type';
+              }
+            ?>
+      </a>
     </div>
   </div>
   <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -95,20 +105,69 @@
             <?php 
           }else{
                 ?>
-              <li class="header">MAIN NAVIGATION</li>
+              <li class="header"> <?php echo $orgnization->find($patient->data()->patient_id)->org_name; ?> Navigation </li>
               <li class=" treeview menu-open active">
                 <a href="#">
-                  <i class="fa fa-dashboard"></i> <span>Management system</span>
+                  <i class="fa fa-users"></i> <span>Orgnization Workers</span>
                   <span class="pull-right-container">
                     <i class="fa fa-angle-left pull-right"></i>
                   </span>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a href="../../views/cure_managers/"><i class="fa fa-circle-o"></i>Register Manager</a></li>
-                  <li><a href="../../views/cure_managers/operations.php"><i class="fa fa-circle-o"></i>Managers Operations</a></li>
-                  <li><a href="../../views/cure_managers/logs.php"><i class="fa fa-circle-o"></i>Managers Logs</a></li>
+                  <li><a href="../../views/workers/"><i class="fa fa-circle-o"></i>Workers Operations</a></li>
+                  <li><a href="../../views/workers/categories.php"><i class="fa fa-circle-o"></i>Categories Operations</a></li>
                 </ul>
               </li>
+              <li class=" treeview menu-open ">
+                <a href="#">
+                  <i class="fa fa-file"></i> <span>Reservations</span>
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="#"><i class="fa fa-circle-o"></i>Reservations List </a></li>
+                  <li><a href="#"><i class="fa fa-circle-o"></i>Session Scheduale</a></li>
+                  <li><a href="#"><i class="fa fa-circle-o"></i>Perceptions</a></li>
+                </ul>
+              </li>
+              <li class=" treeview menu-open ">
+                <a href="#">
+                  <i class="fa fa-arrows-alt"></i> <span>Branches</span>
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="#"><i class="fa fa-circle-o"></i>Branches Operations</a></li>
+                </ul>
+              </li>
+              <li class=" treeview menu-open ">
+                <a href="#">
+                  <i class="fa fa-shopping-cart"></i> <span>Warehouse & Sell</span>
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="#"><i class="fa fa-circle-o"></i>Warehouse Operations</a></li>
+                  <li><a href="#"><i class="fa fa-circle-o"></i>Sell Operations</a></li>
+                  <li><a href="#"><i class="fa fa-circle-o"></i>Discounts </a></li>
+                  <li><a href="#"><i class="fa fa-circle-o"></i>Request Supllier </a></li>
+                </ul>
+              </li>
+              <li class=" treeview menu-open ">
+                <a href="#">
+                  <i class="fa fa-leanpub"></i> <span>Lab</span>
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="#"><i class="fa fa-circle-o"></i>Lab Operations</a></li>
+                </ul>
+              </li>
+
               <?php 
             }
           } 
