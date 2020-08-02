@@ -27,3 +27,15 @@ function createCategory(org_id){
         xhr.send("org_id="+org_id+"&categoryName="+categoryName+"&categoryDesc="+categoryDesc+"&categoryPerm="+categoryPerm);
     }
 }
+function deleteCategory(cat_id  , org_id ){
+    var xhr = new XMLHttpRequest ();
+        xhr.onreadystatechange = function () {
+            if ( xhr.readyState == 4 && xhr.status == 200 ) {
+                document.getElementById("liveTableData").innerHTML = this.responseText;
+                getCategories(org_id);
+            }
+        }
+        xhr.open("POST","../../controllers/categoriesController.php?do=delete",true);
+        xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        xhr.send("cat_id="+cat_id);
+}

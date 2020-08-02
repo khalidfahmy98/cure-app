@@ -51,13 +51,17 @@
                             }
                             ?></td>
                             <td>
-                                <button class="btn btn-xs btn-danger" onclick="deleteCategory(<?php  echo $info->worker_category_id;?>)"><i class="fa fa-times"></i></button>
-                                <button class="btn btn-xs btn-warning" onclick="editCategory(<?php  echo $info->worker_category_id;?>)"><i class="fa fa-edit"></i></button>
+                                <button class="btn btn-xs btn-danger" onclick="deleteCategory(<?php  echo $info->worker_category_id;?> , <?php  echo $info->org_id;?>)"><i class="fa fa-times"></i></button>
+                                <button class="btn btn-xs btn-warning" onclick="editCategory(<?php  echo $info->worker_category_id;?> , <?php  echo $info->org_id;?>)"><i class="fa fa-edit"></i></button>
                             </td>
                       </tr>
                     <?php 
                 }
-        }
+        }else if ( input::get('do') == 'delete'){
+            if ( is_numeric(input::get('cat_id')) ){
+                $workerCategories->delete(input::get('cat_id'));
+            } 
+        } 
 
 
     } 
