@@ -6,8 +6,8 @@ class workerCategories{
     public function __construct($user = null){
         $this->_db = database::getInstance();
     }
-    public function getCategories($org_id){
-        $data = $this->_db->get("worker_categories",array('org_id','=',$org_id));
+    public function getCategories(){
+        $data = $this->_db->get("worker_categories",array('worker_category_id','>=',"1"));
         if ( $data->count() > 0 ){
             return $data->results();
         }

@@ -1,5 +1,5 @@
 <?php 
-    require_once "../../core/init.php";
+    require_once "../core/initController.php";
     $patient = new patient();
     $validation = new validation();
     $workerCategories = new workerCategories();
@@ -35,12 +35,11 @@
                     }
                 }
         }else if ( input::get('do') == 'selectCategories') {
-            if ( is_numeric(input::get('org_id'))){
-                foreach ($workerCategories->getCategories(input::get('org_id')) as $info ){
+                foreach ($workerCategories->getCategories()  as $info ){
                     ?>
                         <tr>
-                            <th ><?php echo $info->worker_category_name?></th>
-                            <td><?php echo $info->worker_category_desc?></td>
+                            <th ><?php echo $info->worker_category_name;?></th>
+                            <td><?php echo $info->worker_category_desc;?></td>
                             <td><?php 
                             if ( $info->category_premission_type == 1 ) {
                                 echo '<label class="label label-success">Full Control </label>';
@@ -57,7 +56,6 @@
                       </tr>
                     <?php 
                 }
-            } 
         }
 
 

@@ -6,7 +6,7 @@
   $patient = new patient();
   $orgnization = new orgnization();
 ?>
-   <div class="content-wrapper" onload="selectCategories(<?php echo $orgnization->find($patient->data()->patient_id)->org_id;?>)">
+   <div class="content-wrapper">
         <section class="content">
           <div class="row">
             <div class="col-xs-12">
@@ -17,6 +17,7 @@
                   <div class="box-body">
                     <div class="row">
                         <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                        <input type="hidden" class="hide" id="org_id" value="<?php echo $orgnization->find($patient->data()->patient_id)->org_id;?>">
                             <label>Category Name</label>
                             <input type="text" class="form-control input-sm" id="categoryName" autocomplete="off">
                         </div>
@@ -71,5 +72,4 @@
 
   templateController::get('footer');
   templateController::getScript('workerCategories','operations');
-  templateController::getScript('workerCategories','add');
 ?>
