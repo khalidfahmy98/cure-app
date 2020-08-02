@@ -36,6 +36,10 @@
                     'orgnizationCity' => array(
                         'required' => true 
                     ),
+                    'owner_id' => array(
+                        'required' => true ,
+                        'unique' => 'cure_organizations'
+                    )
                     'orgnizationAddress' => array(
                         'required' => true 
                     )
@@ -50,7 +54,7 @@
                                 'org_work_id' => input::get('org_work_id'),
                                 'org_town' => input::get('orgnizationCity'),
                                 'org_address' => input::get('orgnizationAddress'),
-                                'owner_id' => input::get('ownerId')
+                                'owner_id' => input::get('owner_id')
                             ));
                             toasters::success('Your Orgnization Created Successfuly');
                         }catch(Exception $e){

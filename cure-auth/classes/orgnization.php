@@ -33,6 +33,15 @@ class orgnization{
         }
         return false;
     }
+    public function orgStatus($user){
+        if($user){
+            $data = $this->_db->get('cure_organizations',array('owner_id','=',$user));
+            if($data->count()){
+                return $this->_data = $data->first()->org_status;
+            }
+        }
+        return false;
+    }
     public function delete($id){
         return $this->_db->delete('cure_organizations',array('org_id','=',$id));
     }

@@ -1,5 +1,6 @@
 <?php 
   $patient  = new patient();
+  $orgnization = new orgnization();
 ?>
 <header class="main-header">
 <!-- Logo -->
@@ -88,37 +89,29 @@
             <li class="header">Unavailable Yet .</li>
           <?php 
         }else{
-          ?>
-          <li class="header">MAIN NAVIGATION</li>
-          <li class=" treeview menu-open active">
-            <a href="#">
-              <i class="fa fa-dashboard"></i> <span>Management system</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="../../views/cure_managers/"><i class="fa fa-circle-o"></i>Register Manager</a></li>
-              <li><a href="../../views/cure_managers/operations.php"><i class="fa fa-circle-o"></i>Managers Operations</a></li>
-              <li><a href="../../views/cure_managers/logs.php"><i class="fa fa-circle-o"></i>Managers Logs</a></li>
-            </ul>
-          </li>
-          <li class=" treeview menu-open active">
-            <a href="#">
-              <i class="fa fa-dashboard"></i> <span>Emergencies Data</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="../../views/emergencies/"><i class="fa fa-circle-o"></i>Emergency Requests</a></li>
-              <li><a href="../../views/emergencies/"><i class="fa fa-circle-o"></i>Emergency Locations</a></li>
-              <li><a href="../../views/emergencies/"><i class="fa fa-circle-o"></i>Emergency Workers</a></li>
-            </ul>
-          </li>
-
-          <?php 
-        }
+          if ( $orgnization->orgStatus($patient->data()->patient_id) == 0 ){
+            ?>
+            <li class="header">Pending Confirmation</li>
+            <?php 
+          }else{
+                ?>
+              <li class="header">MAIN NAVIGATION</li>
+              <li class=" treeview menu-open active">
+                <a href="#">
+                  <i class="fa fa-dashboard"></i> <span>Management system</span>
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="../../views/cure_managers/"><i class="fa fa-circle-o"></i>Register Manager</a></li>
+                  <li><a href="../../views/cure_managers/operations.php"><i class="fa fa-circle-o"></i>Managers Operations</a></li>
+                  <li><a href="../../views/cure_managers/logs.php"><i class="fa fa-circle-o"></i>Managers Logs</a></li>
+                </ul>
+              </li>
+              <?php 
+            }
+          } 
       ?>
     
     <!-- <li><a href="../../views/files/report2.php"><i class="fa fa-book"></i> <span>Policies & Terms</span></a></li> -->

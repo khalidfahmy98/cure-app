@@ -4,6 +4,7 @@
   templateController::get('navigation');
   templateController::setTitle("Homepage | Cure Systems");
   $patient = new patient();
+  $orgnization = new orgnization();
   if ($patient->isLogged()){
     ?>
     <div class="content-wrapper">
@@ -60,8 +61,11 @@
             </div>
         <?php 
       }else{
-          ?>
-            <div class="row">
+        if ( $orgnization->orgStatus($patient->data()->patient_id) == 0 ) {
+          toasters::warning('Wait until cure confirmation and review for your orgnization');
+        }else{
+          ?> 
+               <div class="row">
               <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="info-box">
                   <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
@@ -120,6 +124,7 @@
               <!-- /.col -->
             </div>
           <?php 
+        }
       }
     ?>
     <div id="responserWrapper"></div>
