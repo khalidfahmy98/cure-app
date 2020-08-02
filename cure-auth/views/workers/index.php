@@ -26,11 +26,19 @@
                         </div>
                         <div class="form-group col-md-3 col-sm-6 col-xs-12">
                             <label >Worker Category </label>
-                            <input type="email" class="form-control" id="workercategory">
+                            <select class="form-control" id="workercategory">
+                                <option value="2" selected > Editor  </option>
+                                <option value="3">Manager</option>
+                                <option value="4">Full Admin</option>
+                            </select>
                         </div>
                         <div class="form-group col-md-3 col-sm-6 col-xs-12">
                             <label >Branch</label>
-                            <input type="text" class="form-control" id="workerbranch">
+                            <select class="form-control" id="workerbranch">
+                                <option value="2" selected > Editor  </option>
+                                <option value="3">Manager</option>
+                                <option value="4">Full Admin</option>
+                            </select>
                         </div>
                       </div> 
                   </div>
