@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 31, 2020 at 05:35 PM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Generation Time: Aug 03, 2020 at 10:10 AM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 5.6.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -30,8 +32,16 @@ CREATE TABLE `aggregate_orgs_workers` (
   `aggregte_id` int(11) NOT NULL,
   `worker_id` int(11) NOT NULL,
   `orgniztion_id` int(11) NOT NULL,
-  `work_category` int(11) NOT NULL
+  `work_category` int(11) NOT NULL,
+  `manager_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `aggregate_orgs_workers`
+--
+
+INSERT INTO `aggregate_orgs_workers` (`aggregte_id`, `worker_id`, `orgniztion_id`, `work_category`, `manager_id`) VALUES
+(2, 6, 5, 1, 6);
 
 -- --------------------------------------------------------
 
@@ -134,7 +144,7 @@ CREATE TABLE `cure_managers_session` (
 CREATE TABLE `cure_organizations` (
   `org_id` int(11) NOT NULL,
   `org_name` varchar(255) NOT NULL,
-  `org_email` varchar(100) NOT NULL,
+  `org_email` varchar(100) DEFAULT NULL,
   `org_fax` varchar(50) NOT NULL,
   `org_work_type` tinyint(4) NOT NULL DEFAULT '0',
   `org_tree_type` int(11) NOT NULL DEFAULT '0',
@@ -144,6 +154,16 @@ CREATE TABLE `cure_organizations` (
   `org_status` tinyint(4) NOT NULL DEFAULT '0',
   `owner_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `cure_organizations`
+--
+
+INSERT INTO `cure_organizations` (`org_id`, `org_name`, `org_email`, `org_fax`, `org_work_type`, `org_tree_type`, `org_work_id`, `org_town`, `org_address`, `org_status`, `owner_id`) VALUES
+(1, 'Cure', 'cure@gmail.com', '01026957744', 2, 0, '226154653125658', 'Alsharqiya ', 'alsharqiya - tolba oweda streat ', 1, 6),
+(3, '1-test branch ', NULL, '01026295877', 1, 1, '214654894534321', 'test ', 'test,testfulltest', 0, 6),
+(4, '1-test branch 22', NULL, '01026232877', 4, 1, '214654894454321', 'test ', 'test,testfulltest', 0, 6),
+(5, '1-test branch after reload', NULL, '011659854723', 2, 1, '226154986763258', 'reloaded', 'reloaded , branch , index ', 0, 6);
 
 -- --------------------------------------------------------
 
@@ -177,7 +197,7 @@ CREATE TABLE `cure_users` (
 --
 
 INSERT INTO `cure_users` (`patient_id`, `patient_username`, `patient_email`, `patient_password`, `patient_salt`, `patient_hashedpassword`, `patient_phone`, `patient_gender`, `patient_birthdate`, `patient_nationality`, `patient_address`, `patient_e_coins`, `patient_donation_status`, `patient_account_status`, `patient_registerdate`, `patient_image_code`, `worker_account_type`, `worker_category_id`) VALUES
-(6, 'khalidahmed', 'mohammed@gmail.com', '001100112', '¶ˆ™á\0±«¿N¶Å={WÞZætzíÿè\\ï[U‘ûE*', '583fff5b32977f293ea87babbcd0aafb63f3ede924adc283c5ca6bb0fcaac1e0', '01062957744', 0, '', 'EGY', '', 0, 0, 0, '2020-06-11 19:10:02', '', 0, NULL),
+(6, 'khalidahmed', 'mohammed@gmail.com', '001100112', '¶ˆ™á\0±«¿N¶Å={WÞZætzíÿè\\ï[U‘ûE*', '583fff5b32977f293ea87babbcd0aafb63f3ede924adc283c5ca6bb0fcaac1e0', '01062957744', 0, '', 'EGY', '', 0, 0, 0, '2020-06-11 19:10:02', '', 1, NULL),
 (7, 'yousefHossam', 'youussef@gmail.com', '001100112', 'ŠZIõx%ËÇ–â_P=€À~ž/MâÚÒœ046½Wv', '17b06f710101f08dd029897868c2ab88b48d21254fb0fa3544d04bfe7b3c42ae', '01026957744', 0, '', 'EGY', '', 0, 0, 0, '2020-07-03 14:08:54', '', 0, NULL),
 (8, 'drAhmed', 'drAhmed@gmail.com', '001100112', 'qíU0Î¶j4ó:ž5P‰v?NÁ©;ÎíõÏ', '9c2d09dd02bcecb6c907bcdd33dfc5ac5b41481874316e2af1f0e129962a93e1', '01026957784', 0, '', 'EGY', '', 0, 0, 0, '2020-07-05 09:41:35', '', 0, NULL),
 (9, 'Abdel-Rahman9400', 'abdelrahman.ali.9400@gmail.com', '12344321', 'K?`??N??~ʮ?H??k???u?1??M??', 'b23d64c913394cba4f7859a2007a43da43e3e161351d0513ea8df233950d790f', '01271752188', 0, '', 'egy', '', 0, 0, 0, '2020-07-12 08:25:15', '', 0, NULL),
@@ -368,7 +388,10 @@ INSERT INTO `users_session` (`session_id`, `session_value`, `patient_id`) VALUES
 (23, 'c896b24444c3f554f24b1028e7496843ee9dc985e227e35e76f72dc55abfd2d1', 6),
 (24, 'd26331f2f1db3fae62468069d09ccc8699024fb5e1f161281882722b7f163092', 6),
 (25, '00822ef85147596a8d2f4894a90fb4e72b403a63793b7b25e453bf6ac5ec822f', 6),
-(26, '4a47a0ade3fe5ae9113bc34f32e719fac94f123e1bf5427757f34dbec236b48c', 6);
+(26, '4a47a0ade3fe5ae9113bc34f32e719fac94f123e1bf5427757f34dbec236b48c', 6),
+(27, 'c62c3e1ac912cd2d3e93b24882e7a060abb7bdd901589ad27e62170226ff42b7', 6),
+(28, '06d6c54c17137aa590a11603d5bf9403b5506d8ec60023553a39379e76825e6f', 6),
+(29, '982dd352af8f8edabd3db654c261c3bf59cf527d7fa5fe785eec1cba662ae022', 6);
 
 -- --------------------------------------------------------
 
@@ -380,8 +403,16 @@ CREATE TABLE `worker_categories` (
   `worker_category_id` int(11) NOT NULL,
   `worker_category_name` varchar(255) NOT NULL,
   `worker_category_desc` varchar(255) NOT NULL,
+  `org_id` int(11) NOT NULL,
   `category_premission_type` tinyint(4) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `worker_categories`
+--
+
+INSERT INTO `worker_categories` (`worker_category_id`, `worker_category_name`, `worker_category_desc`, `org_id`, `category_premission_type`) VALUES
+(1, 'Admininstrator', 'full control permssion category made for me ', 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -518,7 +549,8 @@ ALTER TABLE `users_session`
 -- Indexes for table `worker_categories`
 --
 ALTER TABLE `worker_categories`
-  ADD PRIMARY KEY (`worker_category_id`);
+  ADD PRIMARY KEY (`worker_category_id`),
+  ADD KEY `connect_work_category_to_org` (`org_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -528,97 +560,116 @@ ALTER TABLE `worker_categories`
 -- AUTO_INCREMENT for table `aggregate_orgs_workers`
 --
 ALTER TABLE `aggregate_orgs_workers`
-  MODIFY `aggregte_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `aggregte_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `authorized_products`
 --
 ALTER TABLE `authorized_products`
   MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `clinics_schedule`
 --
 ALTER TABLE `clinics_schedule`
   MODIFY `sched_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `cure_managers`
 --
 ALTER TABLE `cure_managers`
   MODIFY `manager_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `cure_managers_categories`
 --
 ALTER TABLE `cure_managers_categories`
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `cure_managers_logs`
 --
 ALTER TABLE `cure_managers_logs`
   MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `cure_managers_session`
 --
 ALTER TABLE `cure_managers_session`
   MODIFY `session_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `cure_organizations`
 --
 ALTER TABLE `cure_organizations`
-  MODIFY `org_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `org_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT for table `cure_users`
 --
 ALTER TABLE `cure_users`
   MODIFY `patient_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT for table `donated_users`
 --
 ALTER TABLE `donated_users`
   MODIFY `donate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `donation_requests`
 --
 ALTER TABLE `donation_requests`
   MODIFY `reqeust_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT for table `master_medical_file`
 --
 ALTER TABLE `master_medical_file`
   MODIFY `medical_file_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `orgnization_clinic_details`
 --
 ALTER TABLE `orgnization_clinic_details`
   MODIFY `clinic_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `patient_eyes_rate`
 --
 ALTER TABLE `patient_eyes_rate`
   MODIFY `rate_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `patient_surgeries`
 --
 ALTER TABLE `patient_surgeries`
   MODIFY `surgery_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `products_categories`
 --
 ALTER TABLE `products_categories`
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `product_images`
 --
 ALTER TABLE `product_images`
   MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `users_session`
 --
 ALTER TABLE `users_session`
-  MODIFY `session_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `session_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
 --
 -- AUTO_INCREMENT for table `worker_categories`
 --
 ALTER TABLE `worker_categories`
-  MODIFY `worker_category_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `worker_category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- Constraints for dumped tables
 --
@@ -721,6 +772,13 @@ ALTER TABLE `product_images`
 --
 ALTER TABLE `users_session`
   ADD CONSTRAINT `connect_patient_with_session` FOREIGN KEY (`patient_id`) REFERENCES `cure_users` (`patient_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `worker_categories`
+--
+ALTER TABLE `worker_categories`
+  ADD CONSTRAINT `connect_work_category_to_org` FOREIGN KEY (`org_id`) REFERENCES `cure_organizations` (`org_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
