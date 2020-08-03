@@ -5,6 +5,8 @@
   templateController::setTitle("Register Admin | Cure ");
   $patient = new patient();
   $orgnization = new orgnization();
+  $branch = new branch();
+  $workerCategories = new workerCategories();
 ?>
    <div class="content-wrapper">
         <section class="content">
@@ -19,25 +21,37 @@
                         <div class="form-group col-md-3 col-sm-6 col-xs-12">
                             <label>Worker Username</label>
                             <select class="form-control" id="workerusername">
-                                <option value="2" selected > Editor  </option>
-                                <option value="3">Manager</option>
-                                <option value="4">Full Admin</option>
-                            </select>
+                            <?php 
+                             foreach($patient->getUsers() as $info ){
+                               ?>
+                                <option value="<?php echo $info->patient_id; ?>"  > <?php echo $info->patient_username;?>  </option>
+                               <?php 
+                             }
+                            ?>
+                          </select>
                         </div>
                         <div class="form-group col-md-3 col-sm-6 col-xs-12">
                             <label >Worker Category </label>
                             <select class="form-control" id="workercategory">
-                                <option value="2" selected > Editor  </option>
-                                <option value="3">Manager</option>
-                                <option value="4">Full Admin</option>
+                                <?php 
+                                  foreach($workerCategories->getCategories($orgnization->find($patient->data()->patient_id)->org_id) as $info ){
+                                      ?>
+                                        <option value="<?php echo $info->worker_category_id; ?>"  > <?php echo $info->worker_category_name;?>  </option>
+                                      <?php 
+                                    }
+                                ?>
                             </select>
                         </div>
                         <div class="form-group col-md-3 col-sm-6 col-xs-12">
                             <label >Branch</label>
                             <select class="form-control" id="workerbranch">
-                                <option value="2" selected > Editor  </option>
-                                <option value="3">Manager</option>
-                                <option value="4">Full Admin</option>
+                            <?php 
+                                  foreach($branch->getAllBranches($patient->data()->patient_id) as $info ){
+                                      ?>
+                                        <option value="<?php echo $info->org_id; ?>"  > <?php echo $info->org_name;?>  </option>
+                                      <?php 
+                                    }
+                                ?>
                             </select>
                         </div>
                       </div> 

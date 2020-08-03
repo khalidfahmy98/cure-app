@@ -13,6 +13,13 @@ class branch{
         }
         return false;
     }
+    public function getAllBranches($ownerId){
+        $data = $this->_db->get("cure_organizations",array('owner_id','=',$ownerId));
+        if ( $data->count() > 0 ){
+            return $data->results();
+        }
+        return false;
+    }
     public function create( $fields = array() ){
         if( !$this->_db->insert('cure_organizations',$fields) ){
             throw new Exception ('there was a problam creating new account');
