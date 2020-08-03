@@ -57,8 +57,9 @@
                       </div> 
                   </div>
                   <div class="box-footer">
-                    <button type="button"  class="btn btn-primary">Register</button>
+                    <button type="button"  class="btn btn-primary" onclick="createWorker()">Register</button>
                   </div>
+                  <div id="responserWrapper"></div>
               </div>
               <div class="box box-primary">
                 <div class="box-header with-border">
@@ -68,19 +69,13 @@
                   <table class="table table-striped table-responsive table-hover">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th >Worker Username</th>
+                        <th >Branch</th>
+                        <th >Work Category</th>
+                        <th >OPR </th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
+                    <tbody id="liveTableData">
                     </tbody>
                   </table>
                    </div>
