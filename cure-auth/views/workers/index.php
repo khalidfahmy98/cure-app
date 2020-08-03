@@ -19,6 +19,7 @@
                   <div class="box-body">
                     <div class="row">
                         <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                        <input type="hidden" class="hide" value="<?php echo $patient->data()->patient_id; ?>" id="ownerId">
                             <label>Worker Username</label>
                             <select class="form-control" id="workerusername">
                             <?php 
@@ -57,7 +58,7 @@
                       </div> 
                   </div>
                   <div class="box-footer">
-                    <button type="button"  class="btn btn-primary" onclick="createWorker()">Register</button>
+                    <button type="button"  class="btn btn-primary" onclick="createWorker(<?php echo $patient->data()->patient_id;?>)">Register</button>
                   </div>
                   <div id="responserWrapper"></div>
               </div>
