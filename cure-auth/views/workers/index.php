@@ -82,6 +82,5 @@
 <?php 
 
   templateController::get('footer');
-  templateController::getScript('workers','add');
   templateController::getScript('workers','operations');
 ?>
