@@ -2,7 +2,7 @@
   require_once "../../core/init.php";
   templateController::get('header');
   templateController::get('navigation');
-  templateController::setTitle("Register Admin | Cure ");
+  templateController::setTitle("Register Workers | Cure ");
   $patient = new patient();
   $orgnization = new orgnization();
   $branch = new branch();
