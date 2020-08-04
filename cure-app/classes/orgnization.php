@@ -22,20 +22,20 @@ class orgnization{
         $data = $this->_db->get('cure_organizations',array('org_id','>=',1));
         return $data->count();
     }
-    public function find($user = null){
-        if($user){
-            $data = $this->_db->get('cure_organizations',array('owner_id','=',$user));
-            if($data->count()){
-                return $this->_data = $data->first();
-            }
-        }
-        return false;
-    }
     public function getOrgType($orgId){
         if($orgId){
             $data = $this->_db->get('cure_organizations',array('org_id','=',$orgId));
             if($data->count()){
                 return $this->_data = $data->first()->org_work_type;
+            }
+        }
+        return false;
+    }
+    public function find($user = null){
+        if($user){
+            $data = $this->_db->get('cure_organizations',array('owner_id','=',$user));
+            if($data->count()){
+                return  $data->first();
             }
         }
         return false;

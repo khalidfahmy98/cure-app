@@ -12,6 +12,17 @@
     <!-- Info boxes -->
     <?php 
       if ( $patient->data()->worker_account_type == 0 ) {
+        // get org-id & set into session 
+          // first check where if the user is owner or not 
+
+          // second check if the user not owner but worker 
+          echo session::get('orgnizationId') . " org <br>";
+          echo session::get('workCategory')  . "work cat <br>";
+          echo session::get('permissions')  . "perm <br>";
+          echo session::get('orgType')  . "org type <br>";
+
+          // get worker permissions  & set into session 
+          // get org work category and open her operations 
         ?>
           <div class="alert alert-info">Register Now Your Own Orgnization Or Work ! </div>
             <div class="row">
@@ -66,6 +77,12 @@
         }else{
           ?> 
                <div class="row">
+               <?php 
+          echo session::get('orgnizationId') . " org <br>";
+          echo session::get('workCategory')  . "work cat <br>";
+          echo session::get('permissions')  . "perm <br>";
+          echo session::get('orgType')  . "org type <br>";
+               ?>
               <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="info-box">
                   <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
