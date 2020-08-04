@@ -22,6 +22,42 @@ class patient{
         }   
 
     }
+    public function isOwner($user){
+        if($user){
+            $data = $this->_db->get('cure_organizations',array('owner_id','=',$user));
+            if($data->count()){
+                return true;
+            }
+        }
+        return false;
+    }
+    public function isWorker($user){
+        if($user){
+            $data = $this->_db->get('aggregate_orgs_workers',array('worker_id','=',$user));
+            if($data->count()){
+                return true;
+            }
+        }
+        return false;
+    }
+    public function getWorkData($user){
+        if($user){
+            $data = $this->_db->get('aggregate_orgs_workers',array('worker_id','=',$user));
+            if($data->count()){
+                return $this->_data = $data->first();
+            }
+        }
+        return false;
+    }
+    public function getPermissions($catId){
+        if($catId){
+            $data = $this->_db->get('worker_categories',array('worker_category_id','=',$catId));
+            if($data->count()){
+                return $this->_data = $data->first()->category_premission_type;
+            }
+        }
+        return false;
+    }
     public function getUsers(){
         $data = $this->_db->get("cure_users",array('patient_id','>=',"1"));
         if ( $data->count() > 0 ){
@@ -105,6 +141,10 @@ class patient{
     public function logout(){
         $this->_db->delete('users_session',array('patient_id','=',$this->data()->id));
         session::delete($this->_sessionName);
+        session::delete('orgnizationId');
+        session::delete('workCategory');
+        session::delete('permissions');
+        session::delete('orgType');
         cookie::delete($this->_cookieName);
     }
     public function data(){

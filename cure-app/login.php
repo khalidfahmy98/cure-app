@@ -18,9 +18,8 @@
                   <img class="cure-logo" src="assets/imgs/logo.png.png"/>
                </label>
                <ul class="list-unstyled">
-                  <li><a class="nav-list" href="register-category.php">Register</a></li>
-                  <li><a class="nav-list" href="#">Support</a></li>
-                  <li><a class="nav-list" href="#">Faq</a></li>
+                  <li><a class="nav-list" href="register.php">Register</a></li>
+                  <li><a class="nav-list" href="#">About</a></li>
                </ul>
             </div>
          <!--End Navbar-->
@@ -59,7 +58,6 @@
                     if($validate->passed()){
                         $remember = true ;
                         $login = $patient->login(input::get('username'),input::get('password'),$remember);
-            
                         if ($login){
                             redirect::to('index.php');
                         }else{
