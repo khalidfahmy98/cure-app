@@ -1,5 +1,5 @@
 <?php 
-    require_once "../../core/init.php";
+    require_once "../core/init.php";
     $patient = new patient();
     $orgnization = new orgnization();
     $validation = new validation();
@@ -8,7 +8,7 @@
                 // update patient account type 
                 $patient->update(array(
                     'worker_account_type' => input::get('accoutType')
-                ), input::get('ownerId'));
+                ), input::get('owner_id'));
                 // register orgnization 
                 $validate = new validation();
                 $validate->check($_POST,array(
@@ -39,7 +39,7 @@
                     'owner_id' => array(
                         'required' => true ,
                         'unique' => 'cure_organizations'
-                    )
+                    ),
                     'orgnizationAddress' => array(
                         'required' => true 
                     )
