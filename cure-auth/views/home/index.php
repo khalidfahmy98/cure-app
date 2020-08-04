@@ -11,78 +11,88 @@
     <section class="content">
     <!-- Info boxes -->
     <?php 
-      if ( $patient->data()->worker_account_type == 0 ) {
-        // get org-id & set into session 
-          // first check where if the user is owner or not 
+              // echo session::get('orgnizationId') 
+              // echo session::get('workCategory')  // not nesseccery 
+              // echo session::get('permissions')  
+              // echo session::get('orgType') 
 
-          // second check if the user not owner but worker 
-          echo session::get('orgnizationId') . " org <br>";
-          echo session::get('workCategory')  . "work cat <br>";
-          echo session::get('permissions')  . "perm <br>";
-          echo session::get('orgType')  . "org type <br>";
+      if ( !$patient->isOwner($patient->data()->patient_id) ) {
+            if ($patient->isWorker($patient->data()->patient_id)){
+                if ( session::get('orgType') == 1 ) {
+                    // show some feature for pharma worker 
+                }else if ( session::get('orgType') == 2 ) {
+                    // show some feature for Factory worker 
+                }else if ( session::get('orgType') == 3 ) {
+                    // show some feature for Laboratory worker 
+                }else if ( session::get('orgType') == 4 ) {
+                    // show some feature for Clinic worker 
+                }
+            } else{
+              ?>
+              <div class="alert alert-info">Register Now Your Own Orgnization Or Work ! </div>
+                <div class="row">
+                    <div class="col-md-3 col-sm-4 col-xs-6 form-group">
+                        <label>Work Type : </label>
+                        <select class="form-control input-sm" id="accountType">
+                            <option value="1">Service Provider</option>
+                            <option value="2">Doctor </option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-6 form-group">
+                        <label>Orgnization Name :  </label>
+                        <input type="text" class="form-control input-sm" id="orgnizationName">
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-6 form-group">
+                        <label>Orgnization Type :  </label>
+                        <select class="form-control input-sm" id="orgnizationType">
+                          <option value="1"> Pharmacy</option>
+                          <option value="2"> Factory </option>
+                          <option value="3"> Labortary </option>
+                          <option value="4">Clinic</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-6 form-group">
+                        <label>Orgnization Email :  </label>
+                        <input type="text" class="form-control input-sm" id="orgnizationEmail">
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-6 form-group">
+                        <label>Orgnization Phone :  </label>
+                        <input type="text" class="form-control input-sm" id="orgnizationPhone">
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-6 form-group">
+                        <label>License Number :  </label>
+                        <input type="text" class="form-control input-sm" id="orgnizationLicense">
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-6 form-group">
+                        <label>City :  </label>
+                        <input type="text" class="form-control input-sm" id="orgnizationCity">
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-6 form-group">
+                        <label>Address :  </label>
+                        <input type="text" class="form-control input-sm" id="orgnizationAddress">
+                    </div>
+                </div>
+                <div class="form-group">
+                  <button class="btn btn-sm btn-success" onclick="createOrgnization(<?php echo $patient->data()->patient_id; ?>)">Create Orgnization</button>
+                </div>
+            <?php 
 
-          // get worker permissions  & set into session 
-          // get org work category and open her operations 
-        ?>
-          <div class="alert alert-info">Register Now Your Own Orgnization Or Work ! </div>
-            <div class="row">
-                <div class="col-md-3 col-sm-4 col-xs-6 form-group">
-                    <label>Work Type : </label>
-                    <select class="form-control input-sm" id="accountType">
-                        <option value="1">Service Provider</option>
-                        <option value="2">Doctor </option>
-                    </select>
-                </div>
-                <div class="col-md-3 col-sm-4 col-xs-6 form-group">
-                    <label>Orgnization Name :  </label>
-                    <input type="text" class="form-control input-sm" id="orgnizationName">
-                </div>
-                <div class="col-md-3 col-sm-4 col-xs-6 form-group">
-                    <label>Orgnization Type :  </label>
-                    <select class="form-control input-sm" id="orgnizationType">
-                      <option value="1"> Pharmacy</option>
-                      <option value="2"> Factory </option>
-                      <option value="3"> Labortary </option>
-                      <option value="4">Clinic</option>
-                    </select>
-                </div>
-                <div class="col-md-3 col-sm-4 col-xs-6 form-group">
-                    <label>Orgnization Email :  </label>
-                    <input type="text" class="form-control input-sm" id="orgnizationEmail">
-                </div>
-                <div class="col-md-3 col-sm-4 col-xs-6 form-group">
-                    <label>Orgnization Phone :  </label>
-                    <input type="text" class="form-control input-sm" id="orgnizationPhone">
-                </div>
-                <div class="col-md-3 col-sm-4 col-xs-6 form-group">
-                    <label>License Number :  </label>
-                    <input type="text" class="form-control input-sm" id="orgnizationLicense">
-                </div>
-                <div class="col-md-3 col-sm-4 col-xs-6 form-group">
-                    <label>City :  </label>
-                    <input type="text" class="form-control input-sm" id="orgnizationCity">
-                </div>
-                <div class="col-md-3 col-sm-4 col-xs-6 form-group">
-                    <label>Address :  </label>
-                    <input type="text" class="form-control input-sm" id="orgnizationAddress">
-                </div>
-            </div>
-            <div class="form-group">
-              <button class="btn btn-sm btn-success" onclick="createOrgnization(<?php echo $patient->data()->patient_id; ?>)">Create Orgnization</button>
-            </div>
-        <?php 
+            }
       }else{
-        if ( $orgnization->orgStatus($patient->data()->patient_id) == 0 ) {
-          toasters::warning('Wait until cure confirmation and review for your orgnization');
-        }else{
-          ?> 
-               <div class="row">
-               <?php 
-          echo session::get('orgnizationId') . " org <br>";
-          echo session::get('workCategory')  . "work cat <br>";
-          echo session::get('permissions')  . "perm <br>";
-          echo session::get('orgType')  . "org type <br>";
-               ?>
+              if ( $orgnization->orgStatus(session::get('orgnizationId')) == 0 ) {
+                toasters::warning('Wait until cure confirmation and review for your orgnization');
+              }
+              if ( session::get('orgType') == 1 ) {
+                // show some feature for pharma owner  
+              }else if ( session::get('orgType') == 2 ) {
+                  // show some feature for Factory owner 
+              }else if ( session::get('orgType') == 3 ) {
+                  // show some feature for Laboratory owner 
+              }else if ( session::get('orgType') == 4 ) {
+                  // show some feature for Clinic owner 
+              }
+              ?>
+            <div class="row">
               <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="info-box">
                   <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
@@ -141,7 +151,6 @@
               <!-- /.col -->
             </div>
           <?php 
-        }
       }
     ?>
     <div id="responserWrapper"></div>

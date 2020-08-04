@@ -42,7 +42,7 @@ class orgnization{
     }
     public function orgStatus($user){
         if($user){
-            $data = $this->_db->get('cure_organizations',array('owner_id','=',$user));
+            $data = $this->_db->get('cure_organizations',array('org_id','=',$user));
             if($data->count()){
                 return $this->_data = $data->first()->org_status;
             }

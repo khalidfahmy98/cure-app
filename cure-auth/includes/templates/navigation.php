@@ -85,7 +85,7 @@
               }else if ($patient->data()->worker_account_type == 2 ) {
                 echo 'Doctor';
               }else{
-                echo 'Register Work Type';
+                echo 'Worker';
               }
             ?>
       </a>
@@ -94,83 +94,122 @@
   <!-- sidebar menu: : style can be found in sidebar.less -->
   <ul class="sidebar-menu" data-widget="tree">
       <?php 
-        if ($patient->data()->worker_account_type == 0 ) {
-          ?>  
-            <li class="header">Unavailable Yet .</li>
-          <?php 
-        }else{
-          if ( $orgnization->orgStatus($patient->data()->patient_id) == 0 ){
+          if ( $orgnization->orgStatus(session::get('orgnizationId')) == 0 ){
             ?>
-            <li class="header">Pending Confirmation</li>
+            <li class="header">Pending </li>
             <?php 
           }else{
                 ?>
-              <li class="header"> <?php echo $orgnization->find($patient->data()->patient_id)->org_name; ?> Navigation </li>
-              <li class=" treeview menu-open active">
-                <a href="#">
-                  <i class="fa fa-users"></i> <span>Orgnization Workers</span>
-                  <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
-                  </span>
-                </a>
-                <ul class="treeview-menu">
-                  <li><a href="../../views/workers/"><i class="fa fa-circle-o"></i>Workers Operations</a></li>
-                  <li><a href="../../views/workers/categories.php"><i class="fa fa-circle-o"></i>Categories Operations</a></li>
-                </ul>
-              </li>
-              <li class=" treeview menu-open ">
-                <a href="#">
-                  <i class="fa fa-file"></i> <span>Reservations</span>
-                  <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
-                  </span>
-                </a>
-                <ul class="treeview-menu">
-                  <li><a href="#"><i class="fa fa-circle-o"></i>Reservations List </a></li>
-                  <li><a href="#"><i class="fa fa-circle-o"></i>Session Scheduale</a></li>
-                  <li><a href="#"><i class="fa fa-circle-o"></i>Perceptions</a></li>
-                </ul>
-              </li>
-              <li class=" treeview menu-open ">
-                <a href="#">
-                  <i class="fa fa-arrows-alt"></i> <span>Branches</span>
-                  <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
-                  </span>
-                </a>
-                <ul class="treeview-menu">
-                  <li><a href="../branches/"><i class="fa fa-circle-o"></i>Branches Operations</a></li>
-                </ul>
-              </li>
-              <li class=" treeview menu-open ">
-                <a href="#">
-                  <i class="fa fa-shopping-cart"></i> <span>Warehouse & Sell</span>
-                  <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
-                  </span>
-                </a>
-                <ul class="treeview-menu">
-                  <li><a href="#"><i class="fa fa-circle-o"></i>Warehouse Operations</a></li>
-                  <li><a href="#"><i class="fa fa-circle-o"></i>Sell Operations</a></li>
-                  <li><a href="#"><i class="fa fa-circle-o"></i>Discounts </a></li>
-                  <li><a href="#"><i class="fa fa-circle-o"></i>Request Supllier </a></li>
-                </ul>
-              </li>
-              <li class=" treeview menu-open ">
-                <a href="#">
-                  <i class="fa fa-leanpub"></i> <span>Lab</span>
-                  <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
-                  </span>
-                </a>
-                <ul class="treeview-menu">
-                  <li><a href="#"><i class="fa fa-circle-o"></i>Lab Operations</a></li>
-                </ul>
-              </li>
+              <li class="header"> System  Navigation </li>
+              <?php 
+                if (session::get('permissions') == 11 ){
+                    ?>
+                  <li class=" treeview menu-open active">
+                      <a href="#">
+                        <i class="fa fa-users"></i> <span>Orgnization Workers</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="../../views/workers/"><i class="fa fa-circle-o"></i>Workers Operations</a></li>
+                        <li><a href="../../views/workers/categories.php"><i class="fa fa-circle-o"></i>Categories Operations</a></li>
+                      </ul>
+                    </li>
+                    <li class=" treeview menu-open ">
+                      <a href="#">
+                        <i class="fa fa-arrows-alt"></i> <span>Branches</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="../branches/"><i class="fa fa-circle-o"></i>Branches Operations</a></li>
+                      </ul>
+                    </li>
+                    <?php 
+                } 
+              ?>
+              <?php 
+                  if ( session::get('orgType') == 1 ) {
+                        // show some feature for pharma worker 
+                    ?>
+                  <li class=" treeview menu-open ">
+                    <a href="#">
+                      <i class="fa fa-shopping-cart"></i> <span>Warehouse & Sell</span>
+                      <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                      </span>
+                    </a>
+                    <ul class="treeview-menu">
+                      <li><a href="#"><i class="fa fa-circle-o"></i>Warehouse Operations</a></li>
+                      <li><a href="#"><i class="fa fa-circle-o"></i>Sell Operations</a></li>
+                      <li><a href="#"><i class="fa fa-circle-o"></i>Discounts </a></li>
+                      <li><a href="#"><i class="fa fa-circle-o"></i>Market Orders </a></li>
+                      <li><a href="#"><i class="fa fa-circle-o"></i>Request Supllier </a></li>
+                    </ul>
+                  </li>
+                    <?php
+                  }else if ( session::get('orgType') == 2 ) {
+                      // show some feature for Factory worker 
+                    ?>
+                      <li class=" treeview menu-open ">
+                        <a href="#">
+                          <i class="fa fa-shopping-cart"></i> <span>Warehouse & Sell</span>
+                          <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                          </span>
+                        </a>
+                        <ul class="treeview-menu">
+                          <li><a href="#"><i class="fa fa-circle-o"></i>Warehouse Operations</a></li>
+                          <li><a href="#"><i class="fa fa-circle-o"></i>Sell Operations</a></li>
+                          <li><a href="#"><i class="fa fa-circle-o"></i>Discounts </a></li>
+                          <li><a href="#"><i class="fa fa-circle-o"></i>Market Orders </a></li>
+                          <li><a href="#"><i class="fa fa-circle-o"></i>Respond Supllier </a></li>
+                        </ul>
+                      </li>
+                  <?php
+                  }else if ( session::get('orgType') == 3 ) {
+                      // show some feature for Laboratory worker 
+                      ?>
+                    <li class=" treeview menu-open ">
+                          <a href="#">
+                            <i class="fa fa-leanpub"></i> <span>Lab</span>
+                            <span class="pull-right-container">
+                              <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                          </a>
+                          <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-circle-o"></i>Lab Operations</a></li>
+                          </ul>
+                        </li>
+                      <?php
+                  }else if ( session::get('orgType') == 4 ) {
+                      // show some feature for Clinic worker 
+                      ?>  
+                  <li class=" treeview menu-open ">
+                      <a href="#">
+                        <i class="fa fa-file"></i> <span>Reservations</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="#"><i class="fa fa-circle-o"></i>Reservations List </a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i>Session Scheduale</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i>Perceptions</a></li>
+                      </ul>
+                    </li>
+                      <?php 
+                  }
+              ?>
+           
+      
+           
+    
 
               <?php 
             }
-          } 
       ?>
     
     <!-- <li><a href="../../views/files/report2.php"><i class="fa fa-book"></i> <span>Policies & Terms</span></a></li> -->

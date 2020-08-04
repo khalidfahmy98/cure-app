@@ -31,6 +31,15 @@ class patient{
         }
         return false;
     }
+    public function isWorker($user){
+        if($user){
+            $data = $this->_db->get('aggregate_orgs_workers',array('worker_id','=',$user));
+            if($data->count()){
+                return true;
+            }
+        }
+        return false;
+    }
     public function getWorkData($user){
         if($user){
             $data = $this->_db->get('aggregate_orgs_workers',array('worker_id','=',$user));
