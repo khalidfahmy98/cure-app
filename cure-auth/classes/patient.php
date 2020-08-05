@@ -44,7 +44,7 @@ class patient{
         if($user){
             $data = $this->_db->get('aggregate_orgs_workers',array('worker_id','=',$user));
             if($data->count()){
-                return $this->_data = $data->first();
+                return  $data->first();
             }
         }
         return false;
@@ -53,7 +53,7 @@ class patient{
         if($catId){
             $data = $this->_db->get('worker_categories',array('worker_category_id','=',$catId));
             if($data->count()){
-                return $this->_data = $data->first()->category_premission_type;
+                return  $data->first()->category_premission_type;
             }
         }
         return false;

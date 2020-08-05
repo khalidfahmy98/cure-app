@@ -6,6 +6,25 @@
   $patient = new patient();
   $orgnization = new orgnization();
   if ($patient->isLogged()){
+    if (input::get('native') =='yes'){
+      if ( !$patient->isOwner($patient->data()->patient_id)){
+        $orgId = $patient->getWorkData($patient->data()->patient_id)->orgniztion_id;
+        $workCategory = $patient->getWorkData($patient->data()->patient_id)->work_category;
+        $permissions = $patient->getPermissions($workCategory);
+        $orgType = $orgnization->getOrgType($orgId);
+        session::put('orgnizationId' , $orgId);
+        session::put('workCategory' , $workCategory);
+        session::put('permissions' , $permissions);
+        session::put('orgType' , $orgType);
+      }else{
+        $orgId = $orgnization->find($patient->data()->patient_id)->org_id;
+        $orgType = $orgnization->find($patient->data()->patient_id)->org_work_type;
+        session::put('orgnizationId' , $orgId);
+        session::put('workCategory' , 11); // means owner of the orgnization 
+        session::put('permissions' , 11);  // means has the full control of all orgnization 
+        session::put('orgType' , $orgType);
+      }
+    }
     ?>
     <div class="content-wrapper">
     <section class="content">
