@@ -1,5 +1,5 @@
 <?php 
-    require_once "../core/init.php";
+    require_once "../core/initController.php";
     $patient = new patient();
     $orgnization = new orgnization();
     $validation = new validation();
