@@ -58,8 +58,7 @@
             <div class="port-h2 col-md-12">
               <h2>Hello From Cure Platform This Website Help Our Paitent To Be A Good</h2>
               <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
-              <button type="button" class="active btn btn-outline">Submit</button>
-              <button type="button" class="btn btn-outline">Log Out</button>
+              <button onclick="location.href='cure-app/'" class="active btn btn-outline">Submit</button>
             </div>
           </div>
         </div>
