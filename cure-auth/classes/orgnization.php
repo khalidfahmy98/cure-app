@@ -26,7 +26,7 @@ class orgnization{
         if($user){
             $data = $this->_db->get('cure_organizations',array('owner_id','=',$user));
             if($data->count()){
-                return $this->_data = $data->first();
+                return  $data->first();
             }
         }
         return false;
@@ -35,7 +35,7 @@ class orgnization{
         if($orgId){
             $data = $this->_db->get('cure_organizations',array('org_id','=',$orgId));
             if($data->count()){
-                return $this->_data = $data->first()->org_work_type;
+                return  $data->first()->org_work_type;
             }
         }
         return false;
