@@ -100,7 +100,23 @@
             <?php 
           }else{
                 ?>
-              <li class="header"> System  Navigation </li>
+              <li class="header"> 
+                <?php 
+                if ( session::get('orgType') == 1 ) {
+                  echo 'Pharma Naviagtion';
+                  // show some feature for pharma worker 
+                }else if ( session::get('orgType') == 2 ) {
+                  echo 'Factory Naviagtion';
+                    // show some feature for Factory worker 
+                }else if ( session::get('orgType') == 3 ) {
+                  echo 'Laboratory Naviagtion';
+                    // show some feature for Laboratory worker 
+                }else if ( session::get('orgType') == 4 ) {
+                  echo 'Clinic Naviagtion';
+                    // show some feature for Clinic worker 
+                }
+              ?>
+              </li>
               <?php 
                 if (session::get('permissions') == 11 ){
                     ?>

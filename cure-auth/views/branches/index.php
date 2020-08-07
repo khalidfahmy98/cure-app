@@ -40,12 +40,24 @@
                         </div>
                         <div class="form-group col-md-3 col-sm-6 col-xs-12">
                             <label>Branch  Work Category </label>
-                            <select class="form-control" id="branchWork">
-                                <option value="1"> Pharmacy</option>
-                                <option value="2"> Factory </option>
-                                <option value="3"> Labortary </option>
-                                <option value="4">Clinic</option>
-                            </select>
+                            <?php 
+                              if ( $patient->data()->worker_account_type == 1 ){
+                                ?>
+                                <select class="form-control" id="branchWork">
+                                    <option value="2"> Factory </option>
+                                    <option value="3"> Labortary </option>
+                                </select>
+                                <?php 
+                              }else{ 
+                                ?>
+                                <select class="form-control" id="branchWork">
+                                  <option value="1"> Pharmacy</option>
+                                  <option value="4">Clinic</option>
+                              </select>
+
+                                <?php 
+                              }
+                            ?>
                         </div>
                       </div> 
                   </div>
