@@ -70,13 +70,12 @@ $patient = new patient();
               </div>
             </div>
              <ul class="list-unstyled">
+                <li style="display:block;height:47px;"><a href="#"><i class="fas fa-user"></i>My Profile</a></li>
                <li style="display:block;height:47px;"><a class="active" href="index.html"><i class="fas fa-store-alt"></i>Market</a></li>
-               <li style="display:block;height:47px;"><a href="#"><i class="fas fa-credit-card"></i>Black Market</a></li>
                <li style="display:block;height:47px;"><a href="#"><i class="fas fa-file-medical-alt"></i>Medical File</a></li>
                <li style="display:block;height:47px;"><a href="bloodDonations.php"><i class="fas fa-prescription-bottle-alt"></i>Blood Donation</a></li>
-               <li style="display:block;height:47px;"><a href="#"><i class="fas fa-book-medical"></i>Mdeical Book</a></li>
-               <li style="display:block;height:47px;"><a href="#"><i class="fas fa-cogs"></i>Settings</a></li>
-               <li style="display:block;height:47px;" ><a href="../cure-auth/"><i class="fas fa-cogs"></i>Service Provider</a></li>
+               <li style="display:block;height:47px;"><a href="#"><i class="fas fa-book-medical"></i>Booking Session</a></li>
+               <li style="display:block;height:47px;" ><a href="../cure-auth/"><i class="fas fa-cogs"></i>Cure Business</a></li>
                <li style="display:block;height:47px;"><a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
              </ul>
             </div>
