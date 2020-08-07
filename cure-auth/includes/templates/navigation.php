@@ -209,7 +209,6 @@
                       <ul class="treeview-menu">
                         <li><a href="#"><i class="fa fa-circle-o"></i>Reservations List </a></li>
                         <li><a href="#"><i class="fa fa-circle-o"></i>Session Scheduale</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i>Perceptions</a></li>
                       </ul>
                     </li>
                       <?php 
