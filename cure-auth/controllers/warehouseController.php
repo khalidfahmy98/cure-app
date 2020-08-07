@@ -44,6 +44,7 @@
                             <th ><?php echo $info->product_name;?></th>
                             <td><?php echo $info->item_quantity;?></td>
                             <td><?php echo $info->item_price;?></td>
+                            <td><?php echo $info->item_price * $info->item_quantity;?></td>
                             <td>
                                 <?php 
                                     if (session::get('permissions') == 1 ||  session::get('permissions') == 11  ){

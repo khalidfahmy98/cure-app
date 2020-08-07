@@ -64,6 +64,7 @@
                         <th >Product Name</th>
                         <th >Quantity</th>
                         <th >Sell Price</th>
+                        <th >Total Price</th>
                         <th >OPR </th>
                       </tr>
                     </thead>
