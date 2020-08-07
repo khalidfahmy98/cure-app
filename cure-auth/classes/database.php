@@ -79,7 +79,7 @@ class database {
             $operator   = $where[1];
             $value      = $where[2];
             if ( in_array($operator,$operators)){
-                $sql = "SELECT * FROM (( {$MAINTABLE} INNER JOIN {$TABLE1} on {$MAINTABLE}.{$FOREIGN1} =  {$TABLE1}.{$TABLE1PRIMAY}   ) INNER JOIN {$TABLE2} on  {$MAINTABLE}.{$FOREIGN23} =  {$TABLE2}.{$TABLE2PRIMARY} )  WHERE {$field} {$operator} ? ";
+                $sql = "SELECT * FROM {$MAINTABLE} INNER JOIN {$TABLE1} on {$MAINTABLE}.{$FOREIGN1} =  {$TABLE1}.{$TABLE1PRIMAY}    INNER JOIN {$TABLE2} on  {$MAINTABLE}.{$FOREIGN23} =  {$TABLE2}.{$TABLE2PRIMARY}   WHERE {$field} {$operator} ? ";
                 if ( !$this->query($sql,array($value))->error() ){ 
                     return $this;
                 }
