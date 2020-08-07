@@ -62,7 +62,60 @@
             if ( is_numeric(input::get('item_id')) ){
                 $warehousing->delete(input::get('item_id'));
             } 
-        } 
+        }else if ( input::get('do') == 'selectSell') {
+            foreach ($warehousing->getItems(input::get('orgId'))  as $info ){
+                $orgSell = $info->item_price * $info->item_quantity;
+                $mainSell = $info->product_price * $info->item_quantity;
+                ?>
+                    <tr>
+                        <th ><?php echo $info->product_global_barcode;?></th>
+                        <th ><?php echo $info->product_name;?></th>
+                        <td><?php echo $info->item_quantity;?></td>
+                        <td><?php echo $info->item_price;?></td>
+                        <td><?php echo $info->product_price;?></td>
+                        <td><?php echo $info->item_price * $info->item_quantity;?></td>
+                        <td><?php echo $orgSell - $mainSell;?></td>
+                        <td><?php 
+                            if ( $info->sell_visiblity == 0 ) {
+                                echo '<label class="label label-warning">Not In Market</label>';
+                            }else{
+                                echo '<label class="label label-success"> In Market</label>';
+                            }
+                        ?></td>
+                        <td>
+                            <?php 
+                                if (session::get('permissions') == 1 ||  session::get('permissions') == 11  ||  session::get('permissions') == 3 ){
+                                    if ($info->sell_visiblity == 0 ) {
+                                        ?>
+                                        <button class="btn btn-xs btn-success" onclick="activeSell( <?php  echo $info->item_id;?> ,   <?php  echo $info->org_id;?>  )">Sell</button>
+                                        <?php 
+                                    }else{
+                                        ?>
+                                        <button class="btn btn-xs btn-warning" onclick="blockSell( <?php  echo $info->item_id;?> ,   <?php  echo $info->org_id;?>  )">Dont Sell</button>
+                                        <?php 
+                                    }
+                                    ?>
+                                    <?php 
+                                }
+                            ?>
+                        </td>
+                  </tr>
+                <?php 
+            }
+        }else if ( input::get('do') == 'sell'){
+            if ( is_numeric(input::get('item_id'))){
+                $warehousing->update(array(
+                    'sell_visiblity' => 1 
+                ),input::get('item_id'));
+            } 
+
+        }else if (input::get('do') == 'revoke') {
+            if ( is_numeric(input::get('item_id'))){
+                $warehousing->update(array(
+                    'sell_visiblity' => 0 
+                ),input::get('item_id'));
+            } 
+        }
 
 
     } 
