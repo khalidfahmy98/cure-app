@@ -5,6 +5,7 @@
     templateController::setTitle("Warehousing | Cure Systems");
     $patient = new patient();
     $orgnization = new orgnization();
+    $authTreatments = new authTreatments();
     if ($patient->isLogged()){
     ?>
     <div class="content-wrapper">
@@ -16,17 +17,32 @@
                   <h3 class="box-title">Feed Warehouse With Products</h3>
                 </div>
                   <div class="box-body">
+                  <?php 
+                    if ( session::get('permissions') == 3 ||   session::get('permissions') == 1 ||   session::get('permissions') == 11) {
+                        ?>
                     <div class="row">
                         <div class="form-group col-md-3 col-sm-6 col-xs-12">
                             <label>Product Barcode </label>
                             <select class="form-control input-sm" id="productBarcode">
-                                <option value=""></option>
+                            <?php 
+                                foreach ( $authTreatments->getTreatments() as $treatment ){
+                                    ?>
+                                        <option value="<?php echo $treatment->product_id;?>"><?php echo $treatment->product_id;?></option>
+                                    <?php 
+                                }
+                            ?>
                             </select>
                         </div>
                         <div class="form-group col-md-3 col-sm-6 col-xs-12">
                             <label>Product Name </label>
                             <select class="form-control input-sm" id="productName">
-                                <option value=""></option>
+                            <?php 
+                                foreach ( $authTreatments->getTreatments() as $treatment ){
+                                    ?>
+                                        <option value="<?php echo $treatment->product_id;?>"><?php echo $treatment->product_name;?></option>
+                                    <?php 
+                                }
+                            ?>
                             </select>
                         </div>
                         <div class="form-group col-md-3 col-sm-6 col-xs-12">
@@ -42,6 +58,9 @@
                   <div class="box-footer">
                     <button type="button"  class="btn btn-primary" onclick="">Register Product</button>
                   </div>
+                        <?php 
+                    }
+                  ?>
               </div>
               <div id="responserWrapper"></div>
               <div class="box box-primary">
