@@ -54,7 +54,6 @@
                                   <option value="1"> Pharmacy</option>
                                   <option value="4">Clinic</option>
                               </select>
-
                                 <?php 
                               }
                             ?>
