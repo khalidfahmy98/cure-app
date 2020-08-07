@@ -158,11 +158,10 @@
                       </span>
                     </a>
                     <ul class="treeview-menu">
-                      <li><a href="#"><i class="fa fa-circle-o"></i>Warehouse Operations</a></li>
-                      <li><a href="#"><i class="fa fa-circle-o"></i>Sell Operations</a></li>
-                      <li><a href="#"><i class="fa fa-circle-o"></i>Discounts </a></li>
-                      <li><a href="#"><i class="fa fa-circle-o"></i>Market Orders </a></li>
-                      <li><a href="#"><i class="fa fa-circle-o"></i>Request Supllier </a></li>
+                      <li><a href="../warehouseSell/index.php"><i class="fa fa-circle-o"></i>Warehouse Operations</a></li>
+                      <li><a href="../warehouseSell/selloperations.php"><i class="fa fa-circle-o"></i>Sell </a></li>
+                      <li><a href="../warehouseSell/orders.php"><i class="fa fa-circle-o"></i>Market Orders </a></li>
+                      <li><a href="../warehouseSell/requestsupply.php"><i class="fa fa-circle-o"></i>Request Supllier </a></li>
                     </ul>
                   </li>
                     <?php
@@ -177,11 +176,10 @@
                           </span>
                         </a>
                         <ul class="treeview-menu">
-                          <li><a href="#"><i class="fa fa-circle-o"></i>Warehouse Operations</a></li>
-                          <li><a href="#"><i class="fa fa-circle-o"></i>Sell Operations</a></li>
-                          <li><a href="#"><i class="fa fa-circle-o"></i>Discounts </a></li>
-                          <li><a href="#"><i class="fa fa-circle-o"></i>Market Orders </a></li>
-                          <li><a href="#"><i class="fa fa-circle-o"></i>Respond Supllier </a></li>
+                          <li><a href="../warehouseSell/index.php"><i class="fa fa-circle-o"></i>Warehouse Operations</a></li>
+                          <li><a href="../warehouseSell/selloperations.php"><i class="fa fa-circle-o"></i>Sell </a></li>
+                          <li><a href="../warehouseSell/orders.php"><i class="fa fa-circle-o"></i>Market Orders </a></li>
+                          <li><a href="../warehouseSell/respondsupply.php"><i class="fa fa-circle-o"></i>Respond Supllier </a></li>
                         </ul>
                       </li>
                   <?php
