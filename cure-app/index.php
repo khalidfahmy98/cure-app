@@ -5,27 +5,31 @@
     $treatment = new treatments();
     $patient = new patient ();
     $orgnization = new orgnization();
+    $siteStatus = 0 ;
     if ( $patient->isLogged() ) {
-      if ( !$patient->isOwner($patient->data()->patient_id)){
-        $orgId = $patient->getWorkData($patient->data()->patient_id)->orgniztion_id;
-        $workCategory = $patient->getWorkData($patient->data()->patient_id)->work_category;
-        $permissions = $patient->getPermissions($workCategory);
-        $orgType = $orgnization->getOrgType($orgId);
-        session::put('orgnizationId' , $orgId);
-        session::put('workCategory' , $workCategory);
-        session::put('permissions' , $permissions);
-        session::put('orgType' , $orgType);
-      }else{
+      if ( $patient->isOwner($patient->data()->patient_id)){
         $orgId = $orgnization->find($patient->data()->patient_id)->org_id;
         $orgType = $orgnization->find($patient->data()->patient_id)->org_work_type;
         session::put('orgnizationId' , $orgId);
         session::put('workCategory' , 11); // means owner of the orgnization 
         session::put('permissions' , 11);  // means has the full control of all orgnization 
         session::put('orgType' , $orgType);
+      }else{
+        if ($patient->isWorker($patient->data()->patient_id)) {
+          $orgId = $patient->getWorkData($patient->data()->patient_id)->orgniztion_id;
+          $workCategory = $patient->getWorkData($patient->data()->patient_id)->work_category;
+          $permissions = $patient->getPermissions($workCategory);
+          $orgType = $orgnization->getOrgType($orgId);
+          session::put('orgnizationId' , $orgId);
+          session::put('workCategory' , $workCategory);
+          session::put('permissions' , $permissions);
+          session::put('orgType' , $orgType);
+        }
+
       }
 ?>
-    <!--Start Categories-->
-    <div class="category-list col-md-7">
+ <!--Start Categories-->
+ <div class="category-list col-md-7">
         <h3>Market</h3>
         <ul class="list-unstyled row text-center">
         <li class="col-md"><a href="market.php?category=0">ALL</a></li>

@@ -25,16 +25,26 @@ class patient{
     public function isOwner($user){
         if($user){
             $data = $this->_db->get('cure_organizations',array('owner_id','=',$user));
-            if($data->count()){
+            if($data->count() > 0 ){
                 return true;
             }
         }
         return false;
     }
+    public function isWorker($user){
+        if($user){
+            $data = $this->_db->get('aggregate_orgs_workers',array('worker_id','=',$user));
+            if($data->count() > 0 ){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public function getWorkData($user){
         if($user){
             $data = $this->_db->get('aggregate_orgs_workers',array('worker_id','=',$user));
-            if($data->count()){
+            if($data->count() > 0 ){
                 return  $data->first();
             }
         }
