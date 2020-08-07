@@ -21,18 +21,7 @@
                     if ( session::get('permissions') == 3 ||   session::get('permissions') == 1 ||   session::get('permissions') == 11) {
                         ?>
                     <div class="row">
-                        <div class="form-group col-md-3 col-sm-6 col-xs-12">
-                            <label>Product Barcode </label>
-                            <select class="form-control input-sm" id="productBarcode">
-                            <?php 
-                                foreach ( $authTreatments->getTreatments() as $treatment ){
-                                    ?>
-                                        <option value="<?php echo $treatment->product_id;?>"><?php echo $treatment->product_id;?></option>
-                                    <?php 
-                                }
-                            ?>
-                            </select>
-                        </div>
+                    <input type="hidden" class="hide" id="orgId" value="<?php echo session::get('orgnizationId');?>">
                         <div class="form-group col-md-3 col-sm-6 col-xs-12">
                             <label>Product Name </label>
                             <select class="form-control input-sm" id="productName">
@@ -56,7 +45,7 @@
                       </div> 
                   </div>
                   <div class="box-footer">
-                    <button type="button"  class="btn btn-primary" onclick="">Register Product</button>
+                    <button type="button"  class="btn btn-primary" onclick="registerProduct(<?php echo session::get('orgnizationId');?>)">Register Product</button>
                   </div>
                         <?php 
                     }
