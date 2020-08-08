@@ -13,6 +13,20 @@ class orgnization{
         }
         return false;
     }
+    public function getClinicOrganizations(){
+        $data = $this->_db->get("cure_organizations",array('org_work_type','=',"4"));
+        if ( $data->count() > 0 ){
+            return $data->results();
+        }
+        return false;
+    }
+    public function getClinicSchedule($orgId){
+        $data = $this->_db->get("clinics_schedule",array('clinic_id','=',$orgId));
+        if ( $data->count() > 0 ){
+            return $data->results();
+        }
+        return false;
+    }
     public function create( $fields = array() ){
         if( !$this->_db->insert('cure_organizations',$fields) ){
             throw new Exception ('there was a problam creating new account');

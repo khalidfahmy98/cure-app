@@ -394,3 +394,12 @@ section.categorey{
 .category-list img {
     width:195px;
 }
+.cure-category .donation .setting-donation{
+    height:auto;
+}
+.nav-bar img.cure-logo {
+    padding: 3px 0px;
+}
+.cure-category .donation .donation-fixed {
+    top:150px;
+}

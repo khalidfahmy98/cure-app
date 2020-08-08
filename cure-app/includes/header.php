@@ -39,7 +39,6 @@ $patient = new patient();
                <img class="cure-logo" src="assets/imgs/logo.png.png"/>
             </label>
             <ul class="list-unstyled">
-              <li><a href=""><i class="far fa-bell fa-x"></i></a> </li> 
               <li><a href="cart.html"><i  class="fas fa-shopping-cart fa-x"></i></a> </li>
            </ul>
          </div>
@@ -70,11 +69,10 @@ $patient = new patient();
               </div>
             </div>
              <ul class="list-unstyled">
-                <li style="display:block;height:47px;"><a href="#"><i class="fas fa-user"></i>My Profile</a></li>
-               <li style="display:block;height:47px;"><a class="active" href="index.html"><i class="fas fa-store-alt"></i>Market</a></li>
-               <li style="display:block;height:47px;"><a href="#"><i class="fas fa-file-medical-alt"></i>Medical File</a></li>
+               <li style="display:block;height:47px;"><a class="active" href="index.php"><i class="fas fa-store-alt"></i>Market</a></li>
+               <li style="display:block;height:47px;"><a href="mfile.php"><i class="fas fa-file-medical-alt"></i>Medical File</a></li>
                <li style="display:block;height:47px;"><a href="bloodDonations.php"><i class="fas fa-prescription-bottle-alt"></i>Blood Donation</a></li>
-               <li style="display:block;height:47px;"><a href="#"><i class="fas fa-book-medical"></i>Booking Session</a></li>
+               <li style="display:block;height:47px;"><a href="booking.php"><i class="fas fa-book-medical"></i>Booking Session</a></li>
                <li style="display:block;height:47px;" ><a href="../cure-auth/"><i class="fas fa-cogs"></i>Cure Business</a></li>
                <li style="display:block;height:47px;"><a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
              </ul>

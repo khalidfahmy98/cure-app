@@ -2,16 +2,14 @@
                     <!--Start Donate Section-->
         <div class="donation col-md-2">
           <div class="donation-fixed">
-           <input class="search-market" type="text" placeholder="Search Market"/>
            <div class="row setting-donation">
-              <h4 class="col-md">Donation</h4>
-              <i class="col-md fas fa-cog"></i>
+              <h4 class="col-md">Covid-19</h4>
               <div id="accordion">
                 <div class="card">
                   <div class="card-header" id="headingOne">
                     <h5 class="mb-0">
                       <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Donate Request In Sharqia
+                        What is covid 19 ? 
                       </button>
                     </h5>
                   </div>
@@ -25,7 +23,7 @@
                   <div class="card-header" id="headingOne">
                     <h5 class="mb-0">
                       <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Donate Request In Sharqia
+                        How to avoid covid-19 ? 
                       </button>
                     </h5>
                   </div>
@@ -61,8 +59,6 @@
           <p class="inc-2020 text-center"> &copy;2020 cure.Ins</p>
         </div>
         <!--End Donate Section-->
-
-
             </div>
        </div> 
     </div>

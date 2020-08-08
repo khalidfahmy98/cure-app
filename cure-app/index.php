@@ -79,9 +79,7 @@
                 <?php 
               } 
             ?>
-
         </div>
-        
     </div>
     <!--End Categories-->
 <?php 
