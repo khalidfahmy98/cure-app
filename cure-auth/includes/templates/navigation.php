@@ -122,7 +122,7 @@
                     ?>
                   <li class=" treeview menu-open active">
                       <a href="#">
-                        <i class="fa fa-users"></i> <span>Orgnization Workers</span>
+                        <i class="fa fa-users"></i> <span>Organization Workers</span>
                         <span class="pull-right-container">
                           <i class="fa fa-angle-left pull-right"></i>
                         </span>
@@ -207,19 +207,12 @@
                         </span>
                       </a>
                       <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i>Reservations List </a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i>Session Scheduale</a></li>
+                        <li><a href="../reservations/"><i class="fa fa-circle-o"></i>Reservations List </a></li>
+                        <li><a href="../reservations/sessions.php"><i class="fa fa-circle-o"></i>Session schedule</a></li>
                       </ul>
                     </li>
                       <?php 
                   }
-              ?>
-           
-      
-           
-    
-
-              <?php 
             }
       ?>
     

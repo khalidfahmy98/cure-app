@@ -1,6 +1,7 @@
 $(document).ready(function () {
-    $('table.datatable').DataTable();
-    $('.dataTables_length').addClass('bs-select');
+    // $('table.datatable').DataTable();
+    // $('.dataTables_length').addClass('bs-select');
+    
 });
 
 

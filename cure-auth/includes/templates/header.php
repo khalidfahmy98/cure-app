@@ -15,6 +15,7 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
   <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <link rel="stylsheet" href="../../assets/dist/css/timepicker.css">
   <link rel="stylsheet" href="../../assets/dist/css/style.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">

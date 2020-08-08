@@ -11,6 +11,7 @@
 <script type="text/javascript" src="../../../assets/dist/datatable/js/jquery.dataTables.min.js"></script>
 <script src="../../assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="../../assets/dist/js/adminlte.min.js"></script>
+<script src="../../assets/dist/js/timepicker.js"></script>
 <script src="../../assets/dist/js/main.js"></script>
 </body>
 </html>
