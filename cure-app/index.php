@@ -5,6 +5,7 @@
     $treatment = new treatments();
     $patient = new patient ();
     $orgnization = new orgnization();
+    $product = new product();
     $siteStatus = 0 ;
     if ( $patient->isLogged() ) {
       if ( $patient->isOwner($patient->data()->patient_id)){
@@ -55,126 +56,32 @@
             </div>
           </div>                  
         </div>
-        <!--Start Rated Pharmcy-->
-        <h4>Top Rated Pharmcy</h4>
-        <div class="row">                 
-          <div class="rate-pharmcy col-md-3 col-sm-3">
-              <i class="fab fa-500px fa-7x"></i>
-          </div>
-          <div class="rate-pharmcy col-md-3 col-sm-3">
-              <i class="fab fa-500px fa-7x"></i>
-          </div>
-          <div class="rate-pharmcy col-md-3 col-sm-3">
-              <i class="fab fa-500px fa-7x"></i>
-          </div>
-          <div class="rate-pharmcy col-md-3 col-sm-3">
-              <i class="fab fa-500px fa-7x"></i>
-          </div>
-        </div>
-        <!--End Rated Pharmcy-->
-        <!--Start Trending-->
-        <h4>Trending Now</h4>
-        <div class="trend row">
-            <div class="trend-category col-sm-4">
-              <img class="img-responsive center-block" style="width:175px;" src="assets/imgs/trend-1.jpg"/>
-              <p>VaseLine Body Spray Coca Rate ,1909</p>
-              <ins>130.00 EGP</ins>
-              <del>140.00 EGP</del>
-              <p>Eligible for <span>Free Shopping</span></p>
-            </div>
-            <div class="trend-category col-sm-4">
-              <img src="assets/imgs/trend-1.jpg"/>
-              <p>VaseLine Body Spray Coca Rate ,1909</p>
-              <ins>49.00 EGP</ins>
-              <del>60.00 EGP</del>
-            </div>
-            <div class="trend-category col-sm-4">
-              <img src="assets/imgs/trend-1.jpg"/>
-              <p>VaseLine Body Spray Coca Rate ,1909</p>
-              <ins>300.00 EGP</ins>
-            </div>
-        </div>
-        <!--End Trending-->
         <!--Start All Products-->
-        <h4>All Products</h4>
+        <h4>Cure Market Products</h4>
         <div class="trend row">
-            <div class="trend-category col-sm-4">
-              <img src="assets/imgs/trend-1.jpg"/>
-              <p>VaseLine Body Spray Coca Rate ,1909</p>
-              <ins>130.00 EGP</ins>
-              <del>140.00 EGP</del>
-              <p>Eligible for <span>Free Shopping</span></p>
-            </div>
-            <div class="trend-category col-sm-4">
-              <img src="assets/imgs/trend-1.jpg"/>
-              <p>VaseLine Body Spray Coca Rate ,1909</p>
-              <ins>49.00 EGP</ins>
-              <del>60.00 EGP</del>
-            </div>
-            <div class="trend-category col-sm-4">
-              <img src="assets/imgs/trend-1.jpg"/>
-              <p>VaseLine Body Spray Coca Rate ,1909</p>
-              <ins>300.00 EGP</ins>
-            </div>
-            <div class="trend-category col-sm-4">
-              <img src="assets/imgs/trend-1.jpg"/>
-              <p>VaseLine Body Spray Coca Rate ,1909</p>
-              <ins>130.00 EGP</ins>
-              <del>140.00 EGP</del>
-              <p>Eligible for <span>Free Shopping</span></p>
-            </div>
-            <div class="trend-category col-sm-4">
-              <img src="assets/imgs/trend-1.jpg"/>
-              <p>VaseLine Body Spray Coca Rate ,1909</p>
-              <ins>49.00 EGP</ins>
-              <del>60.00 EGP</del>
-            </div>
-            <div class="trend-category col-sm-4">
-              <img src="assets/imgs/trend-1.jpg"/>
-              <p>VaseLine Body Spray Coca Rate ,1909</p>
-              <ins>300.00 EGP</ins>
-            </div>
+            <?php 
+              foreach ( $product->getProducts() as $info ){
+                ?>
+                <div class="trend-category col-md-4  col-sm-4 col-xs-12">
+                  <img src="../storage/<?php echo $info->product_image;?>"/>
+                  <p><?php echo $info->product_name;?></p>
+                  <ins><?php echo $info->item_price?> L.E</ins>
+                  <?php 
+                    if ( $info->item_price < $info->product_price){
+                      ?>
+                        <del><?php echo $info->product_price?> L.E </del>
+                      <?php
+                    } 
+                  ?>
+                  <p>Seller : <a href="orgmarket?id=<?php echo $info->org_id;?>"><?php echo $info->org_name;?></a></p>
+                  <button class="btn btn-primary btn-sm" onclick="addToCart(<?php echo $info->item_id;?>)">Add To Cart</button>
+                </div>
+                <?php 
+              } 
+            ?>
+
         </div>
-        <div class="trend row">
-          <div class="trend-category col-sm-4">
-            <img src="assets/imgs/trend-1.jpg"/>
-            <p>VaseLine Body Spray Coca Rate ,1909</p>
-            <ins>130.00 EGP</ins>
-            <del>140.00 EGP</del>
-            <p>Eligible for <span>Free Shopping</span></p>
-          </div>
-          <div class="trend-category col-sm-4">
-            <img src="assets/imgs/trend-1.jpg"/>
-            <p>VaseLine Body Spray Coca Rate ,1909</p>
-            <ins>49.00 EGP</ins>
-            <del>60.00 EGP</del>
-          </div>
-          <div class="trend-category col-sm-4">
-            <img src="assets/imgs/trend-1.jpg"/>
-            <p>VaseLine Body Spray Coca Rate ,1909</p>
-            <ins>300.00 EGP</ins>
-          </div>
-        </div>
-        <div class="trend row">
-        <div class="trend-category col-sm-4">
-          <img src="assets/imgs/trend-1.jpg"/>
-          <p>VaseLine Body Spray Coca Rate ,1909</p>
-          <ins>130.00 EGP</ins>
-          <del>140.00 EGP</del>
-          <p>Eligible for <span>Free Shopping</span></p>
-        </div>
-        <div class="trend-category col-sm-4">
-          <img src="assets/imgs/trend-1.jpg"/>
-          <p>VaseLine Body Spray Coca Rate ,1909</p>
-          <ins>49.00 EGP</ins>
-          <del>60.00 EGP</del>
-        </div>
-        <div class="trend-category col-sm-4">
-          <img src="assets/imgs/trend-1.jpg"/>
-          <p>VaseLine Body Spray Coca Rate ,1909</p>
-          <ins>300.00 EGP</ins>
-        </div>
-      </div> 
+        
     </div>
     <!--End Categories-->
 <?php 

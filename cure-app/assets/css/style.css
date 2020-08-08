@@ -388,3 +388,9 @@ section.categorey{
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+.cure-category .trend{
+    border:none;
+}
+.category-list img {
+    width:195px;
+}
