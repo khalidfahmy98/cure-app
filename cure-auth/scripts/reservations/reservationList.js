@@ -24,12 +24,12 @@ function createReservation(org_id){
     xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
     xhr.send("org_id="+org_id+"&patientname="+patientname+"&sessiontime="+sessiontime);
 }
-function deleteSchedule(org_id, item_id){
+function deleteReservation(org_id, item_id){
     var xhr = new XMLHttpRequest ();
         xhr.onreadystatechange = function () {
             if ( xhr.readyState == 4 && xhr.status == 200 ) {
                 document.getElementById("liveTableData").innerHTML = this.responseText;
-                getSchedule(org_id);
+                getReservations(org_id);
             }
         }
         xhr.open("POST","../../controllers/reservationsController.php?do=delete",true);
